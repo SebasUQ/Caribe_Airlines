@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane fx:id="PanelInicial" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.VentanaInicialController">
+<AnchorPane fx:id="PanelInicial" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.VentanaInicialController">
    <children>
-      <Label layoutX="295.0" layoutY="192.0" text=":3" />
+      <TabPane prefHeight="700.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tickets" text="Compra de Tickets">
+               <content>
+                  <fx:include source="panelTickets.fxml"></fx:include>
+               </content></Tab>
+
+          <Tab fx:id="flotas" text="Flotas">
+               <content>
+                  <fx:include source="panelFlotas.fxml"></fx:include>
+               </content></Tab>
+
+            <Tab fx:id="tripulacion" text="Tripulación">
+               <content>
+                  <fx:include source="panelTripulacion.fxml"></fx:include>
+               </content></Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>

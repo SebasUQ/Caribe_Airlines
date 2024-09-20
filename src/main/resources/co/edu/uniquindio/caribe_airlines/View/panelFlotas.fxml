@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelFlotasController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Flotas" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagen1" fitHeight="140.0" fitWidth="218.0" layoutX="73.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/airbus a320.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imagen3" fitHeight="133.0" fitWidth="240.0" layoutX="333.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/Boeign 787.jpg" />
+         </image></ImageView>
+      <ImageView fx:id="imagen2" fitHeight="140.0" fitWidth="210.0" layoutX="617.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/airbus 330.jpg" />
+         </image></ImageView>
+      <Label layoutX="130.0" layoutY="293.0" text="Airbus A320">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="405.0" layoutY="295.0" text="Boeing 787">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="670.0" layoutY="295.0" text="Airbus A330">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
