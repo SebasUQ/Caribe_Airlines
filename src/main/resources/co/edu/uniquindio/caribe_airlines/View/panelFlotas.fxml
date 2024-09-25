@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,16 +16,16 @@
       </Label>
       <ImageView fx:id="imagen1" fitHeight="140.0" fitWidth="218.0" layoutX="73.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Imagenes/airbus a320.jpeg" />
+            <Image url="@../Imagenes/airbusa320.jpeg" />
          </image>
       </ImageView>
       <ImageView fx:id="imagen3" fitHeight="133.0" fitWidth="240.0" layoutX="333.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Imagenes/Boeign 787.jpg" />
+            <Image url="@../Imagenes/Boeign787.jpg" />
          </image></ImageView>
       <ImageView fx:id="imagen2" fitHeight="140.0" fitWidth="210.0" layoutX="617.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Imagenes/airbus 330.jpg" />
+            <Image url="@../Imagenes/airbus330.jpg" />
          </image></ImageView>
       <Label layoutX="130.0" layoutY="293.0" text="Airbus A320">
          <font>
@@ -39,6 +40,98 @@
       <Label layoutX="670.0" layoutY="295.0" text="Airbus A330">
          <font>
             <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="56.0" layoutY="340.0" text="Cantidad Aeronaves:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="380.0" text="Tipo de Vuelo:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="71.0" layoutY="421.0" prefHeight="19.0" prefWidth="114.0" text="Total de Asientos:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="87.0" layoutY="501.0" text="Clase Ejecutiva:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="462.0" text="Clase Economica:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Separator layoutX="304.0" layoutY="282.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="17.0" />
+      <Separator layoutX="587.0" layoutY="282.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="17.0" />
+      <Label layoutX="49.0" layoutY="538.0" text="Capacidad Total (Kg):">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="328.0" layoutY="340.0" text="Cantidad Aeronaves:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="365.0" layoutY="380.0" text="Tipo de Vuelo:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="343.0" layoutY="421.0" prefHeight="19.0" prefWidth="114.0" text="Total de Asientos:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="359.0" layoutY="501.0" text="Clase Ejecutiva:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="462.0" text="Clase Economica:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="321.0" layoutY="538.0" text="Capacidad Total (Kg):">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="603.0" layoutY="340.0" text="Cantidad Aeronaves:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="640.0" layoutY="380.0" text="Tipo de Vuelo:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="618.0" layoutY="421.0" prefHeight="19.0" prefWidth="114.0" text="Total de Asientos:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="634.0" layoutY="501.0" text="Clase Ejecutiva:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="623.0" layoutY="462.0" text="Clase Economica:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="596.0" layoutY="538.0" text="Capacidad Total (Kg):">
+         <font>
+            <Font name="System Bold" size="13.0" />
          </font>
       </Label>
    </children>
