@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,7 +17,58 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnSiguiente" layoutX="767.0" layoutY="602.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="96.0" text="Siguiente" />
-      <Label layoutX="30.0" layoutY="57.0" text="Pagina 1" />
+      <Button fx:id="btnSiguiente" layoutX="685.0" layoutY="600.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="39.0" prefWidth="173.0" text="Opciones de Vuelo ---&gt;">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label layoutX="34.0" layoutY="87.0" text="Modalidad del Viaje">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <ComboBox fx:id="combModalidad" layoutX="34.0" layoutY="107.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="34.0" layoutY="188.0" text="Ciudad de Origen:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="279.0" layoutY="187.0" text="Ciudad Destino:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="combOrigen" layoutX="34.0" layoutY="208.0" prefHeight="25.0" prefWidth="193.0" />
+      <ComboBox fx:id="combDestino" layoutX="279.0" layoutY="207.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="279.0" layoutY="85.0" text="Clase de Servicio:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="combServicio" layoutX="279.0" layoutY="105.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="34.0" layoutY="295.0" text="Fecha de Inicio:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="279.0" layoutY="295.0" text="Fecha de Retorno:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="fInicio" layoutX="34.0" layoutY="315.0" prefHeight="25.0" prefWidth="193.0" />
+      <DatePicker fx:id="fRetorno" layoutX="279.0" layoutY="315.0" prefHeight="25.0" prefWidth="193.0" />
+      <Label layoutX="34.0" layoutY="390.0" text="Número de personas que viajaran:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="numPersonas" alignment="CENTER_RIGHT" layoutX="279.0" layoutY="388.0" prefHeight="25.0" prefWidth="87.0" />
+      <TableView fx:id="tablaVuelos" layoutX="508.0" layoutY="85.0" prefHeight="465.0" prefWidth="350.0">
+        <columns>
+          <TableColumn fx:id="columOrigen" prefWidth="94.0" text="Origen" />
+          <TableColumn fx:id="columDestino" prefWidth="92.0" text="Destino" />
+            <TableColumn fx:id="columDuracion" prefWidth="68.0" text="Duración" />
+            <TableColumn fx:id="columSalida" prefWidth="95.0" text="Hora de Salida" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>
