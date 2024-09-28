@@ -1,7 +1,31 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
+
 public class PanelTicketsController {
-    public AnchorPane PanelCambiante;
+    public Button btnSiguiente;
+    public AnchorPane panelTickets;
+
+    public void cambiarPanel (AnchorPane panel){
+        this.panelTickets = panel;
+    }
+
+    public void nextPanel(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets1.fxml"));
+            panelTickets.getChildren().setAll((Node) loader.load());
+
+            PanelTicketsController1 controller1 = loader.getController();
+            controller1.cambiarPanel(panelTickets);
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
