@@ -20,6 +20,16 @@ public class PanelTicketsController1 {
 
     public void nextPanel(ActionEvent actionEvent) {
 
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets2.fxml"));
+            panelTickets1.getChildren().setAll((Node) loader.load());
+
+            PanelTicketsController2 controller = loader.getController();
+            controller.cambiarPanel(panelTickets1);
+
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -29,8 +39,8 @@ public class PanelTicketsController1 {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets.fxml"));
             panelTickets1.getChildren().setAll((Node) loader.load());
 
-            PanelTicketsController controller1 = loader.getController();
-            controller1.cambiarPanel(panelTickets1);
+            PanelTicketsController controller = loader.getController();
+            controller.cambiarPanel(panelTickets1);
 
         }catch (IOException e) {
             e.printStackTrace();

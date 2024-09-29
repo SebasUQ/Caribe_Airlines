@@ -12,7 +12,7 @@
 
 <AnchorPane fx:id="panelTickets" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTicketsController">
    <children>
-      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Tickets" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Criterios Principales" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
