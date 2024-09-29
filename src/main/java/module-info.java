@@ -5,6 +5,8 @@ module Caribe_Airlines {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires lombok;
+    requires java.logging;
 
 
     exports co.edu.uniquindio.caribe_airlines.Aplicacion;
