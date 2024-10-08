@@ -2,14 +2,23 @@ package co.edu.uniquindio.caribe_airlines.Model;
 
 import co.edu.uniquindio.caribe_airlines.dataStructures.MiListaEnlazada;
 import co.edu.uniquindio.caribe_airlines.dataStructures.Nodo;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
 public class CaribeAirlines {
 
     private static CaribeAirlines instance;
@@ -36,7 +45,14 @@ public class CaribeAirlines {
 
         // Cargar datos desde archivos si es necesario
         leerTripulantes();
-        leerAeronaves();
+        initializeAeronaves();
+    }
+
+    private void initializeAeronaves() {
+        aeronaves.add(new Avion("Boeing 737", 180, 20000, new HashMap<>()));
+        aeronaves.add(new Avion("Airbus A320", 150, 18000, new HashMap<>()));
+        aeronaves.add(new Avion("Boeing 777", 396, 35000, new HashMap<>()));
+        // Add more predefined aircraft as needed
     }
 
     // Obtener la instancia única de CaribeAirlines
@@ -49,27 +65,23 @@ public class CaribeAirlines {
 
     // Método para leer tripulantes de archivo
     private void leerTripulantes() {
-        try (Scanner scanner = new Scanner(new File("src/main/resources/tripulantes.txt"))) {
-            while (scanner.hasNextLine()) {
-                String[] datos = scanner.nextLine().split(";");
-                tripulantes.add(new Tripulante(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6]));
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/tripulantes.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 7) { // Ensure there are enough elements
+                    Tripulante tripulante = new Tripulante(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
+                    tripulantes.add(tripulante);
+                } else {
+                    // Handle the case where data is incomplete
+                    System.err.println("Incomplete data: " + line);
+                }
             }
         } catch (IOException e) {
-            LOGGER.log(Level.WARNING, "Error al leer los tripulantes", e);
+            e.printStackTrace();
         }
     }
 
-    // Método para leer aeronaves de archivo
-    private void leerAeronaves() {
-        try (Scanner scanner = new Scanner(new File("src/main/resources/aeronaves.txt"))) {
-            while (scanner.hasNextLine()) {
-                String[] datos = scanner.nextLine().split(";");
-                aeronaves.add(new Avion(datos[0], Integer.parseInt(datos[1]), Integer.parseInt(datos[2])));
-            }
-        } catch (IOException e) {
-            LOGGER.log(Level.WARNING, "Error al leer las aeronaves", e);
-        }
-    }
 
     // CRUD Tripulación
     public void registrarTripulante(Tripulante tripulante) throws Exception {
@@ -98,33 +110,6 @@ public class CaribeAirlines {
         guardarTripulantes();
     }
 
-    // CRUD Aeronaves
-    public void registrarAeronave(Avion aeronave) throws Exception {
-        if (aeronaves.find(aeronave) != null) {
-            throw new Exception("La aeronave ya está registrada");
-        }
-        aeronaves.add(aeronave);
-        guardarAeronaves();
-    }
-
-    public void eliminarAeronave(String modelo) {
-        Avion aeronave = buscarAeronave(modelo);
-        if (aeronave != null) {
-            aeronaves.remove(aeronave);
-            guardarAeronaves();
-        }
-    }
-
-    public Avion buscarAeronave(String modelo) {
-        return aeronaves.find(new Avion(modelo, 0, 0));
-    }
-
-    public void actualizarAeronave(Avion aeronaveActualizada) {
-        eliminarAeronave(aeronaveActualizada.getModelo());
-        aeronaves.add(aeronaveActualizada);
-        guardarAeronaves();
-    }
-
     // Métodos para guardar la información en archivos
     private void guardarTripulantes() {
         try (FileWriter fw = new FileWriter(new File("src/main/resources/tripulantes.txt"))) {
@@ -150,4 +135,3 @@ public class CaribeAirlines {
         }
     }
 }
-

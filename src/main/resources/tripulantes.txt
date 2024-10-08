@@ -1,0 +1,1 @@
+Tripulante(id=sfvd, nombre=fsv, direccion=sdfv, email=sdv, fechaNacimiento=2024-10-02, estudios=dsv, rango=sdv)
