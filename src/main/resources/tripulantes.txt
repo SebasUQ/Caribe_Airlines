@@ -1,3 +1,3 @@
-Tripulante(id=Tripulante(id=Tripulante(id=123, nombre= nombre= nombre=Sebas, direccion= direccion= direccion=123, email= email= email=123@gmail.com, fechaNacimiento= fechaNacimiento= fechaNacimiento=2024-10-07, estudios= estudios= estudios=no c, rango= rango= rango=xd)))
-Tripulante(id=Tripulante(id=321, nombre= nombre=Pepe, direccion= direccion=321, email= email=elpepe@gmail.com, fechaNacimiento= fechaNacimiento=2024-10-04, estudios= estudios=jum, rango= rango=admin))
-Tripulante(id=6644, nombre=jebjef, direccion=jnncn, email=ksdjcn, fechaNacimiento=2024-10-10, estudios=knsdkn, rango=jbjb)
+123,Sebas,312,Sebas@gmail.com,2024-10-11,sffwfw,wefwe
+321,Pepe,3443434,Pepe@gmail.com,2024-10-04,wfewfw,wefwfwe
+4321,Valentina,131231313,Vale@gmail.com,2024-09-30,fggegeg,egrerge

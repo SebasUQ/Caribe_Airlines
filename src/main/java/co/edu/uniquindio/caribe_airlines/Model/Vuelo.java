@@ -16,4 +16,5 @@ public class Vuelo implements Serializable {
     private Avion avion;
     private List<Tripulante> tripulacion;
     private List<Cliente> pasajeros;
+
 }

@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d951e023-a0aa-431e-82f0-ddc50d68271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Vuelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Vuelo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/tripulantes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tripulantes.txt" afterDir="false" />
     </list>

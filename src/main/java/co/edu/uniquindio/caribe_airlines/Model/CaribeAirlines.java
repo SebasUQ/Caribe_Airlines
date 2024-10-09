@@ -63,26 +63,6 @@ public class CaribeAirlines {
         return instance;
     }
 
-    // Método para leer tripulantes de archivo
-    private void leerTripulantes() {
-        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/tripulantes.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length >= 7) { // Ensure there are enough elements
-                    Tripulante tripulante = new Tripulante(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
-                    tripulantes.add(tripulante);
-                } else {
-                    // Handle the case where data is incomplete
-                    System.err.println("Incomplete data: " + line);
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
     // CRUD Tripulación
     public void registrarTripulante(Tripulante tripulante) throws Exception {
         if (tripulantes.find(tripulante) != null) {
@@ -110,14 +90,41 @@ public class CaribeAirlines {
         guardarTripulantes();
     }
 
+    // Método para leer tripulantes de archivo
+    private void leerTripulantes() {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/tripulantes.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length >= 7) { // Ensure there are enough elements
+                    Tripulante tripulante = new Tripulante(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
+                    tripulantes.add(tripulante);
+                } else {
+                    // Handle the case where data is incomplete
+                    System.err.println("Incomplete data: " + line);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     // Métodos para guardar la información en archivos
     private void guardarTripulantes() {
-        try (FileWriter fw = new FileWriter(new File("src/main/resources/tripulantes.txt"))) {
+        try (FileWriter fw = new FileWriter(new File("src/main/resources/tripulantes.txt"), false)) {
             Nodo<Tripulante> current = tripulantes.getHead();
+            String contenido = "";
             while (current != null) {
-                fw.write(current.data.toString() + "\n");
+                contenido += current.data.getId()+","+current.data.getNombre()+","+current.data.getDireccion()+
+                ","+current.data.getEmail()+","+current.data.getFechaNacimiento()+","+current.data.getEstudios()+
+                ","+current.data.getRango()+"\n";
                 current = current.next;
             }
+            BufferedWriter bfw = new BufferedWriter(fw);
+            bfw.write(contenido);
+            bfw.close();
+
         } catch (IOException e) {
             LOGGER.log(Level.WARNING, "Error al guardar los tripulantes", e);
         }
