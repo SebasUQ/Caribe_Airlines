@@ -1,1 +1,2 @@
-Tripulante(id=sfvd, nombre=fsv, direccion=sdfv, email=sdv, fechaNacimiento=2024-10-02, estudios=dsv, rango=sdv)
+Tripulante(id=Tripulante(id=123, nombre= nombre=Sebas, direccion= direccion=123, email= email=123@gmail.com, fechaNacimiento= fechaNacimiento=2024-10-07, estudios= estudios=no c, rango= rango=xd))
+Tripulante(id=321, nombre=Pepe, direccion=321, email=elpepe@gmail.com, fechaNacimiento=2024-10-04, estudios=jum, rango=admin)

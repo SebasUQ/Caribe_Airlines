@@ -4,13 +4,13 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController">
+<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController">
    <children>
       <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Gestion de Tripulación" textFill="WHITE">
          <font>
@@ -55,18 +55,18 @@
       <TextField fx:id="txtEstud" layoutX="47.0" layoutY="423.0" prefHeight="25.0" prefWidth="257.0" />
       <ScrollPane layoutX="375.0" layoutY="75.0" prefHeight="550.0" prefWidth="490.0">
          <content>
-            <TreeTableView fx:id="ListaTripulantes" prefHeight="550.0" prefWidth="490.0">
-               <columns>
-                  <TreeTableColumn fx:id="Nombres" prefWidth="178.0" text="Nombre" />
-                  <TreeTableColumn fx:id="IDs" minWidth="0.0" prefWidth="116.0" text="ID" />
-                  <TreeTableColumn fx:id="Correos" prefWidth="180.0" text="Correo" />
-               </columns>
-            </TreeTableView>
+            <TableView fx:id="listaTripulantes" prefHeight="549.0" prefWidth="489.0">
+              <columns>
+                <TableColumn fx:id="Nombres" prefWidth="168.0" text="Nombre" />
+                <TableColumn fx:id="IDs" prefWidth="119.0" text="ID" />
+                  <TableColumn fx:id="Correos" prefWidth="201.0" text="Correo" />
+              </columns>
+            </TableView>
          </content>
       </ScrollPane>
-      <Button fx:id="btnAgregar" layoutX="47.0" layoutY="527.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="103.0" text="Agregar" onAction="#handleAddTripulante" />
-      <Button fx:id="btnEliminar" layoutX="201.0" layoutY="585.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="103.0" text="Eliminar" onAction="#handleDeleteTripulante" />
-      <Button fx:id="btnActualizar" layoutX="47.0" layoutY="585.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="103.0" text="Actualizar" onAction="#handleUpdateTripulante" />
+      <Button fx:id="btnAgregar" layoutX="47.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleAddTripulante" prefHeight="35.0" prefWidth="103.0" text="Agregar" />
+      <Button fx:id="btnEliminar" layoutX="201.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleDeleteTripulante" prefHeight="35.0" prefWidth="103.0" text="Eliminar" />
+      <Button fx:id="btnActualizar" layoutX="47.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleUpdateTripulante" prefHeight="35.0" prefWidth="103.0" text="Actualizar" />
       <TextField fx:id="txtRango" layoutX="47.0" layoutY="477.0" prefHeight="25.0" prefWidth="257.0" />
       <Label layoutX="46.0" layoutY="457.0" text="Rango:">
          <font>

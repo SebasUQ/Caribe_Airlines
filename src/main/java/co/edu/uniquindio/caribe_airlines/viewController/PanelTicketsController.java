@@ -33,6 +33,7 @@ public class PanelTicketsController {
         this.panelTickets = panel;
     }
 
+
     public void nextPanel(ActionEvent actionEvent) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets1.fxml"));
@@ -40,6 +41,8 @@ public class PanelTicketsController {
 
             PanelTicketsController1 controller1 = loader.getController();
             controller1.cambiarPanel(panelTickets);
+
+
 
         }catch (IOException e) {
             e.printStackTrace();
