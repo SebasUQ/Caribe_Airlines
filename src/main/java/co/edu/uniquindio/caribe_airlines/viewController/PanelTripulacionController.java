@@ -96,10 +96,10 @@ public class PanelTripulacionController {
 
     @FXML
     private void handleDeleteTripulante() {
-        int selectedItem =  listaTripulantes.getSelectionModel().getSelectedIndex();
-        if (selectedItem != -1) {
-            caribeAirlines.eliminarTripulante(listaTripulantes.getItems().get(selectedItem).getId());
-            loadTripulantes();
+        Tripulante t = listaTripulantes.getSelectionModel().getSelectedItem();
+        if (t != null) {
+            caribeAirlines.eliminarTripulante(t.getId());
         }
+        loadTripulantes();
     }
 }
