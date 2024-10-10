@@ -72,20 +72,15 @@ public class CaribeAirlines {
         guardarTripulantes();
     }
 
-    public void eliminarTripulante(String id) {
-        Tripulante tripulante = buscarTripulante(id);
+    public void eliminarTripulante(Tripulante tripulante) {
         if (tripulante != null) {
             tripulantes.remove(tripulante);
             guardarTripulantes();
         }
     }
 
-    public Tripulante buscarTripulante(String id) {
-        return tripulantes.find(new Tripulante(id, null, null, null, null, null, null));
-    }
-
     public void actualizarTripulante(Tripulante tripulanteActualizado) {
-        eliminarTripulante(tripulanteActualizado.getId());
+        eliminarTripulante(tripulanteActualizado);
         tripulantes.add(tripulanteActualizado);
         guardarTripulantes();
     }

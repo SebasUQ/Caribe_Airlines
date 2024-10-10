@@ -22,33 +22,32 @@ public class MiListaEnlazada<T> {
             head = nuevoNodo;
         } else {
             Nodo<T> current = head;
-            while (current.next != null) {
-                current = current.next;
+            while (current.getNext() != null) {
+                current = current.getNext();
             }
-            current.next = nuevoNodo;
+            current.setNext(nuevoNodo);
         }
         size++;
     }
 
-    public boolean remove(T data) {
-        if (head == null) {
-            return false;
+    public void remove(T data) {
+
+        if (head.data.equals(data)){
+            head = head.getNext();
         }
-        if (head.data.equals(data)) {
-            head = head.next;
-            size--;
-            return true;
+        else{
+            Nodo<T> aux = head;
+            while (aux.getNext() != null){
+                if(aux.getNext().data.equals(data)){
+                    aux.setNext(aux.getNext().getNext());
+                    break;
+                }
+
+                aux = aux.getNext();
+            }
         }
-        Nodo<T> current = head;
-        while (current.next != null && !current.next.data.equals(data)) {
-            current = current.next;
-        }
-        if (current.next != null) {
-            current.next = current.next.next;
-            size--;
-            return true;
-        }
-        return false;
+        size--;
+
     }
 
     public T find(T data) {

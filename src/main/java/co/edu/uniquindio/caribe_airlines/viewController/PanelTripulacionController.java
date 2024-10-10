@@ -98,8 +98,8 @@ public class PanelTripulacionController {
     private void handleDeleteTripulante() {
         int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
         if (selectedItem != -1) {
-            Tripulante t = listaTripulantes.getItems().get(selectedItem);
-            caribeAirlines.eliminarTripulante(t.getId());
+            Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
+            caribeAirlines.eliminarTripulante(tripulante);
             loadTripulantes();
         }
     }
