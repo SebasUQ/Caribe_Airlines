@@ -7,13 +7,20 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TreeItemPropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+
+import java.io.IOException;
 
 public class PanelTripulacionController {
 
 
+    public AnchorPane panelTripulacion;
     @FXML
     private TextField txtNom, txtID, txtDirec, txtCorreo, txtEstud, txtRango;
     @FXML
@@ -23,7 +30,7 @@ public class PanelTripulacionController {
     @FXML
     private TableColumn<Tripulante, String> Nombres, IDs, Correos;
     @FXML
-    private Button btnAgregar, btnEliminar, btnActualizar;
+    private Button btnAgregar, btnEliminar, btnActualizar, sgtPagina;
 
     private CaribeAirlines caribeAirlines;
 
@@ -101,6 +108,24 @@ public class PanelTripulacionController {
             Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
             caribeAirlines.eliminarTripulante(tripulante);
             loadTripulantes();
+        }
+    }
+
+    public void cambiarPanel (AnchorPane panel){
+        this.panelTripulacion = panel;
+    }
+
+    public void nextPanel(ActionEvent actionEvent) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml"));
+            panelTripulacion.getChildren().setAll((Node) loader.load());
+
+            PanelTripulacionController1 controller1 = loader.getController();
+            controller1.cambiarPanel(panelTripulacion);
+
+        }catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

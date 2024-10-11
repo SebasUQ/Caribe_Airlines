@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController">
+<AnchorPane fx:id="panelTripulacion" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController">
    <children>
-      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Gestion de Tripulación" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Gestion de Tripulantes" textFill="WHITE">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
@@ -53,9 +53,9 @@
          </font>
       </Label>
       <TextField fx:id="txtEstud" layoutX="47.0" layoutY="423.0" prefHeight="25.0" prefWidth="257.0" />
-      <ScrollPane layoutX="375.0" layoutY="75.0" prefHeight="550.0" prefWidth="490.0">
+      <ScrollPane layoutX="375.0" layoutY="75.0" prefHeight="489.0" prefWidth="490.0">
          <content>
-            <TableView fx:id="listaTripulantes" prefHeight="549.0" prefWidth="489.0">
+            <TableView fx:id="listaTripulantes" prefHeight="486.0" prefWidth="489.0">
               <columns>
                 <TableColumn fx:id="Nombres" prefWidth="168.0" text="Nombre" />
                 <TableColumn fx:id="IDs" prefWidth="119.0" text="ID" />
@@ -73,5 +73,6 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
+      <Button fx:id="sgtPagina" layoutX="705.0" layoutY="590.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="160.0" text="Asignar Tripulantes --&gt;" />
    </children>
 </AnchorPane>

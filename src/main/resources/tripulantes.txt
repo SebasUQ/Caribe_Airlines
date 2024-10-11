@@ -1,3 +1,2 @@
 123,Sebas,312,Sebas@gmail.com,2024-10-11,sffwfw,wefwe
 321,Pepe,3443434,Pepe@gmail.com,2024-10-04,wfewfw,wefwfwe
-4321,Valentina,131231313,Vale@gmail.com,2024-09-30,fggegeg,egrerge
