@@ -19,13 +19,15 @@ import java.util.logging.SimpleFormatter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class CaribeAirlines {
+public class CaribeAirlines implements Serializable {
 
     private static CaribeAirlines instance;
 
     // Estructuras de datos personalizadas para tripulantes y aeronaves
     private MiListaEnlazada<Tripulante> tripulantes;
     private MiListaEnlazada<Avion> aeronaves;
+    private MiListaEnlazada<Vuelo> vuelosProgramados;
+    private MiListaEnlazada<Cliente> clientes;
 
     private static final Logger LOGGER = Logger.getLogger(CaribeAirlines.class.getName());
 
@@ -42,6 +44,8 @@ public class CaribeAirlines {
         // Inicializar las listas personalizadas
         this.tripulantes = new MiListaEnlazada<>();
         this.aeronaves = new MiListaEnlazada<>();
+        this.vuelosProgramados = new MiListaEnlazada<>();
+        this.clientes = new MiListaEnlazada<>();
 
         // Cargar datos desde archivos si es necesario
         leerTripulantes();
@@ -49,9 +53,13 @@ public class CaribeAirlines {
     }
 
     private void initializeAeronaves() {
-        aeronaves.add(new Avion("Boeing 737", 180, 20000, new HashMap<>()));
-        aeronaves.add(new Avion("Airbus A320", 150, 18000, new HashMap<>()));
-        aeronaves.add(new Avion("Boeing 777", 396, 35000, new HashMap<>()));
+
+        aeronaves.add(new Avion("Airbus A320", 150, 19000, new HashMap<>()));
+        aeronaves.add(new Avion("Airbus A320", 150, 19000, new HashMap<>()));
+        aeronaves.add(new Avion("Airbus A330", 252, 52000, new HashMap<>()));
+        aeronaves.add(new Avion("Airbus A330", 252, 52000, new HashMap<>()));
+        aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>()));
+        aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>()));
         // Add more predefined aircraft as needed
     }
 
@@ -63,7 +71,7 @@ public class CaribeAirlines {
         return instance;
     }
 
-    // CRUD Tripulación
+//------------------------------------------CRUD Tripulación------------------------------------------//
     public void registrarTripulante(Tripulante tripulante) throws Exception {
         if (tripulantes.find(tripulante) != null) {
             throw new Exception("El tripulante ya está registrado");
@@ -84,6 +92,8 @@ public class CaribeAirlines {
         tripulantes.add(tripulanteActualizado);
         guardarTripulantes();
     }
+
+//------------------------------------CARGADO Y GUARDADO DE ARCHIVOS------------------------------------//
 
     // Método para leer tripulantes de archivo
     private void leerTripulantes() {
