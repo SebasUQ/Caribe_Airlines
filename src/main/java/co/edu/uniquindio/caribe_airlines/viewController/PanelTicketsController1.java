@@ -4,6 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -13,6 +16,9 @@ public class PanelTicketsController1 {
     public Button btnSiguiente;
     public Button btnAnterior;
     public AnchorPane panelTickets1;
+    public TableView TablaVuelos;
+    public ImageView imagenAvion;
+    public TableColumn columAvion, columAsientos, columTipo;
 
     public void cambiarPanel(AnchorPane panel){
         this.panelTickets1 = panel;

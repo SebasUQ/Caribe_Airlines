@@ -15,4 +15,5 @@ public class Ruta implements Serializable {
     private String destino;
     private String duracion;
     private String horaSalida;
+    private String tipoRuta;
 }

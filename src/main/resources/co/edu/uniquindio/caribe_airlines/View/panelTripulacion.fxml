@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -53,17 +52,6 @@
          </font>
       </Label>
       <TextField fx:id="txtEstud" layoutX="47.0" layoutY="423.0" prefHeight="25.0" prefWidth="257.0" />
-      <ScrollPane layoutX="375.0" layoutY="75.0" prefHeight="489.0" prefWidth="490.0">
-         <content>
-            <TableView fx:id="listaTripulantes" prefHeight="486.0" prefWidth="489.0">
-              <columns>
-                <TableColumn fx:id="Nombres" prefWidth="168.0" text="Nombre" />
-                <TableColumn fx:id="IDs" prefWidth="119.0" text="ID" />
-                  <TableColumn fx:id="Correos" prefWidth="201.0" text="Correo" />
-              </columns>
-            </TableView>
-         </content>
-      </ScrollPane>
       <Button fx:id="btnAgregar" layoutX="47.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleAddTripulante" prefHeight="35.0" prefWidth="103.0" text="Agregar" />
       <Button fx:id="btnEliminar" layoutX="201.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleDeleteTripulante" prefHeight="35.0" prefWidth="103.0" text="Eliminar" />
       <Button fx:id="btnActualizar" layoutX="47.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleUpdateTripulante" prefHeight="35.0" prefWidth="103.0" text="Actualizar" />
@@ -74,5 +62,12 @@
          </font>
       </Label>
       <Button fx:id="sgtPagina" layoutX="705.0" layoutY="590.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="160.0" text="Asignar Tripulantes --&gt;" />
+      <TableView fx:id="listaTripulantes" layoutX="375.0" layoutY="74.0" prefHeight="486.0" prefWidth="490.0">
+        <columns>
+          <TableColumn fx:id="Nombres" prefWidth="168.0" text="Nombre" />
+          <TableColumn fx:id="IDs" prefWidth="119.0" text="ID" />
+            <TableColumn fx:id="Correos" prefWidth="201.0" text="Correo" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

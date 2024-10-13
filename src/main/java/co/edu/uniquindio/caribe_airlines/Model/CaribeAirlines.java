@@ -28,6 +28,7 @@ public class CaribeAirlines implements Serializable {
     private MiListaEnlazada<Avion> aeronaves;
     private MiListaEnlazada<Vuelo> vuelosProgramados;
     private MiListaEnlazada<Cliente> clientes;
+    private MiListaEnlazada<Ruta> rutas;
 
     private static final Logger LOGGER = Logger.getLogger(CaribeAirlines.class.getName());
 
@@ -46,8 +47,10 @@ public class CaribeAirlines implements Serializable {
         this.aeronaves = new MiListaEnlazada<>();
         this.vuelosProgramados = new MiListaEnlazada<>();
         this.clientes = new MiListaEnlazada<>();
+        this.rutas = new MiListaEnlazada<>();
 
         // Cargar datos desde archivos si es necesario
+        initializeRutas();
         leerTripulantes();
         initializeAeronaves();
     }
@@ -61,6 +64,15 @@ public class CaribeAirlines implements Serializable {
         aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>()));
         aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>()));
         // Add more predefined aircraft as needed
+    }
+
+    private void initializeRutas(){
+        rutas.add(new Ruta("CDMX","Monterrey", "2(h):45(m)","6:00 am","Nacional"));
+        rutas.add(new Ruta("CDMX","Cancun", "3(h):12(m)","8:00 am","Nacional"));
+        rutas.add(new Ruta("CDMX","Buenos Aires", "9(h):05(m)","11:20 pm","Internacional"));
+        rutas.add(new Ruta("CDMX","Los Angeles", "3(h):25(m)","9:45 am","Internacional"));
+        rutas.add(new Ruta("CDMX","Bogota", "3(h):45(m)","1:30 pm","Internacional"));
+        rutas.add(new Ruta("CDMX","Panama", "2(h):55(m)","2:45 pm","Internacional"));
     }
 
     // Obtener la instancia única de CaribeAirlines

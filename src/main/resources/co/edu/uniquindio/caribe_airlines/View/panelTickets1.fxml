@@ -2,6 +2,9 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -13,6 +16,24 @@
          </font>
       </Label>
       <Button fx:id="btnSiguiente" layoutX="767.0" layoutY="602.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="96.0" text="Siguiente" />
-      <Button fx:id="btnAnterior" layoutX="30.0" layoutY="602.0" mnemonicParsing="false" onAction="#previousPanel" prefHeight="35.0" prefWidth="96.0" text="Anterior" />
+      <Button fx:id="btnAnterior" layoutX="38.0" layoutY="602.0" mnemonicParsing="false" onAction="#previousPanel" prefHeight="35.0" prefWidth="96.0" text="Anterior" />
+      <TableView fx:id="TablaVuelos" layoutX="519.0" layoutY="97.0" prefHeight="445.0" prefWidth="344.0">
+        <columns>
+          <TableColumn fx:id="columAvion" prefWidth="104.0" text="Avion" />
+          <TableColumn fx:id="columAsientos" prefWidth="130.0" text="Asientos Dispoibles" />
+            <TableColumn fx:id="columTipo" prefWidth="109.0" text="Tipo de Vuelo" />
+        </columns>
+      </TableView>
+      <Label layoutX="703.0" layoutY="70.0" text="Vuelos Disponibles">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="70.0" text="Detalles vuelo seleccionado">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagenAvion" fitHeight="150.0" fitWidth="200.0" layoutX="171.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

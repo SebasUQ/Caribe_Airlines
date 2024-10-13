@@ -7,6 +7,7 @@ module Caribe_Airlines {
     requires org.kordamp.bootstrapfx.core;
     requires lombok;
     requires java.logging;
+    requires java.desktop;
 
 
     exports co.edu.uniquindio.caribe_airlines.Aplicacion;
@@ -14,6 +15,9 @@ module Caribe_Airlines {
 
     exports co.edu.uniquindio.caribe_airlines.viewController to javafx.graphics;
     opens co.edu.uniquindio.caribe_airlines.viewController to javafx.fxml;
+
+    exports co.edu.uniquindio.caribe_airlines.Model to javafx.graphics;
+    opens co.edu.uniquindio.caribe_airlines.Model to javafx.fxml;
     
 
 
