@@ -8,8 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +25,9 @@ public class CaribeAirlines {
     // Estructuras de datos personalizadas para tripulantes y aeronaves
     private MiListaEnlazada<Tripulante> tripulantes;
     private MiListaEnlazada<Avion> aeronaves;
+    private MiListaEnlazada<Ruta> rutas;
+    private MiListaEnlazada<Vuelo> vuelos;
+
 
     private static final Logger LOGGER = Logger.getLogger(CaribeAirlines.class.getName());
 
@@ -42,17 +44,47 @@ public class CaribeAirlines {
         // Inicializar las listas personalizadas
         this.tripulantes = new MiListaEnlazada<>();
         this.aeronaves = new MiListaEnlazada<>();
+        this.rutas = new MiListaEnlazada<>();
+        this.vuelos = new MiListaEnlazada<>();
+
 
         // Cargar datos desde archivos si es necesario
         leerTripulantes();
         initializeAeronaves();
+        initializeRutas();
+
+
+    }
+
+    private void initializeRutas() {
+        rutas.add(new Ruta("CDMX", "Monterrey", "2H 45M", "6:00 AM"));
+        rutas.add(new Ruta("CDMX", "Cancún", "3H 12M", "8:00 AM"));
+        rutas.add(new Ruta("CDMX", "Buenos Aires", "9H 5M", "11:30 PM"));
+        rutas.add(new Ruta("CDMX", "Los Ángeles", "3H 25M", "9:45 AM"));
+        rutas.add(new Ruta("CDMX", "Bogotá", "3H 45M", "1:30 PM"));
+        rutas.add(new Ruta("CDMX", "Panamá", "2H 55M", "2:45 PM"));
     }
 
     private void initializeAeronaves() {
-        aeronaves.add(new Avion("Boeing 737", 180, 20000, new HashMap<>()));
-        aeronaves.add(new Avion("Airbus A320", 150, 18000, new HashMap<>()));
-        aeronaves.add(new Avion("Boeing 777", 396, 35000, new HashMap<>()));
-        // Add more predefined aircraft as needed
+        try (BufferedReader br = new BufferedReader(new FileReader("src/main/resources/aeronaves.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data.length == 5) {
+                    String modelo = data[0];
+                    int capacidadPasajeros = Integer.parseInt(data[1]);
+                    int capacidadCarga = Integer.parseInt(data[2]);
+                    Map<String, Integer> asientos = new HashMap<>();
+                    asientos.put("Ejecutiva", Integer.parseInt(data[3]));
+                    asientos.put("Economica", Integer.parseInt(data[4]));
+                    aeronaves.add(new Avion(modelo, capacidadPasajeros, capacidadCarga, asientos, new ArrayList<>()));
+                } else {
+                    System.err.println("Datos incompletos: " + line);
+                }
+            }
+        } catch (IOException e) {
+            LOGGER.log(Level.WARNING, "Error al leer las aeronaves", e);
+        }
     }
 
     // Obtener la instancia única de CaribeAirlines
@@ -116,6 +148,9 @@ public class CaribeAirlines {
             Nodo<Tripulante> current = tripulantes.getHead();
             while (current != null) {
                 fw.write(current.data.toString() + "\n");
+                contenido += current.data.getId() + "," + current.data.getNombre() + "," + current.data.getDireccion() +
+                        "," + current.data.getEmail() + "," + current.data.getFechaNacimiento() + "," + current.data.getEstudios() +
+                        "," + current.data.getRango() + "\n";
                 current = current.next;
             }
         } catch (IOException e) {
@@ -127,11 +162,49 @@ public class CaribeAirlines {
         try (FileWriter fw = new FileWriter(new File("src/main/resources/aeronaves.txt"))) {
             Nodo<Avion> current = aeronaves.getHead();
             while (current != null) {
-                fw.write(current.data.toString() + "\n");
+                Avion avion = current.data;
+                fw.write(String.format("%s,%d,%d,%d,%d\n",
+                        avion.getModelo(),
+                        avion.getCapacidadPasajeros(),
+                        avion.getCapacidadCarga(),
+                        avion.getAsientosDisponibles().get("Ejecutiva"),
+                        avion.getAsientosDisponibles().get("Economica")));
                 current = current.next;
             }
         } catch (IOException e) {
             LOGGER.log(Level.WARNING, "Error al guardar las aeronaves", e);
         }
     }
+
+    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion) {
+        avion.setTripulacion(tripulacion);
+        guardarAeronaves();
+    }
+
+    public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante) {
+        avion.getTripulacion().remove(tripulante);
+        guardarAeronaves();
+    }
+
+    public List<Tripulante> obtenerTripulantesDisponibles() {
+        List<Tripulante> disponibles = new ArrayList<>();
+        Nodo<Tripulante> current = tripulantes.getHead();
+        while (current != null) {
+            boolean asignado = false;
+            Nodo<Avion> currentAvion = aeronaves.getHead();
+            while (currentAvion != null) {
+                if (currentAvion.data.getTripulacion().contains(current.data)) {
+                    asignado = true;
+                    break;
+                }
+                currentAvion = currentAvion.next;
+            }
+            if (!asignado) {
+                disponibles.add(current.data);
+            }
+            current = current.next;
+        }
+        return disponibles;
+    }
+
 }
