@@ -144,15 +144,19 @@ public class CaribeAirlines {
 
     // Métodos para guardar la información en archivos
     private void guardarTripulantes() {
-        try (FileWriter fw = new FileWriter(new File("src/main/resources/tripulantes.txt"))) {
+        try (FileWriter fw = new FileWriter(new File("src/main/resources/tripulantes.txt"), false)) {
             Nodo<Tripulante> current = tripulantes.getHead();
+            String contenido = "";
             while (current != null) {
-                fw.write(current.data.toString() + "\n");
-                contenido += current.data.getId() + "," + current.data.getNombre() + "," + current.data.getDireccion() +
-                        "," + current.data.getEmail() + "," + current.data.getFechaNacimiento() + "," + current.data.getEstudios() +
-                        "," + current.data.getRango() + "\n";
+                contenido += current.data.getId()+","+current.data.getNombre()+","+current.data.getDireccion()+
+                        ","+current.data.getEmail()+","+current.data.getFechaNacimiento()+","+current.data.getEstudios()+
+                        ","+current.data.getRango()+"\n";
                 current = current.next;
             }
+            BufferedWriter bfw = new BufferedWriter(fw);
+            bfw.write(contenido);
+            bfw.close();
+
         } catch (IOException e) {
             LOGGER.log(Level.WARNING, "Error al guardar los tripulantes", e);
         }
