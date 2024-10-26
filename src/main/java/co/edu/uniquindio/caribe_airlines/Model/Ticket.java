@@ -11,6 +11,7 @@ import lombok.Setter;
 public class Ticket {
 
     private String tipoVuelo;
+    private String tipoServicio;
     private String modalidad;
     private String fechaInicio;
     private String fechaRetorno;
