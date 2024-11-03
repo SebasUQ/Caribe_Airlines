@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
@@ -28,6 +28,7 @@ public class PanelTicketsController {
     public TableColumn<Ruta, String> columOrigen, columDestino, columDuracion, columSalida;
 
     private CaribeAirlines caribeAirlines;
+    private static Ticket ticketCliente;
 
 //----------------------------------------------------------------------------------------------//
 
@@ -60,7 +61,6 @@ public class PanelTicketsController {
         destinos.add("Monterrey");
         destinos.add("Cancun");
         destinos.add("Buenos Aires");
-        destinos.add("Monterrey");
         destinos.add("Los Angeles");
         destinos.add("Bogota");
         destinos.add("Panama");
@@ -133,12 +133,12 @@ public class PanelTicketsController {
         try {
             if (datosCompletos()){
                 if (verificarDesicion()){
-                    Ticket ticket = recopilarInfo();
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets1.fxml"));
-                    panelTickets.getChildren().setAll((Node) loader.load());
-
+                    AnchorPane nuevoPanel = loader.load();
                     PanelTicketsController1 controller1 = loader.getController();
-                    controller1.cambiarPanel(panelTickets);
+
+                    controller1.setTicket(recopilarInfo());
+                    panelTickets.getChildren().setAll(nuevoPanel);
                 }
             }
             else{
@@ -152,28 +152,34 @@ public class PanelTicketsController {
 
     private Ticket recopilarInfo() {
 
-        String tipoVuelo = "Internacional";
-        if (combDestino.getValue().equals("Monterrey") || combDestino.getValue().equals("Cancun")){
-            tipoVuelo = "Nacional";
-        }
+        if (ticketCliente == null){
+            String tipoVuelo = "Internacional";
+            if (combDestino.getValue().equals("Monterrey") || combDestino.getValue().equals("Cancun")){
+                tipoVuelo = "Nacional";
+            }
 
-        String retorno = fRetorno.getValue().toString();
-        if (fRetorno.isDisabled()){
-            retorno = "--------";
-        }
+            String retorno;
+            if (fRetorno.isDisabled()){
+                retorno = "--------";
+            }
+            else{
+                retorno = fRetorno.getValue().toString();
+            }
 
-        Ticket ticket = new Ticket(
-                tipoVuelo,
-                combServicio.getValue().toString(),
-                combModalidad.getValue().toString(),
-                fInicio.getValue().toString(),
-                retorno,
-                null,
-                null,
-                0,
-                null
-        );
-        return  ticket;
+            ticketCliente = new Ticket(
+                    tipoVuelo,
+                    combServicio.getValue().toString(),
+                    combModalidad.getValue().toString(),
+                    combDestino.getValue().toString(),
+                    fInicio.getValue().toString(),
+                    retorno,
+                    null,
+                    null,
+                    0,
+                    null
+            );
+        }
+        return ticketCliente;
     }
 
 }

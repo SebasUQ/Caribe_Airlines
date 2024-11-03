@@ -8,8 +8,9 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
+import java.util.List;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,12 +58,12 @@ public class CaribeAirlines implements Serializable {
 
     private void initializeAeronaves() {
 
-        aeronaves.add(new Avion("Airbus A320", 150, 19000, new HashMap<>()));
-        aeronaves.add(new Avion("Airbus A320", 150, 19000, new HashMap<>()));
-        aeronaves.add(new Avion("Airbus A330", 252, 52000, new HashMap<>()));
-        aeronaves.add(new Avion("Airbus A330", 252, 52000, new HashMap<>()));
-        aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>()));
-        aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>()));
+        aeronaves.add(new Avion("Airbus A320", 150, 19000, new HashMap<>(), new ArrayList<>()));
+        aeronaves.add(new Avion("Airbus A320", 150, 19000, new HashMap<>(), new ArrayList<>()));
+        aeronaves.add(new Avion("Airbus A330", 252, 52000, new HashMap<>(), new ArrayList<>()));
+        aeronaves.add(new Avion("Airbus A330", 252, 52000, new HashMap<>(), new ArrayList<>()));
+        aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>(), new ArrayList<>()));
+        aeronaves.add(new Avion("Boeing 787", 250, 50000, new HashMap<>(), new ArrayList<>()));
         // Add more predefined aircraft as needed
     }
 
@@ -83,7 +84,66 @@ public class CaribeAirlines implements Serializable {
         return instance;
     }
 
-//------------------------------------------CRUD Tripulación------------------------------------------//
+//------------------------------------------Manejo Vuelos------------------------------------------//
+
+    public List<Vuelo> obtenerVuelos(Ticket t){
+        List<Vuelo> vuelosDisponibles = new ArrayList<>();
+        if (vuelosProgramados.isEmpty()){
+            initializeVuelos(t);
+            vuelosDisponibles = obtenerVuelos(t);
+        }
+        else{
+            for(Vuelo v: vuelosProgramados){
+                if (v.getFechaVuelo().equals(t.getFechaInicio()) && v.getRuta().getDestino().equals(t.getDestino())){
+                    vuelosDisponibles.add(v);
+                }
+            }
+            if (vuelosDisponibles.isEmpty()){
+                initializeVuelos(t);
+                vuelosDisponibles = obtenerVuelos(t);
+            }
+        }
+        return vuelosDisponibles;
+    }
+
+   private void initializeVuelos(Ticket t){
+        if (t.getTipoVuelo().equals("Nacional")){
+            vuelosProgramados.add(new Vuelo("Nacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(0), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Nacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(1), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+        }
+        else{
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(2), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(3), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(4), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(5), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+        }
+   }
+
+   private Ruta obtenerRuta(Ticket t){
+        Ruta r = null;
+        if (t.getDestino().equals("Monterrey")){
+            r = rutas.get(0);
+        }
+        if (t.getDestino().equals("Cancun")){
+            r = rutas.get(1);
+        }
+        if (t.getDestino().equals("Buenos Aires")){
+            r = rutas.get(2);
+        }
+        if (t.getDestino().equals("Los Angeles")){
+            r = rutas.get(3);
+        }
+       if (t.getDestino().equals("Bogota")){
+           r = rutas.get(4);
+       }
+       if (t.getDestino().equals("Panama")){
+           r = rutas.get(5);
+       }
+        return r;
+   }
+
+
+//------------------------------------------Manejo Tripulación------------------------------------------//
     public void registrarTripulante(Tripulante tripulante) throws Exception {
         if (tripulantes.find(tripulante) != null) {
             throw new Exception("El tripulante ya está registrado");
@@ -92,17 +152,51 @@ public class CaribeAirlines implements Serializable {
         guardarTripulantes();
     }
 
-    public void eliminarTripulante(Tripulante tripulante) {
+    public void eliminarTripulante(Tripulante tripulante) throws Exception {
         if (tripulante != null) {
             tripulantes.remove(tripulante);
             guardarTripulantes();
         }
+        else{
+            throw new Exception("No se a seleccionado ningun tripulante");
+        }
     }
 
-    public void actualizarTripulante(Tripulante tripulanteActualizado) {
+    public void actualizarTripulante(Tripulante tripulanteActualizado) throws Exception {
         eliminarTripulante(tripulanteActualizado);
         tripulantes.add(tripulanteActualizado);
         guardarTripulantes();
+    }
+
+    public List<Tripulante> obtenerTripulantesDisponibles() {
+        List<Tripulante> disponibles = new ArrayList<>();
+        Nodo<Tripulante> current = tripulantes.getHead();
+        while (current != null) {
+            boolean asignado = false;
+            Nodo<Avion> currentAvion = aeronaves.getHead();
+            while (currentAvion != null) {
+                if (currentAvion.data.getTripulacion().contains(current.data)) {
+                    asignado = true;
+                    break;
+                }
+                currentAvion = currentAvion.next;
+            }
+            if (!asignado) {
+                disponibles.add(current.data);
+            }
+            current = current.next;
+        }
+        return disponibles;
+    }
+
+    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion) {
+        avion.setTripulacion(tripulacion);
+        guardarAeronaves();
+    }
+
+    public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante) {
+        avion.getTripulacion().remove(tripulante);
+        guardarAeronaves();
     }
 
 //------------------------------------CARGADO Y GUARDADO DE ARCHIVOS------------------------------------//

@@ -84,7 +84,7 @@ public class PanelTripulacionController {
     }
 
     @FXML
-    private void handleUpdateTripulante() {
+    private void handleUpdateTripulante() throws Exception {
         int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
         if (selectedItem != -1) {
             Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
@@ -101,7 +101,7 @@ public class PanelTripulacionController {
     }
 
     @FXML
-    private void handleDeleteTripulante() {
+    private void handleDeleteTripulante() throws Exception {
         int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
         if (selectedItem != -1) {
             Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);

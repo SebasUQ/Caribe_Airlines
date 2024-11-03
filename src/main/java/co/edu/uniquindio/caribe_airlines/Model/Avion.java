@@ -1,6 +1,7 @@
 package co.edu.uniquindio.caribe_airlines.Model;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,4 +17,5 @@ public class Avion implements Serializable {
     private int capacidadPasajeros;
     private int capacidadCarga;
     private Map<String, Integer> asientosDisponibles; // Ejemplo: {"Economica": 100, "Ejecutiva": 20}
+    private List<Tripulante> tripulacion;
 }

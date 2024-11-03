@@ -3,8 +3,9 @@ package co.edu.uniquindio.caribe_airlines.dataStructures;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-public class MiListaEnlazada<T> {
+public class MiListaEnlazada<T> implements Iterable<T> {
     @Getter
     private Nodo<T> head;
     private int size;
@@ -69,6 +70,19 @@ public class MiListaEnlazada<T> {
         return size == 0;
     }
 
+    public T get (int i){
+        if (i < 0 || i > size){
+            return null;
+        }
+        int c = 0;
+        Nodo<T> aux = head;
+        while (c < i){
+            aux = aux.getNext();
+            c++;
+        }
+        return aux.getData();
+    }
+
     // Método para convertir la lista enlazada en un ArrayList
     public ArrayList<T> toArrayList() {
         ArrayList<T> arrayList = new ArrayList<>();
@@ -80,5 +94,9 @@ public class MiListaEnlazada<T> {
         return arrayList;
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterador<>(head);
+    }
 }
 

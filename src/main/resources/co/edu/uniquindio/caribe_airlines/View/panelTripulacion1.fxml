@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,6 +16,22 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnVolver" layoutX="41.0" layoutY="587.0" mnemonicParsing="false" onAction="#previousPanel" prefHeight="46.0" prefWidth="113.0" text="Volver" />
+      <TableView fx:id="tablaTripulacion" layoutX="41.0" layoutY="50.0" prefHeight="467.0" prefWidth="800.0">
+         <columns>
+            <TableColumn fx:id="colAvion" prefWidth="258.0" text="Avion" />
+            <TableColumn fx:id="colTripulante" prefWidth="284.0" text="Tripulante" />
+            <TableColumn fx:id="colRango" prefWidth="257.0" text="Rango" />
+         </columns>
+      </TableView>
+      <ListView fx:id="listaTripulantesDisponibles" layoutX="182.0" layoutY="547.0" prefHeight="100.0" prefWidth="423.0" />
+      <ComboBox fx:id="comboAviones" layoutX="616.0" layoutY="546.0" prefWidth="150.0" />
+      <Button fx:id="btnAsignar" layoutX="774.0" layoutY="545.0" mnemonicParsing="false" onAction="#asignarTripulante" prefHeight="35.0" prefWidth="67.0" text="Asignar" />
+      <Button fx:id="btnEliminar" layoutX="774.0" layoutY="612.0" mnemonicParsing="false" onAction="#eliminarTripulante" prefHeight="35.0" prefWidth="67.0" text="Eliminar" />
+      <Button fx:id="btnVolver" layoutX="41.0" layoutY="597.0" mnemonicParsing="false" onAction="#previousPanel" prefHeight="46.0" prefWidth="113.0" text="Volver" />
+      <Label layoutX="317.0" layoutY="526.0" text="Tripulantes sin Asignar">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

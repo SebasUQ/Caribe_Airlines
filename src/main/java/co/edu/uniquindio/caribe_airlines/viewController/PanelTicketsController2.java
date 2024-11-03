@@ -1,5 +1,6 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
+import co.edu.uniquindio.caribe_airlines.Model.Ticket;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -29,6 +30,8 @@ public class PanelTicketsController2 {
     public RadioButton opcionSI;
     public RadioButton opcionNO;
     public TextField pesoM;
+
+    private Ticket ticketCliente;
 
 
     public void cambiarPanel(AnchorPane panel){

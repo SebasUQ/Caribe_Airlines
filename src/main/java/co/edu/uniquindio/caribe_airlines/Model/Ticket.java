@@ -13,6 +13,7 @@ public class Ticket {
     private String tipoVuelo;
     private String tipoServicio;
     private String modalidad;
+    private String destino;
     private String fechaInicio;
     private String fechaRetorno;
     private Vuelo vuelo;
