@@ -20,6 +20,7 @@ public class Ticket {
     private MiListaEnlazada<Asiento> asientos;
     private long valorPagado;
     private String idTicket;
+    private int totalPersonas;
 
 
 }

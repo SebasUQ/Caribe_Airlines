@@ -15,27 +15,21 @@ import java.io.IOException;
 public class PanelTicketsController2 {
 
     public AnchorPane panelTickets2;
-    public Button btnSiguiente;
-    public Button btnAnterior;
-    public TextField alturaP1;
-    public TextField largoP1;
-    public TextField anchoP1;
-    public TextField pesoP1;
-    public TextField altura2;
-    public TextField largo2;
-    public TextField ancho2;
-    public TextField peso2;
-    public ComboBox comboEquipaje1;
-    public ComboBox comboEquipaje2;
-    public RadioButton opcionSI;
-    public RadioButton opcionNO;
-    public TextField pesoM;
-
+    public Button btnSiguiente, btnAnterior;
+    public TextField alturaP1, largoP1, anchoP1, pesoP1, altura2, largo2, ancho2, peso2, pesoM;
+    public ComboBox<String> comboEquipaje1, comboEquipaje2;
+    public RadioButton opcionSI, opcionNO;
     private Ticket ticketCliente;
 
+//----------------------------------------------------------------------------------------------//
 
-    public void cambiarPanel(AnchorPane panel){
-        this.panelTickets2 = panel;
+    public void setTicket(Ticket ticketCliente) {
+        this.ticketCliente = ticketCliente;
+        initialize();
+    }
+
+    private void initialize(){
+
     }
 
     public void nextPanel(ActionEvent actionEvent) {
@@ -49,10 +43,10 @@ public class PanelTicketsController2 {
             panelTickets2.getChildren().setAll((Node) loader.load());
 
             PanelTicketsController1 controller = loader.getController();
-            controller.cambiarPanel(panelTickets2);
-
         }catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+
 }

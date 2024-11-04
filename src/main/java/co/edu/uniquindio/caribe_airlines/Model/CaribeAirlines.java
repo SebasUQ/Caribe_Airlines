@@ -108,14 +108,14 @@ public class CaribeAirlines implements Serializable {
 
    private void initializeVuelos(Ticket t){
         if (t.getTipoVuelo().equals("Nacional")){
-            vuelosProgramados.add(new Vuelo("Nacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(0), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
-            vuelosProgramados.add(new Vuelo("Nacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(1), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Nacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(0), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Nacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(1), new MiListaEnlazada<>()));
         }
         else{
-            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(2), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
-            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(3), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
-            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(4), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
-            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(5), new MiListaEnlazada<>(), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(2), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(3), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(4), new MiListaEnlazada<>()));
+            vuelosProgramados.add(new Vuelo("Internacional",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(5), new MiListaEnlazada<>()));
         }
    }
 

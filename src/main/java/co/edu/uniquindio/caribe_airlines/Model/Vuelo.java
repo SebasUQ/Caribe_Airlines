@@ -18,7 +18,6 @@ public class Vuelo implements Serializable {
     private String fechaVuelo;
     private Ruta ruta;
     private Avion avion;
-    private MiListaEnlazada<Tripulante> tripulacion;
     private MiListaEnlazada<Cliente> pasajeros;
 
 }

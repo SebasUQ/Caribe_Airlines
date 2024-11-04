@@ -28,19 +28,27 @@ public class PanelTicketsController {
     public TableColumn<Ruta, String> columOrigen, columDestino, columDuracion, columSalida;
 
     private CaribeAirlines caribeAirlines;
-    private static Ticket ticketCliente;
+    private Ticket ticketCliente;
 
 //----------------------------------------------------------------------------------------------//
-
-    public void cambiarPanel (AnchorPane panel){
-        this.panelTickets = panel;
-    }
-
     @FXML
     private void initialize(){
         caribeAirlines = CaribeAirlines.getInstance();
         iniciatializeComb();
         cargarRutas();
+
+        numPersonas.setTextFormatter(new TextFormatter<>( change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d*")){
+                return change;
+            }
+            return null;
+        }));
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticketCliente = ticket;
+        initialize();
     }
 
     private void iniciatializeComb(){
@@ -176,10 +184,12 @@ public class PanelTicketsController {
                     null,
                     null,
                     0,
-                    null
+                    null,
+                    Integer.parseInt(numPersonas.getText())
             );
         }
         return ticketCliente;
     }
+
 
 }
