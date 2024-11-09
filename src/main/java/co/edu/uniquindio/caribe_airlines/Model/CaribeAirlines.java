@@ -22,8 +22,6 @@ import java.util.logging.SimpleFormatter;
 @AllArgsConstructor
 public class CaribeAirlines implements Serializable {
 
-    private static CaribeAirlines instance;
-
     // Estructuras de datos personalizadas para tripulantes y aeronaves
     private MiListaEnlazada<Tripulante> tripulantes;
     private MiListaEnlazada<Avion> aeronaves;
@@ -33,8 +31,7 @@ public class CaribeAirlines implements Serializable {
 
     private static final Logger LOGGER = Logger.getLogger(CaribeAirlines.class.getName());
 
-    // Constructor privado para patrón Singleton
-    private CaribeAirlines() {
+    public CaribeAirlines() {
         try {
             FileHandler fh = new FileHandler("logs.log", true);
             fh.setFormatter(new SimpleFormatter());
@@ -52,7 +49,7 @@ public class CaribeAirlines implements Serializable {
 
         // Cargar datos desde archivos si es necesario
         initializeRutas();
-        leerTripulantes();
+        //leerTripulantes();
         initializeAeronaves();
     }
 
@@ -74,14 +71,6 @@ public class CaribeAirlines implements Serializable {
         rutas.add(new Ruta("CDMX","Los Angeles", "3(h):25(m)","9:45 am","Internacional"));
         rutas.add(new Ruta("CDMX","Bogota", "3(h):45(m)","1:30 pm","Internacional"));
         rutas.add(new Ruta("CDMX","Panama", "2(h):55(m)","2:45 pm","Internacional"));
-    }
-
-    // Obtener la instancia única de CaribeAirlines
-    public static CaribeAirlines getInstance() {
-        if (instance == null) {
-            instance = new CaribeAirlines();
-        }
-        return instance;
     }
 
 //------------------------------------------Manejo Vuelos------------------------------------------//

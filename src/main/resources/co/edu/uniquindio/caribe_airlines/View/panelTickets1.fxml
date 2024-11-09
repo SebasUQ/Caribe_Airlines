@@ -16,7 +16,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnSiguiente" layoutX="767.0" layoutY="602.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="96.0" text="Siguiente" />
+      <Button fx:id="btnSiguiente" layoutX="703.0" layoutY="602.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="160.0" text="Gestionar equipaje ---&gt;" />
       <Button fx:id="btnCancelar" layoutX="38.0" layoutY="602.0" mnemonicParsing="false" onAction="#cancelarReserva" prefHeight="35.0" prefWidth="96.0" text="Cancelar" />
       <TableView fx:id="TablaVuelos" layoutX="519.0" layoutY="97.0" onMouseClicked="#obtenerInfo" prefHeight="445.0" prefWidth="344.0">
         <columns>

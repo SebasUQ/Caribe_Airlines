@@ -1,5 +1,6 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
+import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,15 +34,15 @@ public class PanelTripulacionController1 {
     @FXML
     private Button btnAsignar, btnEliminar;
 
-    private CaribeAirlines caribeAirlines;
+    private ModelFactoryController controller;
     private List<Avion> avionesList;
     private List<Tripulante> tripulantesDisponiblesList;
 
     @FXML
     public void initialize() {
-        caribeAirlines = CaribeAirlines.getInstance();
-        avionesList = caribeAirlines.getAeronaves().toArrayList();
-        tripulantesDisponiblesList = caribeAirlines.obtenerTripulantesDisponibles();
+        controller = ModelFactoryController.getInstance();
+        avionesList = controller.getAeronaves();
+        tripulantesDisponiblesList = controller.obtenerTripulantesDisponibles();
 
         tablaTripulacion.getItems().clear();
         colAvion.setCellValueFactory(new PropertyValueFactory<>("avion"));
@@ -106,7 +107,7 @@ public class PanelTripulacionController1 {
         if (selectedTripulante != null && selectedAvion != null) {
             selectedAvion.getTripulacion().add(selectedTripulante);
             tripulantesDisponiblesList.remove(selectedTripulante);
-            caribeAirlines.asignarTripulacionAAvion(selectedAvion, selectedAvion.getTripulacion());
+            controller.asignarTripulacionAAvion(selectedAvion, selectedAvion.getTripulacion());
             cargarTripulacion();
             cargarTripulantesDisponibles();
         }
@@ -118,11 +119,11 @@ public class PanelTripulacionController1 {
             Avion avion = avionesList.stream()
                     .filter(a -> a.getModelo().equals(selectedTripulacion.getAvion()))
                     .findFirst().orElse(null);
-            Tripulante tripulante = caribeAirlines.getTripulantes().toArrayList().stream()
+            Tripulante tripulante = controller.getTripulantes().stream()
                     .filter(t -> t.getNombre().equals(selectedTripulacion.getTripulante()))
                     .findFirst().orElse(null);
             if (avion != null && tripulante != null) {
-                caribeAirlines.removerTripulacionDeAvion(avion, tripulante);
+                controller.removerTripulacionDeAvion(avion, tripulante);
                 tripulantesDisponiblesList.add(tripulante);
                 cargarTripulacion();
                 cargarTripulantesDisponibles();

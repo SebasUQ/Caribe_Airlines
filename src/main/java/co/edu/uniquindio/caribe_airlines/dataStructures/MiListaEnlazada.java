@@ -2,10 +2,11 @@ package co.edu.uniquindio.caribe_airlines.dataStructures;
 
 import lombok.Getter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class MiListaEnlazada<T> implements Iterable<T> {
+public class MiListaEnlazada<T> implements Iterable<T>, Serializable {
     @Getter
     private Nodo<T> head;
     private int size;

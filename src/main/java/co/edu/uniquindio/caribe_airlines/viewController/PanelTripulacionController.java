@@ -1,5 +1,6 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
+import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
 import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
 import co.edu.uniquindio.caribe_airlines.Model.Tripulante;
 import javafx.beans.Observable;
@@ -31,11 +32,11 @@ public class PanelTripulacionController {
     @FXML
     private Button btnAgregar, btnEliminar, btnActualizar, sgtPagina;
 
-    private CaribeAirlines caribeAirlines;
+    private ModelFactoryController controller;
 
     @FXML
     public void initialize() {
-        caribeAirlines = CaribeAirlines.getInstance();
+        controller = ModelFactoryController.getInstance();
         loadTripulantes();
     }
 
@@ -52,7 +53,7 @@ public class PanelTripulacionController {
     private void loadTripulantes() {
 
         listaTripulantes.getItems().clear();
-        ObservableList<Tripulante> lista = FXCollections.observableList(caribeAirlines.getTripulantes().toArrayList());
+        ObservableList<Tripulante> lista = FXCollections.observableList(controller.getTripulantes());
         listaTripulantes.setItems(lista);
 
         Nombres.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
@@ -75,7 +76,7 @@ public class PanelTripulacionController {
                     txtEstud.getText(),
                     txtRango.getText()
             );
-            caribeAirlines.registrarTripulante(tripulante);
+            controller.registrarTripulante(tripulante);
             loadTripulantes();
             clear();
         } catch (Exception e) {
@@ -94,7 +95,7 @@ public class PanelTripulacionController {
             tripulante.setFechaNacimiento(fNacimiento.getValue().toString());
             tripulante.setEstudios(txtEstud.getText());
             tripulante.setRango(txtRango.getText());
-            caribeAirlines.actualizarTripulante(tripulante);
+            controller.actualizarTripulante(tripulante);
             loadTripulantes();
             clear();
         }
@@ -105,7 +106,7 @@ public class PanelTripulacionController {
         int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
         if (selectedItem != -1) {
             Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
-            caribeAirlines.eliminarTripulante(tripulante);
+            controller.eliminarTripulante(tripulante);
             loadTripulantes();
         }
     }

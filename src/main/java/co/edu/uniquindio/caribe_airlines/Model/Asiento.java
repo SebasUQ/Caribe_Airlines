@@ -10,5 +10,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Asiento {
 
-
+    private String codigo;
+    private String estado;
 }

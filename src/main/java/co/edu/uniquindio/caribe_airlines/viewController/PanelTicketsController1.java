@@ -1,8 +1,10 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
+import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
 import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
 import co.edu.uniquindio.caribe_airlines.Model.Ticket;
 import co.edu.uniquindio.caribe_airlines.Model.Vuelo;
+import co.edu.uniquindio.caribe_airlines.Utils.Utils;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,12 +35,12 @@ public class PanelTicketsController1 {
     public Label txtPiloto, txtFVuelo, txtSalida, txtDuracion, txtRuta, txtCostoP, txtSubTotal;
 
     private Ticket ticketCliente;
-    private CaribeAirlines caribeAirlines;
+    private ModelFactoryController controller;
 
 //----------------------------------------------------------------------------------------------//
 
     private void initialize (){
-        caribeAirlines = CaribeAirlines.getInstance();
+        controller = ModelFactoryController.getInstance();
         vuelosDisponibles();
         calcularCostos();
     }
@@ -50,7 +52,7 @@ public class PanelTicketsController1 {
 
     private void vuelosDisponibles() {
         TablaVuelos.getItems().clear();
-        ObservableList<Vuelo> vuelos = FXCollections.observableList(caribeAirlines.obtenerVuelos(ticketCliente));
+        ObservableList<Vuelo> vuelos = FXCollections.observableList(controller.obtenerVuelos(ticketCliente));
         TablaVuelos.setItems(vuelos);
 
         columAsientos.setCellValueFactory(data -> new SimpleStringProperty(""+data.getValue().getAvion().getCapacidadPasajeros()));
@@ -63,13 +65,18 @@ public class PanelTicketsController1 {
     public void nextPanel() {
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets2.fxml"));
-            AnchorPane nuevoPanel = loader.load();
+            if (TablaVuelos.getSelectionModel().getSelectedItem() != null){
+                ticketCliente.setVuelo(TablaVuelos.getSelectionModel().getSelectedItem());
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets2.fxml"));
+                AnchorPane nuevoPanel = loader.load();
 
-            PanelTicketsController2 controller2 = loader.getController();
-            controller2.setTicket(ticketCliente);
-            panelTickets1.getChildren().setAll(nuevoPanel);
-
+                PanelTicketsController2 controller2 = loader.getController();
+                controller2.setTicket(ticketCliente);
+                panelTickets1.getChildren().setAll(nuevoPanel);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Por favor seleccione un vuelo primero");
+            }
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -77,8 +84,9 @@ public class PanelTicketsController1 {
     }
 
     public void cancelarReserva() {
+        String msj = "¿Esta seguro de que desea cancelar la reserva?";
 
-        if (verificarDesicion()){
+        if (Utils.verificarDesicion(msj)){
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets.fxml"));
                 AnchorPane primerPanel = loader.load();
@@ -124,67 +132,27 @@ public class PanelTicketsController1 {
         }
     }
 
-    private boolean verificarDesicion(){
-        boolean centinela = false;
-        String msj = "¿Esta seguro de que desea cancelar la reserva?";
-
-        int result = JOptionPane.showConfirmDialog(null,
-                msj,null, JOptionPane.YES_NO_OPTION);
-        if(result == JOptionPane.YES_OPTION) {
-            centinela=true;
-        }
-        return centinela;
-    }
-
     private void calcularCostos() {
-        double costoP = 0, subTotal;
-        if (ticketCliente.getDestino().equals("Monterrey") && ticketCliente.getModalidad().equals("Solo Ida")){
-            costoP = 37.27;
+        double costoP, subTotal;
+        if (ticketCliente.getTipoServicio().equals("Economica")){
+            costoP = Utils.calcularCostosEco(ticketCliente);
         }
-        if (ticketCliente.getDestino().equals("Monterrey") && ticketCliente.getModalidad().equals("Ida y Vuelta")){
-            costoP = 79.50;
+        else{
+            costoP = Utils.calcularCostosEje(ticketCliente);
         }
-        if (ticketCliente.getDestino().equals("Cancun") && ticketCliente.getModalidad().equals("Solo Ida")){
-            costoP = 25.84;
-        }
-        if (ticketCliente.getDestino().equals("Cancun") && ticketCliente.getModalidad().equals("Ida y Vuelta")){
-            costoP = 58.14;
-        }
-        if (ticketCliente.getDestino().equals("Buenos Aires") && ticketCliente.getModalidad().equals("Solo Ida")){
-            costoP = 270.81;
-        }
-        if (ticketCliente.getDestino().equals("Buenos Aires") && ticketCliente.getModalidad().equals("Ida y Vuelta")){
-            costoP = 591.30;
-        }
-        if (ticketCliente.getDestino().equals("Los Angeles") && ticketCliente.getModalidad().equals("Solo Ida")){
-            costoP = 81.49;
-        }
-        if (ticketCliente.getDestino().equals("Los Angeles") && ticketCliente.getModalidad().equals("Ida y Vuelta")){
-            costoP = 150.06;
-        }
-        if (ticketCliente.getDestino().equals("Bogota") && ticketCliente.getModalidad().equals("Solo Ida")){
-            costoP = 163.48;
-        }
-        if (ticketCliente.getDestino().equals("Bogota") && ticketCliente.getModalidad().equals("Ida y Vuelta")){
-            costoP = 320.96;
-        }
-        if (ticketCliente.getDestino().equals("Panama") && ticketCliente.getModalidad().equals("Solo Ida")){
-            costoP = 168.05;
-        }
-        if (ticketCliente.getDestino().equals("Panama") && ticketCliente.getModalidad().equals("Ida y Vuelta")){
-            costoP = 351;
-        }
+
         subTotal = costoP*ticketCliente.getTotalPersonas();
 
-        if (ticketCliente.getTipoServicio().equals("Nacional")){
-            subTotal= subTotal + (subTotal*0.8);
+        if (ticketCliente.getTipoVuelo().equals("Nacional")){
+            subTotal = subTotal + (subTotal*0.008);
         }
         else {
-            subTotal = subTotal + (subTotal*0.97);
+            subTotal = subTotal + (subTotal*0.0097);
         }
+        ticketCliente.setValorPagado(subTotal);
         DecimalFormat df = new DecimalFormat("#.00");
 
-        txtCostoP.setText("$"+df.format(costoP)+" USD");
-        txtSubTotal.setText("$"+df.format(subTotal)+" USD");
+        txtCostoP.setText("$ "+df.format(costoP)+" USD");
+        txtSubTotal.setText("$ "+df.format(subTotal)+" USD");
     }
 }

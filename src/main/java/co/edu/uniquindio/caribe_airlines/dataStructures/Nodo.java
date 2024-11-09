@@ -5,11 +5,13 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @ToString
 @Getter
 @Setter
 @AllArgsConstructor
-public class Nodo<T> {
+public class Nodo<T> implements Serializable {
 
         public T data;
         public Nodo<T> next;

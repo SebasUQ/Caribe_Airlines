@@ -16,7 +16,7 @@ module Caribe_Airlines {
     exports co.edu.uniquindio.caribe_airlines.viewController to javafx.graphics;
     opens co.edu.uniquindio.caribe_airlines.viewController to javafx.fxml;
 
-    exports co.edu.uniquindio.caribe_airlines.Model to javafx.graphics;
+    exports co.edu.uniquindio.caribe_airlines.Model;
     opens co.edu.uniquindio.caribe_airlines.Model to javafx.fxml;
     
 

@@ -1,15 +1,15 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
-import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
+import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
 import co.edu.uniquindio.caribe_airlines.Model.Ruta;
 import co.edu.uniquindio.caribe_airlines.Model.Ticket;
+import co.edu.uniquindio.caribe_airlines.Utils.Utils;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javax.swing.JOptionPane;
@@ -21,19 +21,19 @@ public class PanelTicketsController {
     // Componenetes
     public Button btnSiguiente;
     public AnchorPane panelTickets;
-    public ComboBox combModalidad, combServicio, combOrigen,combDestino;
+    public ComboBox<String> combModalidad, combServicio, combOrigen,combDestino;
     public DatePicker fInicio, fRetorno;
     public TextField numPersonas;
     public TableView<Ruta> tablaVuelos;
     public TableColumn<Ruta, String> columOrigen, columDestino, columDuracion, columSalida;
 
-    private CaribeAirlines caribeAirlines;
+    private ModelFactoryController controller;
     private Ticket ticketCliente;
 
 //----------------------------------------------------------------------------------------------//
     @FXML
     private void initialize(){
-        caribeAirlines = CaribeAirlines.getInstance();
+        controller = ModelFactoryController.getInstance();
         iniciatializeComb();
         cargarRutas();
 
@@ -77,7 +77,7 @@ public class PanelTicketsController {
 
     private void cargarRutas(){
         tablaVuelos.getItems().clear();
-        ObservableList<Ruta> rutas = FXCollections.observableList(caribeAirlines.getRutas().toArrayList());
+        ObservableList<Ruta> rutas = FXCollections.observableList(controller.getRutas());
         tablaVuelos.setItems(rutas);
 
         columOrigen.setCellValueFactory(celldata -> new SimpleStringProperty(celldata.getValue().getOrigen()));
@@ -88,59 +88,11 @@ public class PanelTicketsController {
         tablaVuelos.refresh();
     }
 
-    private boolean verificarDesicion(){
-        boolean centinela = false;
-        String msj = "¿Esta seguro de que todos los datos son correctos?";
-
-        int result = JOptionPane.showConfirmDialog(null,
-                msj,null, JOptionPane.YES_NO_OPTION);
-        if(result == JOptionPane.YES_OPTION) {
-            centinela=true;
-        }
-        return centinela;
-    }
-
-    @FXML
-    private void definirFecha(ActionEvent actionEvent) {
-        if (combModalidad.getValue() != null){
-            if(combModalidad.getValue().equals("Solo Ida")){
-                fRetorno.setValue(null);
-                fRetorno.setDisable(true);
-            }
-            else{
-                fRetorno.setDisable(false);
-            }
-        }
-    }
-
-    private boolean datosCompletos(){
-        boolean cent = true;
-        if (combModalidad.getValue() == null){
-            cent = false;
-        }
-        if (combDestino.getValue() == null){
-            cent = false;
-        }
-        if (combServicio.getValue() == null){
-            cent = false;
-        }
-        if (fInicio.getValue() == null){
-            cent = false;
-        }
-        if (!fRetorno.isDisabled() && fRetorno.getValue() == null){
-            cent = false;
-        }
-        if (numPersonas.getText().isEmpty()){
-            cent = false;
-        }
-        return cent;
-    }
-
-
     public void nextPanel(ActionEvent actionEvent) {
+        String msj = "¿Esta seguro de que todos los datos son correctos?";
         try {
             if (datosCompletos()){
-                if (verificarDesicion()){
+                if (Utils.verificarDesicion(msj)){
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets1.fxml"));
                     AnchorPane nuevoPanel = loader.load();
                     PanelTicketsController1 controller1 = loader.getController();
@@ -184,12 +136,47 @@ public class PanelTicketsController {
                     null,
                     null,
                     0,
-                    null,
+                    Utils.generarID(),
                     Integer.parseInt(numPersonas.getText())
             );
         }
         return ticketCliente;
     }
 
+    @FXML
+    private void definirFecha() {
+        if (combModalidad.getValue() != null){
+            if(combModalidad.getValue().equals("Solo Ida")){
+                fRetorno.setValue(null);
+                fRetorno.setDisable(true);
+            }
+            else{
+                fRetorno.setDisable(false);
+            }
+        }
+    }
+
+    private boolean datosCompletos(){
+        boolean cent = true;
+        if (combModalidad.getValue() == null){
+            cent = false;
+        }
+        if (combDestino.getValue() == null){
+            cent = false;
+        }
+        if (combServicio.getValue() == null){
+            cent = false;
+        }
+        if (fInicio.getValue() == null){
+            cent = false;
+        }
+        if (!fRetorno.isDisabled() && fRetorno.getValue() == null){
+            cent = false;
+        }
+        if (numPersonas.getText().isEmpty()){
+            cent = false;
+        }
+        return cent;
+    }
 
 }

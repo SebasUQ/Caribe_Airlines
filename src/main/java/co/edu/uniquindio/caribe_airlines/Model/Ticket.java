@@ -5,10 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @AllArgsConstructor
-public class Ticket {
+public class Ticket implements Serializable {
 
     private String tipoVuelo;
     private String tipoServicio;
@@ -18,7 +20,7 @@ public class Ticket {
     private String fechaRetorno;
     private Vuelo vuelo;
     private MiListaEnlazada<Asiento> asientos;
-    private long valorPagado;
+    private double valorPagado;
     private String idTicket;
     private int totalPersonas;
 
