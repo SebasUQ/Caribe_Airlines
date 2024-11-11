@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d951e023-a0aa-431e-82f0-ddc50d68271c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Ruta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Ruta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Tripulante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Tripulante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tripulantes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tripulantes.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +99,7 @@
       <workItem from="1727870801962" duration="289000" />
       <workItem from="1727871339584" duration="7000" />
       <workItem from="1728346050349" duration="3967000" />
+      <workItem from="1731339358185" duration="6405000" />
     </task>
     <servers />
   </component>

@@ -27,6 +27,7 @@
       <ComboBox fx:id="comboAviones" layoutX="360.0" layoutY="570.0" prefWidth="150.0" />
       <Button fx:id="btnAsignar" layoutX="520.0" layoutY="570.0" mnemonicParsing="false" onAction="#asignarTripulante" text="Asignar" />
       <Button fx:id="btnEliminar" layoutX="520.0" layoutY="620.0" mnemonicParsing="false" onAction="#eliminarTripulante" text="Eliminar" />
+      <Button fx:id="btnVerTripulacion" layoutX="680.0" layoutY="570.0" mnemonicParsing="false" onAction="#verTripulacion" text="Ver Tripulación" />
       <Button fx:id="btnVolver" layoutX="360.0" layoutY="610.0" mnemonicParsing="false" onAction="#previousPanel" prefHeight="46.0" prefWidth="113.0" text="Volver" />
    </children>
 </AnchorPane>

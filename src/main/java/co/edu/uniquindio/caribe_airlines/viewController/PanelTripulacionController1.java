@@ -38,6 +38,8 @@ public class PanelTripulacionController1 {
     private Button btnAsignar;
     @FXML
     private Button btnEliminar;
+    @FXML
+    private Button btnVerTripulacion;
 
     private CaribeAirlines caribeAirlines;
     private List<Avion> avionesList;
@@ -59,13 +61,18 @@ public class PanelTripulacionController1 {
     }
 
     private void cargarTripulacion() {
-        List<TripulacionDisplay> tripulacionList = avionesList.stream()
-                .flatMap(avion -> avion.getTripulacion().stream()
-                        .map(tripulante -> new TripulacionDisplay(avion.getModelo(), tripulante.getNombre(), tripulante.getRango())))
-                .collect(Collectors.toList());
+        Avion selectedAvion = comboAviones.getSelectionModel().getSelectedItem();
+        if (selectedAvion != null) {
+            List<TripulacionDisplay> tripulacionList = selectedAvion.getTripulacion().stream()
+                    .map(tripulante -> new TripulacionDisplay(selectedAvion.getModelo(), tripulante.getNombre(), tripulante.getRango()))
+                    .collect(Collectors.toList());
 
-        ObservableList<TripulacionDisplay> data = FXCollections.observableArrayList(tripulacionList);
-        tablaTripulacion.setItems(data);
+            ObservableList<TripulacionDisplay> data = FXCollections.observableArrayList(tripulacionList);
+            tablaTripulacion.setItems(data);
+            tablaTripulacion.refresh();
+        } else {
+            tablaTripulacion.getItems().clear();
+        }
     }
 
     private void cargarTripulantesDisponibles() {
@@ -73,18 +80,23 @@ public class PanelTripulacionController1 {
         listaTripulantesDisponibles.setItems(tripulantes);
     }
 
+
+
     private void cargarAviones() {
         ObservableList<Avion> aviones = FXCollections.observableArrayList(avionesList);
         comboAviones.setItems(aviones);
+        if (!aviones.isEmpty()) {
+            comboAviones.getSelectionModel().selectFirst();
+            cargarTripulacion(); // Cargar la tripulación del primer avión
+        }
     }
 
     public void asignarTripulante(ActionEvent actionEvent) {
         Tripulante selectedTripulante = listaTripulantesDisponibles.getSelectionModel().getSelectedItem();
         Avion selectedAvion = comboAviones.getSelectionModel().getSelectedItem();
         if (selectedTripulante != null && selectedAvion != null) {
-            selectedAvion.getTripulacion().add(selectedTripulante);
+            caribeAirlines.asignarTripulacionAAvion(selectedAvion, selectedTripulante);
             tripulantesDisponiblesList.remove(selectedTripulante);
-            caribeAirlines.asignarTripulacionAAvion(selectedAvion, selectedAvion.getTripulacion());
             cargarTripulacion();
             cargarTripulantesDisponibles();
         }
@@ -105,6 +117,19 @@ public class PanelTripulacionController1 {
                 cargarTripulacion();
                 cargarTripulantesDisponibles();
             }
+        }
+    }
+
+    public void verTripulacion(ActionEvent actionEvent) {
+        Avion selectedAvion = comboAviones.getSelectionModel().getSelectedItem();
+        if (selectedAvion != null) {
+            List<TripulacionDisplay> tripulacionList = selectedAvion.getTripulacion().stream()
+                    .map(tripulante -> new TripulacionDisplay(selectedAvion.getModelo(), tripulante.getNombre(), tripulante.getRango()))
+                    .collect(Collectors.toList());
+
+            ObservableList<TripulacionDisplay> data = FXCollections.observableArrayList(tripulacionList);
+            tablaTripulacion.setItems(data);
+            tablaTripulacion.refresh();
         }
     }
 
