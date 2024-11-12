@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -72,6 +73,32 @@ public class CaribeAirlines implements Serializable {
         rutas.add(new Ruta("CDMX","Bogota", "3(h):45(m)","1:30 pm","Internacional"));
         rutas.add(new Ruta("CDMX","Panama", "2(h):55(m)","2:45 pm","Internacional"));
     }
+
+//----------------------------------------Gestion Clientes-----------------------------------------//
+
+    public Cliente clienteRegistrado(String id){
+        Cliente cliente = null;
+        for (Cliente c : clientes){
+            if(c.getIdentificacion().equals(id)){
+                cliente = c;
+                break;
+            }
+        }
+        return cliente;
+    }
+
+    public boolean verificarContrasena(Cliente c, String con){
+        boolean cent = false;
+        if (c.getContrasena().equals(con)){
+            cent = true;
+        }
+        return cent;
+    }
+
+    public void registrarCliente (Cliente cliente){
+        clientes.add(cliente);
+    }
+
 
 //------------------------------------------Manejo Vuelos------------------------------------------//
 

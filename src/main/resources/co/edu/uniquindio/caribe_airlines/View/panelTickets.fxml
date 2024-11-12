@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="panelTickets" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTicketsController">
+<AnchorPane fx:id="panelTickets" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTicketsViewController">
    <children>
       <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Criterios de Viaje" textFill="WHITE">
          <font>

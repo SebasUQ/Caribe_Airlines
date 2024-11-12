@@ -38,6 +38,8 @@ public class PanelTripulacionController1 {
     private List<Avion> avionesList;
     private List<Tripulante> tripulantesDisponiblesList;
 
+//----------------------------------------------------------------------------------------------------//
+
     @FXML
     public void initialize() {
         controller = ModelFactoryController.getInstance();

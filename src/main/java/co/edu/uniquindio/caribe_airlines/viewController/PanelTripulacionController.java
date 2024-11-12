@@ -31,8 +31,9 @@ public class PanelTripulacionController {
     private TableColumn<Tripulante, String> Nombres, IDs, Correos;
     @FXML
     private Button btnAgregar, btnEliminar, btnActualizar, sgtPagina;
-
     private ModelFactoryController controller;
+
+//----------------------------------------------------------------------------------------------------//
 
     @FXML
     public void initialize() {

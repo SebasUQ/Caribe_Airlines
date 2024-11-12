@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="panelEmpleado" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelEmpleadoViewController">
+   <children>
+      <TabPane prefHeight="680.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabFlotas" text="Flotas">
+            <content>
+                <fx:include source="panelFlotas.fxml"></fx:include>
+            </content>
+          </Tab>
+          <Tab fx:id="tabTripulacion" text="Gestion Tripulacion">
+            <content>
+                <fx:include source="panelTripulacion.fxml"></fx:include>
+            </content>
+          </Tab>
+          <Tab fx:id="Perfil" text="Perfil">
+                <content>
+                    <fx:include source="panelPerfilEmpleado.fxml"></fx:include>
+                </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -14,6 +14,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public class Cliente implements Serializable {
     private String identificacion;
+    private String contrasena;
     private String nombre;
     private String apellido;
     private String direccion;

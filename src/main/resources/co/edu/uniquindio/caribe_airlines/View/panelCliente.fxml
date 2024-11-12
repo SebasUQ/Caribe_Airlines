@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="panelCliente" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelClienteViewController">
+   <children>
+      <TabPane prefHeight="680.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabTickets" text="Compra Tickets">
+            <content>
+                <fx:include source="panelTickets.fxml"></fx:include>
+            </content>
+          </Tab>
+          <Tab fx:id="tabPerfil" text="Perfil">
+            <content>
+                <fx:include source="panelPerfilCliente.fxml"></fx:include>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

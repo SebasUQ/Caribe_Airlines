@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="panelRegistrarse" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelRegistrarseViewController">
+   <children>
+      <Separator layoutX="423.0" layoutY="11.0" orientation="VERTICAL" prefHeight="659.0" prefWidth="55.0" />
+      <Label layoutX="589.0" layoutY="117.0" text="Registrate">
+         <font>
+            <Font name="System Bold Italic" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="478.0" layoutY="212.0" text="ID o Pasaporte:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtID" layoutX="478.0" layoutY="232.0" prefHeight="25.0" prefWidth="172.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <TextField fx:id="txtNom" layoutX="682.0" layoutY="232.0" prefHeight="25.0" prefWidth="172.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label layoutX="682.0" layoutY="212.0" text="Nombre:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="478.0" layoutY="281.0" text="Apellido:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtApe" layoutX="478.0" layoutY="301.0" prefHeight="25.0" prefWidth="172.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label layoutX="682.0" layoutY="279.0" text="Direccion:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDirec" layoutX="682.0" layoutY="299.0" prefHeight="25.0" prefWidth="172.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <Label layoutX="682.0" layoutY="351.0" text="Correo:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCorreo" layoutX="682.0" layoutY="371.0" prefHeight="25.0" prefWidth="172.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+      <DatePicker fx:id="fNaci" layoutX="477.0" layoutY="371.0" />
+      <Label layoutX="478.0" layoutY="351.0" text="Fecha de Nacimiento:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnRegistrarse" layoutX="618.0" layoutY="498.0" mnemonicParsing="false" onAction="#RegistrarCliente" prefHeight="42.0" prefWidth="115.0" text="Registrarse">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="477.0" layoutY="423.0" text="Contraseña:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtContra" layoutX="477.0" layoutY="443.0" prefHeight="25.0" prefWidth="172.0">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </TextField>
+   </children>
+</AnchorPane>

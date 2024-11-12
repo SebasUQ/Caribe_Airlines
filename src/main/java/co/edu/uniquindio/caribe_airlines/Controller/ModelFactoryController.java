@@ -21,8 +21,23 @@ public class ModelFactoryController {
 
     public ModelFactoryController (){
         cargarXML();
-        //guardarXML(caribeAirlines);
+
     }
+
+//----------------------------------------Gestion Clientes-----------------------------------------//
+
+    public Cliente estaRegistrado(String id){
+        return caribeAirlines.clienteRegistrado(id);
+    }
+
+    public boolean verificarContrasena (Cliente c, String con){
+        return caribeAirlines.verificarContrasena(c,con);
+    }
+
+    public void registrarCliente(Cliente cliente){
+        caribeAirlines.registrarCliente(cliente);
+    }
+
 
 //------------------------------------------Manejo Vuelos------------------------------------------//
 

@@ -1,6 +1,7 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
 import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
+import co.edu.uniquindio.caribe_airlines.Model.Cliente;
 import co.edu.uniquindio.caribe_airlines.Model.Ruta;
 import co.edu.uniquindio.caribe_airlines.Model.Ticket;
 import co.edu.uniquindio.caribe_airlines.Utils.Utils;
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
 
 import java.io.IOException;
 
-public class PanelTicketsController {
+public class PanelTicketsViewController {
 
     // Componenetes
     public Button btnSiguiente;
@@ -29,8 +30,9 @@ public class PanelTicketsController {
 
     private ModelFactoryController controller;
     private Ticket ticketCliente;
+    private Cliente cliente;
 
-//----------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------//
     @FXML
     private void initialize(){
         controller = ModelFactoryController.getInstance();
@@ -46,8 +48,9 @@ public class PanelTicketsController {
         }));
     }
 
-    public void setTicket(Ticket ticket) {
+    public void setObjetos(Ticket ticket, Cliente c) {
         this.ticketCliente = ticket;
+        this.cliente = c;
         initialize();
     }
 
@@ -95,9 +98,9 @@ public class PanelTicketsController {
                 if (Utils.verificarDesicion(msj)){
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets1.fxml"));
                     AnchorPane nuevoPanel = loader.load();
-                    PanelTicketsController1 controller1 = loader.getController();
+                    PanelTicketsViewController1 controller1 = loader.getController();
 
-                    controller1.setTicket(recopilarInfo());
+                    controller1.setObjetos(recopilarInfo(), cliente);
                     panelTickets.getChildren().setAll(nuevoPanel);
                 }
             }

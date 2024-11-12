@@ -10,8 +10,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainAplicacion extends Application {
-
-    private static ModelFactoryController controller;
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainAplicacion.class.getResource("/co/edu/uniquindio/caribe_airlines/View/ventanaInicial.fxml"));
@@ -25,7 +23,6 @@ public class MainAplicacion extends Application {
     }
 
     public static void main(String[] args) {
-        controller = ModelFactoryController.getInstance();
         launch();
     }
 }

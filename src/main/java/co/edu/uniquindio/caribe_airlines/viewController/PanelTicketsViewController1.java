@@ -1,31 +1,28 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
 import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
-import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
+import co.edu.uniquindio.caribe_airlines.Model.Cliente;
 import co.edu.uniquindio.caribe_airlines.Model.Ticket;
 import co.edu.uniquindio.caribe_airlines.Model.Vuelo;
 import co.edu.uniquindio.caribe_airlines.Utils.Utils;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.text.DecimalFormat;
 
-public class PanelTicketsController1 {
+public class PanelTicketsViewController1 {
 
     public Button btnSiguiente, btnCancelar;
     public AnchorPane panelTickets1;
@@ -35,9 +32,10 @@ public class PanelTicketsController1 {
     public Label txtPiloto, txtFVuelo, txtSalida, txtDuracion, txtRuta, txtCostoP, txtSubTotal;
 
     private Ticket ticketCliente;
+    private Cliente cliente;
     private ModelFactoryController controller;
 
-//----------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------//
 
     private void initialize (){
         controller = ModelFactoryController.getInstance();
@@ -45,8 +43,9 @@ public class PanelTicketsController1 {
         calcularCostos();
     }
 
-    public void setTicket(Ticket ticket) {
+    public void setObjetos(Ticket ticket, Cliente c) {
         this.ticketCliente = ticket;
+        this.cliente = c;
         initialize();
     }
 
@@ -70,8 +69,8 @@ public class PanelTicketsController1 {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets2.fxml"));
                 AnchorPane nuevoPanel = loader.load();
 
-                PanelTicketsController2 controller2 = loader.getController();
-                controller2.setTicket(ticketCliente);
+                PanelTicketsViewController2 controller2 = loader.getController();
+                controller2.setObjetos(ticketCliente, cliente);
                 panelTickets1.getChildren().setAll(nuevoPanel);
             }
             else{
@@ -91,8 +90,8 @@ public class PanelTicketsController1 {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTickets.fxml"));
                 AnchorPane primerPanel = loader.load();
 
-                PanelTicketsController controller = loader.getController();
-                controller.setTicket(null);
+                PanelTicketsViewController controller = loader.getController();
+                controller.setObjetos(null, cliente);
                 panelTickets1.getChildren().setAll(primerPanel);
 
             }catch (IOException e) {

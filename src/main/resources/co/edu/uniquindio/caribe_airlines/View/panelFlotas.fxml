@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelFlotasController">
+<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelFlotasViewController">
    <children>
       <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Flotas" textFill="WHITE">
          <font>
