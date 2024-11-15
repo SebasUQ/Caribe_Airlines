@@ -161,58 +161,106 @@ public class CaribeAirlines implements Serializable {
 
 //------------------------------------------Manejo Tripulación------------------------------------------//
     public void registrarTripulante(Tripulante tripulante) throws Exception {
-        if (tripulantes.find(tripulante) != null) {
+        if (buscarTripulante(tripulante.getId()) != null) {
             throw new Exception("El tripulante ya está registrado");
         }
         tripulantes.add(tripulante);
         guardarTripulantes();
     }
 
-    public void eliminarTripulante(Tripulante tripulante) throws Exception {
+    public void eliminarTripulante(String id) {
+        Tripulante tripulante = buscarTripulante(id);
         if (tripulante != null) {
             tripulantes.remove(tripulante);
             guardarTripulantes();
         }
-        else{
-            throw new Exception("No se a seleccionado ningun tripulante");
-        }
     }
 
-    public void actualizarTripulante(Tripulante tripulanteActualizado) throws Exception {
-        eliminarTripulante(tripulanteActualizado);
-        tripulantes.add(tripulanteActualizado);
-        guardarTripulantes();
+    public Tripulante buscarTripulante(String id) {
+        return tripulantes.find(new Tripulante(id, null, null, null, null, null, null));
     }
+
 
     public List<Tripulante> obtenerTripulantesDisponibles() {
         List<Tripulante> disponibles = new ArrayList<>();
-        Nodo<Tripulante> current = tripulantes.getHead();
-        while (current != null) {
+        for (Tripulante tripulante : tripulantes.toArrayList()) {
             boolean asignado = false;
-            Nodo<Avion> currentAvion = aeronaves.getHead();
-            while (currentAvion != null) {
-                if (currentAvion.data.getTripulacion().contains(current.data)) {
+            for (Avion avion : aeronaves.toArrayList()) {
+                if (avion.getTripulacion().contains(tripulante)) {
                     asignado = true;
                     break;
                 }
-                currentAvion = currentAvion.next;
             }
             if (!asignado) {
-                disponibles.add(current.data);
+                disponibles.add(tripulante);
             }
-            current = current.next;
         }
         return disponibles;
     }
 
-    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion) {
-        avion.setTripulacion(tripulacion);
-        guardarAeronaves();
+    public void asignarTripulacionAAvion(Avion avion, Tripulante tripulante) {
+        if (avion != null && tripulante != null && necesitaTripulante(avion, tripulante.getRango())) {
+            avion.getTripulacion().add(tripulante);
+            guardarAeronaves();
+        }
     }
 
     public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante) {
-        avion.getTripulacion().remove(tripulante);
-        guardarAeronaves();
+        if (avion != null && tripulante != null) {
+            avion.getTripulacion().remove(tripulante);
+            guardarAeronaves();
+        }
+    }
+
+    public boolean validarTripulacionCompleta(Avion avion) {
+        long comandantes = avion.getTripulacion().stream()
+                .filter(t -> t.getRango().equals("Comandante")).count();
+        long copilotos = avion.getTripulacion().stream()
+                .filter(t -> t.getRango().equals("Copiloto")).count();
+        long auxiliares = avion.getTripulacion().stream()
+                .filter(t -> t.getRango().equals("Auxiliar de vuelo")).count();
+
+        if (avion.getModelo().equals("Airbus A320")) {
+            return comandantes == 1 && copilotos == 1 && auxiliares == 3;
+        } else if (avion.getModelo().equals("Airbus A330") || avion.getModelo().equals("Boeing 787")) {
+            return comandantes == 1 && copilotos == 1 && auxiliares == 7;
+        }
+        return false;
+    }
+
+    public boolean necesitaTripulante(Avion avion, String rango) {
+        if (avion == null || rango == null) {
+            return false;
+        }
+
+        long count = avion.getTripulacion().stream()
+                .filter(t -> t.getRango().equals(rango))
+                .count();
+
+        switch (avion.getModelo()) {
+            case "Airbus A320":
+                switch (rango) {
+                    case "Comandante": return count < 1;
+                    case "Copiloto": return count < 1;
+                    case "Auxiliar de vuelo": return count < 3;
+                }
+                break;
+            case "Airbus A330":
+            case "Boeing 787":
+                switch (rango) {
+                    case "Comandante": return count < 1;
+                    case "Copiloto": return count < 1;
+                    case "Auxiliar de vuelo": return count < 7;
+                }
+                break;
+        }
+        return false;
+    }
+
+    public boolean necesitaMasTripulacion(Avion avion) {
+        return necesitaTripulante(avion, "Comandante") ||
+                necesitaTripulante(avion, "Copiloto") ||
+                necesitaTripulante(avion, "Auxiliar de vuelo");
     }
 
 //------------------------------------CARGADO Y GUARDADO DE ARCHIVOS------------------------------------//
@@ -223,49 +271,47 @@ public class CaribeAirlines implements Serializable {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-                if (data.length >= 7) { // Ensure there are enough elements
+                if (data.length >= 7) {
                     Tripulante tripulante = new Tripulante(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
                     tripulantes.add(tripulante);
-                } else {
-                    // Handle the case where data is incomplete
-                    System.err.println("Incomplete data: " + line);
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.WARNING, "Error al leer tripulantes", e);
         }
     }
 
 
     // Métodos para guardar la información en archivos
     private void guardarTripulantes() {
-        try (FileWriter fw = new FileWriter(new File("src/main/resources/tripulantes.txt"), false)) {
-            Nodo<Tripulante> current = tripulantes.getHead();
-            String contenido = "";
-            while (current != null) {
-                contenido += current.data.getId()+","+current.data.getNombre()+","+current.data.getDireccion()+
-                ","+current.data.getEmail()+","+current.data.getFechaNacimiento()+","+current.data.getEstudios()+
-                ","+current.data.getRango()+"\n";
-                current = current.next;
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/main/resources/tripulantes.txt"))) {
+            for (Tripulante tripulante : tripulantes.toArrayList()) {
+                writer.printf("%s,%s,%s,%s,%s,%s,%s\n",
+                        tripulante.getId(),
+                        tripulante.getNombre(),
+                        tripulante.getDireccion(),
+                        tripulante.getEmail(),
+                        tripulante.getFechaNacimiento(),
+                        tripulante.getEstudios(),
+                        tripulante.getRango());
             }
-            BufferedWriter bfw = new BufferedWriter(fw);
-            bfw.write(contenido);
-            bfw.close();
-
         } catch (IOException e) {
-            LOGGER.log(Level.WARNING, "Error al guardar los tripulantes", e);
+            LOGGER.log(Level.WARNING, "Error al guardar tripulantes", e);
         }
     }
 
     private void guardarAeronaves() {
-        try (FileWriter fw = new FileWriter(new File("src/main/resources/aeronaves.txt"))) {
-            Nodo<Avion> current = aeronaves.getHead();
-            while (current != null) {
-                fw.write(current.data.toString() + "\n");
-                current = current.next;
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/main/resources/aeronaves.txt"))) {
+            for (Avion avion : aeronaves.toArrayList()) {
+                writer.printf("%s,%d,%d,%d,%d\n",
+                        avion.getModelo(),
+                        avion.getCapacidadPasajeros(),
+                        avion.getCapacidadCarga(),
+                        avion.getAsientosDisponibles().get("Ejecutiva"),
+                        avion.getAsientosDisponibles().get("Economica"));
             }
         } catch (IOException e) {
-            LOGGER.log(Level.WARNING, "Error al guardar las aeronaves", e);
+            LOGGER.log(Level.WARNING, "Error al guardar aeronaves", e);
         }
     }
 }

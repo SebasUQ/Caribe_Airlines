@@ -1,10 +1,7 @@
 package co.edu.uniquindio.caribe_airlines.viewController;
 
 import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
-import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
 import co.edu.uniquindio.caribe_airlines.Model.Tripulante;
-import javafx.beans.Observable;
-import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,117 +13,123 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class PanelTripulacionController {
+    @FXML private AnchorPane panelTripulacion;
+    @FXML private TextField txtNom, txtID, txtDirec, txtCorreo, txtEstud;
+    @FXML private ComboBox<String> comboRango;
+    @FXML private DatePicker fNacimiento;
+    @FXML private TableView<Tripulante> listaTripulantes;
+    @FXML private TableColumn<Tripulante, String> Nombres, IDs, Correos;
+    @FXML private Button btnAgregar, btnEliminar, sgtPagina;
 
-
-    public AnchorPane panelTripulacion;
-    @FXML
-    private TextField txtNom, txtID, txtDirec, txtCorreo, txtEstud, txtRango;
-    @FXML
-    private DatePicker fNacimiento;
-    @FXML
-    private TableView<Tripulante> listaTripulantes;
-    @FXML
-    private TableColumn<Tripulante, String> Nombres, IDs, Correos;
-    @FXML
-    private Button btnAgregar, btnEliminar, btnActualizar, sgtPagina;
-    private ModelFactoryController controller;
-
-//----------------------------------------------------------------------------------------------------//
+    private ModelFactoryController modelFactoryController;
+    private final String[] RANGOS_DISPONIBLES = {
+            "Comandante",
+            "Copiloto",
+            "Auxiliar de Vuelo"
+    };
 
     @FXML
     public void initialize() {
-        controller = ModelFactoryController.getInstance();
-        loadTripulantes();
-    }
+        modelFactoryController = ModelFactoryController.getInstance();
 
-    private void clear(){
-        txtNom.setText("");
-        txtID.setText("");
-        txtCorreo.setText("");
-        txtDirec.setText("");
-        txtEstud.setText("");
-        txtRango.setText("");
-        fNacimiento.setValue(null);
-    }
+        // Inicializar ComboBox de rangos
+        comboRango.setItems(FXCollections.observableArrayList(RANGOS_DISPONIBLES));
 
-    private void loadTripulantes() {
-
-        listaTripulantes.getItems().clear();
-        ObservableList<Tripulante> lista = FXCollections.observableList(controller.getTripulantes());
-        listaTripulantes.setItems(lista);
-
+        // Configurar columnas de la tabla
         Nombres.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         IDs.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getId()));
         Correos.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));
 
-        listaTripulantes.refresh();
+        loadTripulantes();
+    }
 
+    private void clear() {
+        txtNom.clear();
+        txtID.clear();
+        txtCorreo.clear();
+        txtDirec.clear();
+        txtEstud.clear();
+        comboRango.getSelectionModel().clearSelection();
+        fNacimiento.setValue(null);
+    }
+
+    private void loadTripulantes() {
+        listaTripulantes.getItems().clear();
+        ObservableList<Tripulante> lista = FXCollections.observableList(modelFactoryController.getTripulantes());
+        listaTripulantes.setItems(lista);
     }
 
     @FXML
     private void handleAddTripulante() {
-        try {
-            Tripulante tripulante = new Tripulante(
-                    txtID.getText(),
-                    txtNom.getText(),
-                    txtDirec.getText(),
-                    txtCorreo.getText(),
-                    fNacimiento.getValue().toString(),
-                    txtEstud.getText(),
-                    txtRango.getText()
-            );
-            controller.registrarTripulante(tripulante);
-            loadTripulantes();
-            clear();
-        } catch (Exception e) {
-            // Handle exception (e.g., show an alert)
+        if (validarCampos()) {
+            try {
+                Tripulante tripulante = new Tripulante(
+                        txtID.getText(),
+                        txtNom.getText(),
+                        txtDirec.getText(),
+                        txtCorreo.getText(),
+                        fNacimiento.getValue().toString(),
+                        txtEstud.getText(),
+                        comboRango.getValue()
+                );
+                modelFactoryController.registrarTripulante(tripulante);
+                loadTripulantes();
+                clear();
+                mostrarMensaje("Éxito", "Tripulante agregado correctamente", Alert.AlertType.INFORMATION);
+            } catch (Exception e) {
+                mostrarMensaje("Error", "Error al agregar tripulante: " + e.getMessage(), Alert.AlertType.ERROR);
+            }
         }
+    }
+
+    private boolean validarCampos() {
+        if (txtNom.getText().isEmpty() || txtID.getText().isEmpty() ||
+                txtDirec.getText().isEmpty() || txtCorreo.getText().isEmpty() ||
+                txtEstud.getText().isEmpty() || comboRango.getValue() == null ||
+                fNacimiento.getValue() == null) {
+
+            mostrarMensaje("Error", "Todos los campos son obligatorios", Alert.AlertType.ERROR);
+            return false;
+        }
+        return true;
     }
 
     @FXML
-    private void handleUpdateTripulante() throws Exception {
-        int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
-        if (selectedItem != -1) {
-            Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
-            tripulante.setNombre(txtNom.getText());
-            tripulante.setDireccion(txtDirec.getText());
-            tripulante.setEmail(txtCorreo.getText());
-            tripulante.setFechaNacimiento(fNacimiento.getValue().toString());
-            tripulante.setEstudios(txtEstud.getText());
-            tripulante.setRango(txtRango.getText());
-            controller.actualizarTripulante(tripulante);
+    private void handleDeleteTripulante() {
+        Tripulante selectedTripulante = listaTripulantes.getSelectionModel().getSelectedItem();
+        if (selectedTripulante != null) {
+            modelFactoryController.eliminarTripulante(selectedTripulante);
             loadTripulantes();
-            clear();
+            mostrarMensaje("Éxito", "Tripulante eliminado correctamente", Alert.AlertType.INFORMATION);
+        } else {
+            mostrarMensaje("Error", "Por favor seleccione un tripulante para eliminar", Alert.AlertType.WARNING);
         }
     }
 
-    @FXML
-    private void handleDeleteTripulante() throws Exception {
-        int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
-        if (selectedItem != -1) {
-            Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
-            controller.eliminarTripulante(tripulante);
-            loadTripulantes();
-        }
+    private void mostrarMensaje(String titulo, String mensaje, Alert.AlertType tipo) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 
-    public void cambiarPanel (AnchorPane panel){
+    public void cambiarPanel(AnchorPane panel) {
         this.panelTripulacion = panel;
     }
 
     public void nextPanel(ActionEvent actionEvent) {
-
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml"));
             panelTripulacion.getChildren().setAll((Node) loader.load());
 
             PanelTripulacionController1 controller1 = loader.getController();
             controller1.cambiarPanel(panelTripulacion);
-
-        }catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            mostrarMensaje("Error", "Error al cambiar de panel: " + e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 }
