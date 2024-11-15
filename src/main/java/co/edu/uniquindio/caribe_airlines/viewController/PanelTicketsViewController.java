@@ -5,6 +5,7 @@ import co.edu.uniquindio.caribe_airlines.Model.Cliente;
 import co.edu.uniquindio.caribe_airlines.Model.Ruta;
 import co.edu.uniquindio.caribe_airlines.Model.Ticket;
 import co.edu.uniquindio.caribe_airlines.Utils.Utils;
+import co.edu.uniquindio.caribe_airlines.dataStructures.MiListaEnlazada;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -131,16 +132,17 @@ public class PanelTicketsViewController {
 
             ticketCliente = new Ticket(
                     tipoVuelo,
-                    combServicio.getValue().toString(),
-                    combModalidad.getValue().toString(),
-                    combDestino.getValue().toString(),
+                    combServicio.getValue(),
+                    combModalidad.getValue(),
+                    combDestino.getValue(),
                     fInicio.getValue().toString(),
                     retorno,
                     null,
-                    null,
+                    new MiListaEnlazada<>(),
                     0,
                     Utils.generarID(),
-                    Integer.parseInt(numPersonas.getText())
+                    Integer.parseInt(numPersonas.getText()),
+                    new MiListaEnlazada<>()
             );
         }
         return ticketCliente;
@@ -161,16 +163,10 @@ public class PanelTicketsViewController {
 
     private boolean datosCompletos(){
         boolean cent = true;
-        if (combModalidad.getValue() == null){
+        if (combModalidad.getValue() == null || combDestino.getValue() == null){
             cent = false;
         }
-        if (combDestino.getValue() == null){
-            cent = false;
-        }
-        if (combServicio.getValue() == null){
-            cent = false;
-        }
-        if (fInicio.getValue() == null){
+        if (combServicio.getValue() == null || fInicio.getValue() == null){
             cent = false;
         }
         if (!fRetorno.isDisabled() && fRetorno.getValue() == null){

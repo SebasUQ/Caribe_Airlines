@@ -37,16 +37,16 @@ public class PanelTicketsViewController1 {
 
 //----------------------------------------------------------------------------------------------------//
 
-    private void initialize (){
-        controller = ModelFactoryController.getInstance();
-        vuelosDisponibles();
-        calcularCostos();
-    }
-
     public void setObjetos(Ticket ticket, Cliente c) {
         this.ticketCliente = ticket;
         this.cliente = c;
         initialize();
+    }
+
+    private void initialize (){
+        controller = ModelFactoryController.getInstance();
+        vuelosDisponibles();
+        calcularCostos();
     }
 
     private void vuelosDisponibles() {

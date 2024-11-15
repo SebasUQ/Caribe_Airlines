@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
@@ -18,89 +17,118 @@
       </Label>
       <Button fx:id="btnSiguiente" layoutX="767.0" layoutY="602.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="96.0" text="Realizar Pago" />
       <Button fx:id="btnCancelar" layoutX="30.0" layoutY="602.0" mnemonicParsing="false" onAction="#cancelarReserva" prefHeight="35.0" prefWidth="96.0" text="Cancelar" />
-      <Label layoutX="396.0" layoutY="119.0" text="Primera pieza">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="358.0" layoutY="175.0" text="Alto:">
+      <Label layoutX="612.0" layoutY="329.0" text="¿Viaja con mascota?">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="467.0" layoutY="175.0" text="Largo:">
+      <RadioButton fx:id="opcionSIMascota" layoutX="612.0" layoutY="365.0" mnemonicParsing="false" onAction="#mostrarPesoM" text="Si" />
+      <RadioButton fx:id="opcionNOMascota" layoutX="705.0" layoutY="365.0" mnemonicParsing="false" onAction="#esconderPesoM" text="No" />
+      <AnchorPane fx:id="panelPrimeraPieza" layoutX="78.0" layoutY="129.0" prefHeight="188.0" prefWidth="310.0">
+         <children>
+            <Label layoutX="96.0" layoutY="14.0" text="Primera pieza">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="60.0" text="Alto(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="alturaP1" layoutX="102.0" layoutY="58.0" prefHeight="25.0" prefWidth="46.0" />
+            <Label layoutX="165.0" layoutY="61.0" text="Largo(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="largoP1" layoutX="247.0" layoutY="58.0" prefHeight="25.0" prefWidth="42.0" />
+            <Label layoutX="11.0" layoutY="112.0" text="Ancho(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="anchoP1" layoutX="104.0" layoutY="109.0" prefHeight="25.0" prefWidth="42.0" />
+            <Label layoutX="165.0" layoutY="111.0" text="Peso (Kg):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pesoP1" layoutX="247.0" layoutY="109.0" prefHeight="25.0" prefWidth="42.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="panelSegundaPieza" layoutX="78.0" layoutY="341.0" prefHeight="188.0" prefWidth="310.0">
+         <children>
+            <Label layoutX="93.0" layoutY="14.0" text="Segunda Pieza">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="60.0" text="Alto(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="158.0" layoutY="61.0" text="Largo(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="18.0" layoutY="112.0" text="Ancho(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="158.0" layoutY="111.0" text="Peso (Kg):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="altura2" layoutX="100.0" layoutY="58.0" prefHeight="25.0" prefWidth="42.0" />
+            <TextField fx:id="largo2" layoutX="244.0" layoutY="60.0" prefHeight="25.0" prefWidth="42.0" />
+            <TextField fx:id="ancho2" layoutX="100.0" layoutY="109.0" prefHeight="25.0" prefWidth="42.0" />
+            <TextField fx:id="peso2" layoutX="244.0" layoutY="110.0" prefHeight="25.0" prefWidth="42.0" />
+         </children>
+      </AnchorPane>
+      <Separator layoutX="435.0" layoutY="51.0" orientation="VERTICAL" prefHeight="532.0" prefWidth="31.0" />
+      <AnchorPane fx:id="panelEquipajeMano" layoutX="522.0" layoutY="170.0" prefHeight="122.0" prefWidth="310.0">
+         <children>
+            <Label layoutX="18.0" layoutY="26.0" text="Alto(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="alturaEMano" layoutX="102.0" layoutY="24.0" prefHeight="25.0" prefWidth="46.0" />
+            <Label layoutX="165.0" layoutY="27.0" text="Largo(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="largoEMano" layoutX="247.0" layoutY="24.0" prefHeight="25.0" prefWidth="42.0" />
+            <Label layoutX="11.0" layoutY="78.0" text="Ancho(cm):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="AnchoEMano" layoutX="104.0" layoutY="75.0" prefHeight="25.0" prefWidth="42.0" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="593.0" layoutY="122.0" text="¿Lleva equipaje de mano?">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="585.0" layoutY="175.0" text="Ancho:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="711.0" layoutY="175.0" text="Peso (Kg):">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="alturaP1" layoutX="399.0" layoutY="173.0" prefHeight="25.0" prefWidth="42.0" />
-      <TextField fx:id="largoP1" layoutX="517.0" layoutY="173.0" prefHeight="25.0" prefWidth="42.0" />
-      <TextField fx:id="anchoP1" layoutX="639.0" layoutY="173.0" prefHeight="25.0" prefWidth="42.0" />
-      <TextField fx:id="pesoP1" layoutX="788.0" layoutY="173.0" prefHeight="25.0" prefWidth="42.0" />
-      <Label layoutX="393.0" layoutY="253.0" text="Segunda Pieza">
-         <font>
-            <Font name="System Bold Italic" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="358.0" layoutY="306.0" text="Alto:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="467.0" layoutY="306.0" text="Largo:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="585.0" layoutY="306.0" text="Ancho:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="711.0" layoutY="306.0" text="Peso (Kg):">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="altura2" layoutX="399.0" layoutY="304.0" prefHeight="25.0" prefWidth="42.0" />
-      <TextField fx:id="largo2" layoutX="517.0" layoutY="304.0" prefHeight="25.0" prefWidth="42.0" />
-      <TextField fx:id="ancho2" layoutX="639.0" layoutY="304.0" prefHeight="25.0" prefWidth="42.0" />
-      <TextField fx:id="peso2" layoutX="788.0" layoutY="304.0" prefHeight="25.0" prefWidth="42.0" />
-      <Label layoutX="71.0" layoutY="175.0" text="Tipo de Equipaje:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="comboEquipaje1" layoutX="187.0" layoutY="173.0" prefWidth="150.0" />
-      <Label layoutX="71.0" layoutY="306.0" text="Tipo de Equipaje:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="comboEquipaje2" layoutX="187.0" layoutY="304.0" prefWidth="150.0" />
-      <Separator layoutX="34.0" layoutY="355.0" prefHeight="25.0" prefWidth="832.0" />
-      <Label layoutX="85.0" layoutY="396.0" text="¿Viaja con mascota?">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <RadioButton fx:id="opcionSI" layoutX="85.0" layoutY="432.0" mnemonicParsing="false" text="Si" />
-      <RadioButton fx:id="opcionNO" layoutX="178.0" layoutY="432.0" mnemonicParsing="false" text="No" />
-      <Label layoutX="91.0" layoutY="486.0" text="Peso (Kg):">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="pesoM" layoutX="168.0" layoutY="484.0" prefHeight="25.0" prefWidth="42.0" />
+      <RadioButton fx:id="opcionSIEquipaje" layoutX="612.0" layoutY="153.0" mnemonicParsing="false" onAction="#MostrarPanelE" text="Si" />
+      <RadioButton fx:id="opcionNOEquipaje" layoutX="705.0" layoutY="153.0" mnemonicParsing="false" onAction="#esconderPanelE" text="No" />
+      <AnchorPane fx:id="panelMascota" layoutX="563.0" layoutY="391.0" prefHeight="54.0" prefWidth="229.0">
+         <children>
+            <Label layoutX="55.0" layoutY="17.0" text="Peso (Kg):">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="pesoM" layoutX="132.0" layoutY="15.0" prefHeight="25.0" prefWidth="42.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

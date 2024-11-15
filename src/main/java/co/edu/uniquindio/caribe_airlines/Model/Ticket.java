@@ -23,6 +23,7 @@ public class Ticket implements Serializable {
     private double valorPagado;
     private String idTicket;
     private int totalPersonas;
+    private MiListaEnlazada<Equipaje> equipajes;
 
 
 }
