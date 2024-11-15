@@ -1,78 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
 
 <AnchorPane fx:id="panelTripulacion" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController">
    <children>
-      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Gestion de Tripulantes" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="47.0" layoutY="74.0" text="Nombre:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtNom" layoutX="47.0" layoutY="94.0" prefHeight="25.0" prefWidth="257.0" />
-      <Label layoutX="47.0" layoutY="138.0" text="Identificacion:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtID" layoutX="47.0" layoutY="158.0" prefHeight="25.0" prefWidth="257.0" />
-      <Label layoutX="47.0" layoutY="203.0" text="Direccion:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtDirec" layoutX="47.0" layoutY="223.0" prefHeight="25.0" prefWidth="257.0" />
-      <Label layoutX="47.0" layoutY="265.0" text="Correo:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtCorreo" layoutX="47.0" layoutY="285.0" prefHeight="25.0" prefWidth="257.0" />
-      <Label layoutX="47.0" layoutY="330.0" text="Fecha de Nacimiento:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <DatePicker fx:id="fNacimiento" layoutX="47.0" layoutY="358.0" prefHeight="25.0" prefWidth="257.0" />
-      <Label layoutX="47.0" layoutY="403.0" text="Estudios:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtEstud" layoutX="47.0" layoutY="423.0" prefHeight="25.0" prefWidth="257.0" />
-      <ScrollPane layoutX="375.0" layoutY="75.0" prefHeight="489.0" prefWidth="490.0">
-         <content>
-            <TableView fx:id="listaTripulantes" prefHeight="486.0" prefWidth="489.0">
-               <columns>
-                  <TableColumn fx:id="Nombres" prefWidth="168.0" text="Nombre" />
-                  <TableColumn fx:id="IDs" prefWidth="119.0" text="ID" />
-                  <TableColumn fx:id="Correos" prefWidth="201.0" text="Correo" />
-               </columns>
-            </TableView>
-         </content>
-      </ScrollPane>
-      <Button fx:id="btnAgregar" layoutX="47.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleAddTripulante" prefHeight="35.0" prefWidth="103.0" text="Agregar" />
-      <Button fx:id="btnEliminar" layoutX="201.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleDeleteTripulante" prefHeight="35.0" prefWidth="103.0" text="Eliminar" />
-      <Button fx:id="btnActualizar" layoutX="47.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleUpdateTripulante" prefHeight="35.0" prefWidth="103.0" text="Actualizar" />
-      <TextField fx:id="txtRango" layoutX="47.0" layoutY="477.0" prefHeight="25.0" prefWidth="257.0" />
-      <Label layoutX="46.0" layoutY="457.0" text="Rango:">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button fx:id="sgtPagina" layoutX="705.0" layoutY="590.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="160.0" text="Asignar Tripulantes --&gt;" />
+      <VBox spacing="10" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
+         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Gestión de Tripulantes" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+
+         <HBox spacing="20">
+            <padding>
+               <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <VBox spacing="10" prefWidth="300">
+               <Label text="Información del Tripulante" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
+
+               <Label text="Nombre:" style="-fx-font-weight: bold"/>
+               <TextField fx:id="txtNom"/>
+
+               <Label text="Identificación:" style="-fx-font-weight: bold"/>
+               <TextField fx:id="txtID"/>
+
+               <Label text="Dirección:" style="-fx-font-weight: bold"/>
+               <TextField fx:id="txtDirec"/>
+
+               <Label text="Correo:" style="-fx-font-weight: bold"/>
+               <TextField fx:id="txtCorreo"/>
+
+               <Label text="Fecha de Nacimiento:" style="-fx-font-weight: bold"/>
+               <DatePicker fx:id="fNacimiento" prefWidth="300"/>
+
+               <Label text="Estudios:" style="-fx-font-weight: bold"/>
+               <TextField fx:id="txtEstud"/>
+
+               <Label text="Rango:" style="-fx-font-weight: bold"/>
+               <ComboBox fx:id="comboRango" prefWidth="300"/>
+
+               <HBox spacing="10" alignment="CENTER_LEFT">
+                  <Button fx:id="btnAgregar" onAction="#handleAddTripulante" text="Agregar" prefWidth="120"/>
+                  <Button fx:id="btnEliminar" onAction="#handleDeleteTripulante" text="Eliminar" prefWidth="120"/>
+               </HBox>
+            </VBox>
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+               <TableView fx:id="listaTripulantes" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="Nombres" text="Nombre" prefWidth="200"/>
+                     <TableColumn fx:id="IDs" text="ID" prefWidth="120"/>
+                     <TableColumn fx:id="Correos" text="Correo" prefWidth="200"/>
+                  </columns>
+               </TableView>
+
+               <Button fx:id="sgtPagina" onAction="#nextPanel" text="Asignar Tripulantes →"
+                       alignment="CENTER_RIGHT" prefWidth="200"/>
+            </VBox>
+         </HBox>
+      </VBox>
    </children>
 </AnchorPane>
