@@ -19,6 +19,11 @@
                 <fx:include source="panelTripulacion.fxml"></fx:include>
             </content>
           </Tab>
+          <Tab fx:id="tabSimulacion" text="Simulacion">
+                <content>
+
+                </content>
+          </Tab>
           <Tab fx:id="Perfil" text="Perfil">
                 <content>
                     <fx:include source="panelPerfilEmpleado.fxml"></fx:include>

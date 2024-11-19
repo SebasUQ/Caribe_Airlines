@@ -2,59 +2,62 @@ package co.edu.uniquindio.caribe_airlines.Utils;
 
 import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.*;
+import java.lang.reflect.Type;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class Persistencia {
 
-    private static final String RUTA_XML = "src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines.xml";
-    private static final String RUTA_XML_RESPALDO = "src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines_RESPALDO.xml";
+    private static final String RUTA_PRINCIPAL = "src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/Caribe_Airlines.json";
+    private static final String RUTA_RESPALDO = "src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/Caribe_Airlines_RESPALDO.json";
 
 
-    public static CaribeAirlines cargarArchivo() throws FileNotFoundException {
+    public static void guardarArchivoJSON(CaribeAirlines caribeAirlines){
+        Gson gson = new Gson();
+        String json = gson.toJson(caribeAirlines);
+        try (FileWriter writer = new FileWriter(RUTA_PRINCIPAL)) {
+            writer.write(json);
+        }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-        CaribeAirlines caribeAirlines;
+    public static void guardarArchivoRESPALDO_JSON(CaribeAirlines caribeAirlines){
+        Gson gson = new Gson();
+        String json = gson.toJson(caribeAirlines);
+        try (FileWriter writer = new FileWriter(RUTA_RESPALDO)) {
+            writer.write(json);
+        }catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-        XMLDecoder decodificadorXML;
-        Object objetoXML;
 
-        decodificadorXML = new XMLDecoder(new FileInputStream(RUTA_XML));
-        objetoXML = decodificadorXML.readObject();
-        decodificadorXML.close();
+    public static CaribeAirlines cargarArchivo(){
+        CaribeAirlines caribeAirlines = null;
+        try (FileReader reader = new FileReader(RUTA_PRINCIPAL)) {
+            Gson gson = new Gson();
+            Type objeto = new TypeToken<CaribeAirlines>() {}.getType();
+            caribeAirlines = gson.fromJson(reader, objeto);
 
-        caribeAirlines = (CaribeAirlines) objetoXML;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return caribeAirlines;
     }
 
-    public static CaribeAirlines cargarRespaldo() throws FileNotFoundException{
-        CaribeAirlines caribeAirlines;
+    public static CaribeAirlines cargarRespaldo(){
+        CaribeAirlines caribeAirlines = null;
+        try (FileReader reader = new FileReader(RUTA_RESPALDO)) {
+            Gson gson = new Gson();
+            Type objeto = new TypeToken<CaribeAirlines>() {}.getType();
+            caribeAirlines = gson.fromJson(reader, objeto);
 
-        XMLDecoder decodificadorXML;
-        Object objetoXML;
-
-        decodificadorXML = new XMLDecoder(new FileInputStream(RUTA_XML_RESPALDO));
-        objetoXML = decodificadorXML.readObject();
-        decodificadorXML.close();
-        caribeAirlines = (CaribeAirlines) objetoXML;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return caribeAirlines;
-    }
-
-    public static void guardarArchivo(CaribeAirlines caribeAirlines) throws FileNotFoundException {
-        XMLEncoder codificadorXML;
-
-        codificadorXML = new XMLEncoder(new FileOutputStream(RUTA_XML));
-        codificadorXML.writeObject(caribeAirlines);
-        codificadorXML.close();
-    }
-
-    public static void guardarRespaldo(CaribeAirlines caribeAirlines) throws FileNotFoundException {
-        XMLEncoder codificadorXML;
-
-        codificadorXML = new XMLEncoder(new FileOutputStream(RUTA_XML_RESPALDO));
-        codificadorXML.writeObject(caribeAirlines);
-        codificadorXML.close();
     }
 }

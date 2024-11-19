@@ -20,8 +20,10 @@ public class ModelFactoryController {
     }
 
     public ModelFactoryController (){
-        cargarXML();
-
+        cargarArchivo();
+        if (caribeAirlines == null){
+            caribeAirlines = new CaribeAirlines();
+        }
     }
 
 //----------------------------------------Gestion Clientes-----------------------------------------//
@@ -57,17 +59,17 @@ public class ModelFactoryController {
 
     public void registrarTripulante(Tripulante tripulante) throws Exception {
         caribeAirlines.registrarTripulante(tripulante);
-        guardarXML(caribeAirlines);
+        guardarArchivo();
     }
 
     public void eliminarTripulante(Tripulante tripulante) throws Exception {
         caribeAirlines.eliminarTripulante(tripulante);
-        guardarXML(caribeAirlines);
+        guardarArchivo();
     }
 
     public void actualizarTripulante(Tripulante tripulanteActualizado) throws Exception {
         caribeAirlines.actualizarTripulante(tripulanteActualizado);
-        guardarXML(caribeAirlines);
+        guardarArchivo();
     }
 
     public List<Tripulante> obtenerTripulantesDisponibles(){
@@ -76,12 +78,12 @@ public class ModelFactoryController {
 
     public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion){
         caribeAirlines.asignarTripulacionAAvion(avion, tripulacion);
-        guardarXML(caribeAirlines);
+
     }
 
     public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante){
         caribeAirlines.removerTripulacionDeAvion(avion, tripulante);
-        guardarXML(caribeAirlines);
+
     }
 
     public List<Tripulante> getTripulantes(){
@@ -89,28 +91,19 @@ public class ModelFactoryController {
     }
 
 //----------------------------------CARGADO Y GUARDADO DE ARCHIVOS---------------------------------//
-    private void cargarXML() {
-        try{
-            this.caribeAirlines = Persistencia.cargarArchivo();
-        }catch (FileNotFoundException e){
-            try {
-                this.caribeAirlines = Persistencia.cargarRespaldo();
-            }catch (FileNotFoundException e1){
-                caribeAirlines = new CaribeAirlines();
-            }
-        }
+
+    private void guardarArchivo(){
+        Persistencia.guardarArchivoJSON(caribeAirlines);
+        Persistencia.guardarArchivoRESPALDO_JSON(caribeAirlines);
     }
 
-    private void guardarXML( CaribeAirlines caribeAirlines){
-        try {
-            Persistencia.guardarArchivo(caribeAirlines);
-        }catch (FileNotFoundException e){
-            try {
-                Persistencia.guardarRespaldo(caribeAirlines);
-            }catch (FileNotFoundException e1){
-                e1.printStackTrace();
-            }
+    private void cargarArchivo(){
+        CaribeAirlines objeto = Persistencia.cargarArchivo();
+        if (objeto != null){
+            this.caribeAirlines = objeto;
         }
-
+        else{
+            this.caribeAirlines = Persistencia.cargarRespaldo();
+        }
     }
 }

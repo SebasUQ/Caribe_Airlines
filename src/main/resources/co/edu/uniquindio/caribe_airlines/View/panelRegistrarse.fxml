@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -32,12 +33,12 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Label layoutX="682.0" layoutY="212.0" text="Nombre:">
+      <Label layoutX="682.0" layoutY="212.0" text="Nombre(s):">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="478.0" layoutY="281.0" text="Apellido:">
+      <Label layoutX="478.0" layoutY="281.0" text="Apellido(s):">
          <font>
             <Font size="14.0" />
          </font>
@@ -91,5 +92,6 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
+      <ImageView fitHeight="430.0" fitWidth="320.0" layoutX="69.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -42,94 +42,94 @@
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="56.0" layoutY="340.0" text="Cantidad Aeronaves:">
+      <Label layoutX="80.0" layoutY="340.0" text="Cantidad Aeronaves:   2">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="380.0" text="Tipo de Vuelo:">
+      <Label layoutX="117.0" layoutY="380.0" text="Tipo de Vuelo:   Nacionales">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="71.0" layoutY="421.0" prefHeight="19.0" prefWidth="114.0" text="Total de Asientos:">
+      <Label layoutX="95.0" layoutY="421.0" prefHeight="19.0" prefWidth="145.0" text="Total de Asientos:   150">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="501.0" text="Clase Ejecutiva:">
+      <Label layoutX="111.0" layoutY="501.0" text="Clase Ejecutiva:   12">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="76.0" layoutY="462.0" text="Clase Economica:">
+      <Label layoutX="100.0" layoutY="462.0" text="Clase Economica:   138">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
       <Separator layoutX="304.0" layoutY="282.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="17.0" />
       <Separator layoutX="587.0" layoutY="282.0" orientation="VERTICAL" prefHeight="373.0" prefWidth="17.0" />
-      <Label layoutX="49.0" layoutY="538.0" text="Capacidad Total (Kg):">
+      <Label layoutX="73.0" layoutY="538.0" text="Capacidad Total (Kg):   19000">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="328.0" layoutY="340.0" text="Cantidad Aeronaves:">
+      <Label layoutX="341.0" layoutY="340.0" text="Cantidad Aeronaves:   2">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="365.0" layoutY="380.0" text="Tipo de Vuelo:">
+      <Label layoutX="378.0" layoutY="380.0" text="Tipo de Vuelo:   Internacionales">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="343.0" layoutY="421.0" prefHeight="19.0" prefWidth="114.0" text="Total de Asientos:">
+      <Label layoutX="356.0" layoutY="421.0" prefHeight="19.0" prefWidth="145.0" text="Total de Asientos:   250">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="359.0" layoutY="501.0" text="Clase Ejecutiva:">
+      <Label layoutX="372.0" layoutY="501.0" text="Clase Ejecutiva:   28">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="348.0" layoutY="462.0" text="Clase Economica:">
+      <Label layoutX="361.0" layoutY="462.0" text="Clase Economica:   222">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="321.0" layoutY="538.0" text="Capacidad Total (Kg):">
+      <Label layoutX="334.0" layoutY="538.0" text="Capacidad Total (Kg):   50000">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="603.0" layoutY="340.0" text="Cantidad Aeronaves:">
+      <Label layoutX="624.0" layoutY="340.0" text="Cantidad Aeronaves:   2">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="640.0" layoutY="380.0" text="Tipo de Vuelo:">
+      <Label layoutX="661.0" layoutY="380.0" prefHeight="19.0" prefWidth="193.0" text="Tipo de Vuelo:   Internacionales">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="618.0" layoutY="421.0" prefHeight="19.0" prefWidth="114.0" text="Total de Asientos:">
+      <Label layoutX="639.0" layoutY="421.0" prefHeight="19.0" prefWidth="145.0" text="Total de Asientos:   252">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="634.0" layoutY="501.0" text="Clase Ejecutiva:">
+      <Label layoutX="655.0" layoutY="501.0" prefHeight="19.0" prefWidth="119.0" text="Clase Ejecutiva:   30">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="623.0" layoutY="462.0" text="Clase Economica:">
+      <Label layoutX="644.0" layoutY="462.0" prefHeight="19.0" prefWidth="138.0" text="Clase Economica:   222">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="596.0" layoutY="538.0" text="Capacidad Total (Kg):">
+      <Label layoutX="617.0" layoutY="538.0" prefHeight="19.0" prefWidth="180.0" text="Capacidad Total (Kg):   52000">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

@@ -8,6 +8,7 @@ module Caribe_Airlines {
     requires lombok;
     requires java.logging;
     requires java.desktop;
+    requires com.google.gson;
 
 
     exports co.edu.uniquindio.caribe_airlines.Aplicacion;
@@ -17,8 +18,6 @@ module Caribe_Airlines {
     opens co.edu.uniquindio.caribe_airlines.viewController to javafx.fxml;
 
     exports co.edu.uniquindio.caribe_airlines.Model;
-    opens co.edu.uniquindio.caribe_airlines.Model to javafx.fxml;
-    
-
+    opens co.edu.uniquindio.caribe_airlines.Model to com.google.gson;
 
 }

@@ -128,7 +128,7 @@ public class PanelTicketsViewController2 {
         if (ticketCliente.getTipoServicio().equals("Economica")){
             if (peso1 > 24){
                 double extra = 0;
-                for (int i = 24; i <= peso1; i++){
+                for (int i = 24; i < peso1; i++){
                     extra+=8;
                 }
                 extra = extra + (extra*0.0675);
@@ -144,7 +144,7 @@ public class PanelTicketsViewController2 {
         if (ticketCliente.getTipoServicio().equals("Ejecutiva")){
             if (peso1 > 34){
                 double extra = 0;
-                for (int i = 34; i <= peso1; i++){
+                for (int i = 34; i < peso1; i++){
                     extra+=8;
                 }
                 extra = extra + (extra*0.0675);
@@ -166,7 +166,7 @@ public class PanelTicketsViewController2 {
         if (ticketCliente.getTipoServicio().equals("Economica")){
             if (peso > 24){
                 double extra = 0;
-                for (int i = 24; i <= peso; i++){
+                for (int i = 24; i < peso; i++){
                     extra+=8;
                 }
                 extra = extra + (extra*0.0675);
@@ -182,7 +182,7 @@ public class PanelTicketsViewController2 {
         if (ticketCliente.getTipoServicio().equals("Ejecutiva")){
             if (peso > 34){
                 double extra = 0;
-                for (int i = 34; i <= peso; i++){
+                for (int i = 34; i < peso; i++){
                     extra+=8;
                 }
                 extra = extra + (extra*0.0675);
