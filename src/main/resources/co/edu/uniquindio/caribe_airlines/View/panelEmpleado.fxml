@@ -21,7 +21,7 @@
           </Tab>
           <Tab fx:id="tabSimulacion" text="Simulacion">
                 <content>
-
+                    <fx:include source="panelSimulacion.fxml"></fx:include>
                 </content>
           </Tab>
           <Tab fx:id="Perfil" text="Perfil">
