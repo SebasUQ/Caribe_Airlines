@@ -1,6 +1,7 @@
 package co.edu.uniquindio.caribe_airlines.Controller;
 
 import co.edu.uniquindio.caribe_airlines.Model.*;
+import co.edu.uniquindio.caribe_airlines.Utils.Persistencia;
 
 import java.util.List;
 
@@ -17,7 +18,10 @@ public class ModelFactoryController {
     }
 
     public ModelFactoryController() {
-        caribeAirlines = new CaribeAirlines();
+        cargarArchivo();
+        if (caribeAirlines == null){
+            caribeAirlines = new CaribeAirlines();
+        }
     }
 
     //----------------------------------------Gestión de Clientes-----------------------------------------//
@@ -32,6 +36,7 @@ public class ModelFactoryController {
 
     public void registrarCliente(Cliente cliente) {
         caribeAirlines.registrarCliente(cliente);
+        guardarArchivo();
     }
 
     //------------------------------------------Manejo de Vuelos------------------------------------------//
@@ -83,4 +88,19 @@ public class ModelFactoryController {
     public boolean necesitaMasTripulacion(Avion avion) {
         return caribeAirlines.necesitaMasTripulacion(avion);
     }
+
+    //-----------------------------CARGADO Y GUARDADO DE ARCHIVOS-------------------------------//
+
+    public void guardarArchivo(){
+        Persistencia.guardarArchivoJSON(caribeAirlines);
+        Persistencia.guardarArchivoRESPALDO_JSON(caribeAirlines);
+    }
+
+    private void cargarArchivo(){
+        this.caribeAirlines = Persistencia.cargarArchivo();
+        if (caribeAirlines == null){
+            this.caribeAirlines = Persistencia.cargarRespaldo();
+        }
+    }
+
 }

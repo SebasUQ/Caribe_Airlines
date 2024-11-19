@@ -1,6 +1,8 @@
 package co.edu.uniquindio.caribe_airlines.Model;
 
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,4 +18,8 @@ public class Ruta implements Serializable {
     private String duracion;
     private String horaSalida;
     private String tipoRuta;
+    @JsonCreator
+    public Ruta(){
+
+    }
 }

@@ -1,18 +1,21 @@
 package co.edu.uniquindio.caribe_airlines.dataStructures;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+@Getter
+@Setter
 public class MiListaEnlazada<T> implements Iterable<T>, Serializable {
-    @Getter
+
     private Nodo<T> head;
     private int size;
 
-
-
+    @JsonCreator
     public MiListaEnlazada() {
         this.head = null;
         this.size = 0;

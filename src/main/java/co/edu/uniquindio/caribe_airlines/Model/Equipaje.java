@@ -1,5 +1,6 @@
 package co.edu.uniquindio.caribe_airlines.Model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,4 +12,8 @@ public class Equipaje {
     private String tipo;
     private double peso;
     private double sumDimensiones;
+    @JsonCreator
+    public Equipaje(){
+
+    }
 }

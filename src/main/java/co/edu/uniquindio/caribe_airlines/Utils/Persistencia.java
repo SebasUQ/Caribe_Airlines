@@ -3,10 +3,11 @@ package co.edu.uniquindio.caribe_airlines.Utils;
 import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
 
 import java.io.*;
-import java.lang.reflect.Type;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+import java.io.IOException;
+
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Persistencia {
 
@@ -15,49 +16,45 @@ public class Persistencia {
 
 
     public static void guardarArchivoJSON(CaribeAirlines caribeAirlines){
-        Gson gson = new Gson();
-        String json = gson.toJson(caribeAirlines);
-        try (FileWriter writer = new FileWriter(RUTA_PRINCIPAL)) {
-            writer.write(json);
-        }catch (IOException e) {
-            throw new RuntimeException(e);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writeValue(new File(RUTA_PRINCIPAL), caribeAirlines);
+        } catch (IOException e) {
+            System.err.println("Error al guardar los datos: " + e.getMessage());
         }
     }
 
     public static void guardarArchivoRESPALDO_JSON(CaribeAirlines caribeAirlines){
-        Gson gson = new Gson();
-        String json = gson.toJson(caribeAirlines);
-        try (FileWriter writer = new FileWriter(RUTA_RESPALDO)) {
-            writer.write(json);
-        }catch (IOException e) {
-            throw new RuntimeException(e);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writeValue(new File(RUTA_RESPALDO), caribeAirlines);
+        } catch (IOException e) {
+            System.err.println("Error al guardar los datos: " + e.getMessage());
         }
     }
 
 
     public static CaribeAirlines cargarArchivo(){
-        CaribeAirlines caribeAirlines = null;
-        try (FileReader reader = new FileReader(RUTA_PRINCIPAL)) {
-            Gson gson = new Gson();
-            Type objeto = new TypeToken<CaribeAirlines>() {}.getType();
-            caribeAirlines = gson.fromJson(reader, objeto);
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
+        try {
+            return mapper.readValue(new File(RUTA_PRINCIPAL), CaribeAirlines.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error al cargar los datos: " + e.getMessage());
+            return null; // Devuelve null si hay un error
         }
-        return caribeAirlines;
     }
 
     public static CaribeAirlines cargarRespaldo(){
-        CaribeAirlines caribeAirlines = null;
-        try (FileReader reader = new FileReader(RUTA_RESPALDO)) {
-            Gson gson = new Gson();
-            Type objeto = new TypeToken<CaribeAirlines>() {}.getType();
-            caribeAirlines = gson.fromJson(reader, objeto);
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
+        try {
+            return mapper.readValue(new File(RUTA_RESPALDO), CaribeAirlines.class);
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error al cargar los datos: " + e.getMessage());
+            return null; // Devuelve null si hay un error
         }
-        return caribeAirlines;
     }
 }

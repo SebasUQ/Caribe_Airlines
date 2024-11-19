@@ -9,6 +9,7 @@ module Caribe_Airlines {
     requires java.logging;
     requires java.desktop;
     requires com.google.gson;
+    requires com.fasterxml.jackson.databind;
 
 
     exports co.edu.uniquindio.caribe_airlines.Aplicacion;
@@ -20,4 +21,6 @@ module Caribe_Airlines {
     exports co.edu.uniquindio.caribe_airlines.Model;
     opens co.edu.uniquindio.caribe_airlines.Model to com.google.gson;
 
+    exports co.edu.uniquindio.caribe_airlines.dataStructures to com.fasterxml.jackson.databind;
+    opens co.edu.uniquindio.caribe_airlines.dataStructures to com.fasterxml.jackson.databind;
 }

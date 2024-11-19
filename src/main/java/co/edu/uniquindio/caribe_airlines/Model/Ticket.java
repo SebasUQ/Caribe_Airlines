@@ -1,6 +1,7 @@
 package co.edu.uniquindio.caribe_airlines.Model;
 
 import co.edu.uniquindio.caribe_airlines.dataStructures.MiListaEnlazada;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,6 +25,10 @@ public class Ticket implements Serializable {
     private String idTicket;
     private int totalPersonas;
     private MiListaEnlazada<Equipaje> equipajes;
+    @JsonCreator
+    public Ticket(){
+
+    }
 
 
 }

@@ -1,5 +1,7 @@
 package co.edu.uniquindio.caribe_airlines.dataStructures;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +18,8 @@ public class Nodo<T> implements Serializable {
         public T data;
         public Nodo<T> next;
 
-        Nodo(T data) {
+        @JsonCreator
+        public Nodo(@JsonProperty("data")T data) {
             this.data = data;
             this.next = null;
         }

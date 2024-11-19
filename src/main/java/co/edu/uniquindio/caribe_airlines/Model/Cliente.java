@@ -3,6 +3,7 @@ package co.edu.uniquindio.caribe_airlines.Model;
 import java.io.Serializable;
 
 import co.edu.uniquindio.caribe_airlines.dataStructures.MiListaEnlazada;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,4 +22,9 @@ public class Cliente implements Serializable {
     private String correoElectronico;
     private String fechaNacimiento;
     private MiListaEnlazada<Ticket> tickets;
+
+    @JsonCreator
+    public Cliente(){
+
+    }
 }

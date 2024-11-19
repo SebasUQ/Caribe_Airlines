@@ -168,14 +168,14 @@ public class PanelTripulacionController1 {
         }
 
         try {
-            if (modelFactoryController.necesitaTripulante(avionSeleccionado, tripulanteSeleccionado.getRango())) {
+            /*if (modelFactoryController.necesitaTripulante(avionSeleccionado, tripulanteSeleccionado.getRango())) {
                 modelFactoryController.asignarTripulacionAAvion(avionSeleccionado, tripulanteSeleccionado));
                 actualizarDatos();
                 actualizarTablaTripulacion();
                 mostrarInformacion("Tripulante asignado exitosamente.");
             } else {
                 mostrarAlerta("No se puede asignar más tripulantes de este rango al avión seleccionado.");
-            }
+            }*/
         } catch (Exception e) {
             mostrarError("Error al asignar tripulante: " + e.getMessage());
         }

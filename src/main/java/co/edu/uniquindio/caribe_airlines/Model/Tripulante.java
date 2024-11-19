@@ -1,5 +1,7 @@
 package co.edu.uniquindio.caribe_airlines.Model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +20,8 @@ public class Tripulante implements Serializable {
     private String estudios;
     private String rango;
 
-    public Tripulante(String id, String nombre, String direccion, String email, String fechaNacimiento, String estudios, String rango) {
+    @JsonCreator
+    public Tripulante(@JsonProperty("id") String id,@JsonProperty("nombre") String nombre,@JsonProperty("direccion") String direccion,@JsonProperty("email") String email,@JsonProperty("fechaNacimiento") String fechaNacimiento,@JsonProperty("estudios") String estudios,@JsonProperty("rango") String rango) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;

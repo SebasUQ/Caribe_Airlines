@@ -44,9 +44,11 @@ public class PanelTicketsViewController1 {
     }
 
     private void initialize (){
-        controller = ModelFactoryController.getInstance();
-        vuelosDisponibles();
-        calcularCostos();
+        if (ticketCliente != null){
+            controller = ModelFactoryController.getInstance();
+            vuelosDisponibles();
+            calcularCostos();
+        }
     }
 
     private void vuelosDisponibles() {

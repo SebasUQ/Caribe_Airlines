@@ -2,6 +2,7 @@ package co.edu.uniquindio.caribe_airlines.Model;
 
 import co.edu.uniquindio.caribe_airlines.dataStructures.MiListaEnlazada;
 import co.edu.uniquindio.caribe_airlines.dataStructures.Nodo;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +33,7 @@ public class CaribeAirlines implements Serializable {
 
     private static final Logger LOGGER = Logger.getLogger(CaribeAirlines.class.getName());
 
+    @JsonCreator
     public CaribeAirlines() {
         try {
             FileHandler fh = new FileHandler("logs.log", true);
@@ -49,9 +51,9 @@ public class CaribeAirlines implements Serializable {
         this.rutas = new MiListaEnlazada<>();
 
         // Cargar datos desde archivos si es necesario
-        initializeRutas();
+        //initializeRutas();
         //leerTripulantes();
-        initializeAeronaves();
+        //initializeAeronaves();
     }
 
     private void initializeAeronaves() {
@@ -149,12 +151,12 @@ public class CaribeAirlines implements Serializable {
         if (t.getDestino().equals("Los Angeles")){
             r = rutas.get(3);
         }
-       if (t.getDestino().equals("Bogota")){
+        if (t.getDestino().equals("Bogota")){
            r = rutas.get(4);
-       }
-       if (t.getDestino().equals("Panama")){
+        }
+        if (t.getDestino().equals("Panama")){
            r = rutas.get(5);
-       }
+        }
         return r;
    }
 
