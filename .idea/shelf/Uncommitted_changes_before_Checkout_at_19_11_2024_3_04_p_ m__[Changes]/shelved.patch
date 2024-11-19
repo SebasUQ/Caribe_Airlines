@@ -1,0 +1,992 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"d951e023-a0aa-431e-82f0-ddc50d68271c\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/Caribe_Airlines_RESPALDO.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Imagenes/logoAerolinea.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_11_2024_2_52_p__m___Changes_.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_11_2024_2_52_p__m___Changes_.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Utils/Persistencia.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Utils/Persistencia.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController2.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController2.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController3.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController3.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/module-info.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/module-info.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines_RESPALDO.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/Caribe_Airlines.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelEmpleado.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelEmpleado.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelFlotas.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelFlotas.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelIniciarSesion.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelIniciarSesion.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelRegistrarse.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelRegistrarse.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets3.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets3.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/tripulantes.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/tripulantes.txt\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaFXApplication\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHome\" value=\"Use Maven wrapper\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2libXB1qREUnPCk9fzaDBIoJBnk\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;SEB&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/Juan Sebastian/Downloads/gson-2.10.1.jar&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.4045977&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Repositorios programacion\\Caribe_Airlines\\src\\main\\resources\\co\\edu\\uniquindio\\caribe_airlines\\View\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Repositorios programacion\\Caribe_Airlines\\src\\main\\resources\\co\\edu\\uniquindio\\caribe_airlines\\Imagenes\" />\r\n      <recent name=\"D:\\Repositorios programacion\\Caribe_Airlines\\src\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"co.edu.uniquindio.caribe_airlines\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"d951e023-a0aa-431e-82f0-ddc50d68271c\" name=\"Changes\" comment=\"\" />\r\n      <created>1725665881511</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1725665881511</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,23 +5,36 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="d951e023-a0aa-431e-82f0-ddc50d68271c" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/Caribe_Airlines_RESPALDO.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Imagenes/logoAerolinea.png" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_11_2024_2_52_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_11_2024_2_52_p__m___Changes_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelClienteViewController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelEmpleadoViewController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelIniciarSesionViewController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelPerfilClienteViewController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelPerfilEmpleadoViewController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelRegistrarseViewController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelCliente.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelEmpleado.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelIniciarSesion.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelPerfilCliente.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelPerfilEmpleado.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelRegistrarse.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Aplicacion/MainAplicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Aplicacion/MainAplicacion.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Utils/Persistencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Utils/Persistencia.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController2.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController3.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines.xml" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines_RESPALDO.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/Caribe_Airlines.json" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelEmpleado.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelEmpleado.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Cliente.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelFlotasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelFlotasViewController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsController1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController1.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTicketsViewController2.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/VentanaInicialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/VentanaInicialController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/Archivos/ModelCaribeAirlines.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelFlotas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelFlotas.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelIniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelIniciarSesion.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelRegistrarse.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelRegistrarse.fxml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets3.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets3.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets1.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets1.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets2.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTickets2.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/ventanaInicial.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/co/edu/uniquindio/caribe_airlines/View/ventanaInicial.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/resources/tripulantes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tripulantes.txt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -67,20 +80,16 @@
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;SEB&quot;,
+     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Juan Sebastian/Downloads/gson-2.10.1.jar&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/Repositorios programacion/Caribe_Airlines/src/main/resources/co/edu/uniquindio/caribe_airlines/View&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.4045977&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
++    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+   }
+ }</component>
+   <component name="RecentsManager">
+@@ -88,7 +97,6 @@
+       <recent name="D:\Repositorios programacion\Caribe_Airlines\src\main\resources\co\edu\uniquindio\caribe_airlines\View" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
+-      <recent name="D:\Repositorios programacion\Caribe_Airlines\src\main\resources\co\edu\uniquindio\caribe_airlines\Imagenes" />
+       <recent name="D:\Repositorios programacion\Caribe_Airlines\src" />
+     </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_21\" default=\"true\" project-jdk-name=\"openjdk-21\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,3 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+   <component name="MavenProjectsManager">
+@@ -6,6 +7,7 @@
+         <option value="$PROJECT_DIR$/pom.xml" />
+       </list>
+     </option>
++    <option name="workspaceImportForciblyTurnedOn" value="true" />
+   </component>
+   <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+Index: src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uniquindio.caribe_airlines.viewController;\r\n\r\nimport co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;\r\nimport co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;\r\nimport co.edu.uniquindio.caribe_airlines.Model.Tripulante;\r\nimport javafx.beans.Observable;\r\nimport javafx.beans.property.SimpleListProperty;\r\nimport javafx.beans.property.SimpleStringProperty;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.layout.AnchorPane;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class PanelTripulacionController {\r\n\r\n\r\n    public AnchorPane panelTripulacion;\r\n    @FXML\r\n    private TextField txtNom, txtID, txtDirec, txtCorreo, txtEstud, txtRango;\r\n    @FXML\r\n    private DatePicker fNacimiento;\r\n    @FXML\r\n    private TableView<Tripulante> listaTripulantes;\r\n    @FXML\r\n    private TableColumn<Tripulante, String> Nombres, IDs, Correos;\r\n    @FXML\r\n    private Button btnAgregar, btnEliminar, btnActualizar, sgtPagina;\r\n    private ModelFactoryController controller;\r\n\r\n//----------------------------------------------------------------------------------------------------//\r\n\r\n    @FXML\r\n    public void initialize() {\r\n        controller = ModelFactoryController.getInstance();\r\n        loadTripulantes();\r\n    }\r\n\r\n    private void clear(){\r\n        txtNom.setText(\"\");\r\n        txtID.setText(\"\");\r\n        txtCorreo.setText(\"\");\r\n        txtDirec.setText(\"\");\r\n        txtEstud.setText(\"\");\r\n        txtRango.setText(\"\");\r\n        fNacimiento.setValue(null);\r\n    }\r\n\r\n    private void loadTripulantes() {\r\n\r\n        listaTripulantes.getItems().clear();\r\n        ObservableList<Tripulante> lista = FXCollections.observableList(controller.getTripulantes());\r\n        listaTripulantes.setItems(lista);\r\n\r\n        Nombres.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));\r\n        IDs.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getId()));\r\n        Correos.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));\r\n\r\n        listaTripulantes.refresh();\r\n\r\n    }\r\n\r\n    @FXML\r\n    private void handleAddTripulante() {\r\n        try {\r\n            Tripulante tripulante = new Tripulante(\r\n                    txtID.getText(),\r\n                    txtNom.getText(),\r\n                    txtDirec.getText(),\r\n                    txtCorreo.getText(),\r\n                    fNacimiento.getValue().toString(),\r\n                    txtEstud.getText(),\r\n                    txtRango.getText()\r\n            );\r\n            controller.registrarTripulante(tripulante);\r\n            loadTripulantes();\r\n            clear();\r\n        } catch (Exception e) {\r\n            // Handle exception (e.g., show an alert)\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    private void handleUpdateTripulante() throws Exception {\r\n        int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();\r\n        if (selectedItem != -1) {\r\n            Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);\r\n            tripulante.setNombre(txtNom.getText());\r\n            tripulante.setDireccion(txtDirec.getText());\r\n            tripulante.setEmail(txtCorreo.getText());\r\n            tripulante.setFechaNacimiento(fNacimiento.getValue().toString());\r\n            tripulante.setEstudios(txtEstud.getText());\r\n            tripulante.setRango(txtRango.getText());\r\n            controller.actualizarTripulante(tripulante);\r\n            loadTripulantes();\r\n            clear();\r\n        }\r\n    }\r\n\r\n    @FXML\r\n    private void handleDeleteTripulante() throws Exception {\r\n        int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();\r\n        if (selectedItem != -1) {\r\n            Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);\r\n            controller.eliminarTripulante(tripulante);\r\n            loadTripulantes();\r\n        }\r\n    }\r\n\r\n    public void cambiarPanel (AnchorPane panel){\r\n        this.panelTripulacion = panel;\r\n    }\r\n\r\n    public void nextPanel(ActionEvent actionEvent) {\r\n\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml\"));\r\n            panelTripulacion.getChildren().setAll((Node) loader.load());\r\n\r\n            PanelTripulacionController1 controller1 = loader.getController();\r\n            controller1.cambiarPanel(panelTripulacion);\r\n\r\n        }catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java b/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java
+--- a/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java	
++++ b/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController.java	
+@@ -1,10 +1,7 @@
+ package co.edu.uniquindio.caribe_airlines.viewController;
+ 
+ import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
+-import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
+ import co.edu.uniquindio.caribe_airlines.Model.Tripulante;
+-import javafx.beans.Observable;
+-import javafx.beans.property.SimpleListProperty;
+ import javafx.beans.property.SimpleStringProperty;
+ import javafx.collections.FXCollections;
+ import javafx.collections.ObservableList;
+@@ -16,117 +13,123 @@
+ import javafx.scene.layout.AnchorPane;
+ 
+ import java.io.IOException;
++import java.time.LocalDate;
+ 
+ public class PanelTripulacionController {
++    @FXML private AnchorPane panelTripulacion;
++    @FXML private TextField txtNom, txtID, txtDirec, txtCorreo, txtEstud;
++    @FXML private ComboBox<String> comboRango;
++    @FXML private DatePicker fNacimiento;
++    @FXML private TableView<Tripulante> listaTripulantes;
++    @FXML private TableColumn<Tripulante, String> Nombres, IDs, Correos;
++    @FXML private Button btnAgregar, btnEliminar, sgtPagina;
+ 
+-
+-    public AnchorPane panelTripulacion;
+-    @FXML
+-    private TextField txtNom, txtID, txtDirec, txtCorreo, txtEstud, txtRango;
+-    @FXML
+-    private DatePicker fNacimiento;
+-    @FXML
+-    private TableView<Tripulante> listaTripulantes;
+-    @FXML
+-    private TableColumn<Tripulante, String> Nombres, IDs, Correos;
+-    @FXML
+-    private Button btnAgregar, btnEliminar, btnActualizar, sgtPagina;
+-    private ModelFactoryController controller;
+-
+-//----------------------------------------------------------------------------------------------------//
++    private ModelFactoryController modelFactoryController;
++    private final String[] RANGOS_DISPONIBLES = {
++            "Comandante",
++            "Copiloto",
++            "Auxiliar de Vuelo"
++    };
+ 
+     @FXML
+     public void initialize() {
+-        controller = ModelFactoryController.getInstance();
++        modelFactoryController = ModelFactoryController.getInstance();
++
++        // Inicializar ComboBox de rangos
++        comboRango.setItems(FXCollections.observableArrayList(RANGOS_DISPONIBLES));
++
++        // Configurar columnas de la tabla
++        Nombres.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
++        IDs.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getId()));
++        Correos.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));
++
+         loadTripulantes();
+     }
+ 
+-    private void clear(){
+-        txtNom.setText("");
+-        txtID.setText("");
+-        txtCorreo.setText("");
+-        txtDirec.setText("");
+-        txtEstud.setText("");
+-        txtRango.setText("");
++    private void clear() {
++        txtNom.clear();
++        txtID.clear();
++        txtCorreo.clear();
++        txtDirec.clear();
++        txtEstud.clear();
++        comboRango.getSelectionModel().clearSelection();
+         fNacimiento.setValue(null);
+     }
+ 
+     private void loadTripulantes() {
+-
+         listaTripulantes.getItems().clear();
+-        ObservableList<Tripulante> lista = FXCollections.observableList(controller.getTripulantes());
++        ObservableList<Tripulante> lista = FXCollections.observableList(modelFactoryController.getTripulantes());
+         listaTripulantes.setItems(lista);
+-
+-        Nombres.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
+-        IDs.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getId()));
+-        Correos.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getEmail()));
+-
+-        listaTripulantes.refresh();
+-
+     }
+ 
+     @FXML
+     private void handleAddTripulante() {
+-        try {
+-            Tripulante tripulante = new Tripulante(
+-                    txtID.getText(),
+-                    txtNom.getText(),
+-                    txtDirec.getText(),
+-                    txtCorreo.getText(),
+-                    fNacimiento.getValue().toString(),
+-                    txtEstud.getText(),
+-                    txtRango.getText()
+-            );
+-            controller.registrarTripulante(tripulante);
+-            loadTripulantes();
+-            clear();
+-        } catch (Exception e) {
+-            // Handle exception (e.g., show an alert)
++        if (validarCampos()) {
++            try {
++                Tripulante tripulante = new Tripulante(
++                        txtID.getText(),
++                        txtNom.getText(),
++                        txtDirec.getText(),
++                        txtCorreo.getText(),
++                        fNacimiento.getValue().toString(),
++                        txtEstud.getText(),
++                        comboRango.getValue()
++                );
++                modelFactoryController.registrarTripulante(tripulante);
++                loadTripulantes();
++                clear();
++                mostrarMensaje("Éxito", "Tripulante agregado correctamente", Alert.AlertType.INFORMATION);
++            } catch (Exception e) {
++                mostrarMensaje("Error", "Error al agregar tripulante: " + e.getMessage(), Alert.AlertType.ERROR);
++            }
+         }
+     }
++
++    private boolean validarCampos() {
++        if (txtNom.getText().isEmpty() || txtID.getText().isEmpty() ||
++                txtDirec.getText().isEmpty() || txtCorreo.getText().isEmpty() ||
++                txtEstud.getText().isEmpty() || comboRango.getValue() == null ||
++                fNacimiento.getValue() == null) {
++
++            mostrarMensaje("Error", "Todos los campos son obligatorios", Alert.AlertType.ERROR);
++            return false;
++        }
++        return true;
++    }
+ 
+     @FXML
+-    private void handleUpdateTripulante() throws Exception {
+-        int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
+-        if (selectedItem != -1) {
+-            Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
+-            tripulante.setNombre(txtNom.getText());
+-            tripulante.setDireccion(txtDirec.getText());
+-            tripulante.setEmail(txtCorreo.getText());
+-            tripulante.setFechaNacimiento(fNacimiento.getValue().toString());
+-            tripulante.setEstudios(txtEstud.getText());
+-            tripulante.setRango(txtRango.getText());
+-            controller.actualizarTripulante(tripulante);
++    private void handleDeleteTripulante() {
++        Tripulante selectedTripulante = listaTripulantes.getSelectionModel().getSelectedItem();
++        if (selectedTripulante != null) {
++            modelFactoryController.eliminarTripulante(selectedTripulante);
+             loadTripulantes();
+-            clear();
++            mostrarMensaje("Éxito", "Tripulante eliminado correctamente", Alert.AlertType.INFORMATION);
++        } else {
++            mostrarMensaje("Error", "Por favor seleccione un tripulante para eliminar", Alert.AlertType.WARNING);
+         }
+     }
+ 
+-    @FXML
+-    private void handleDeleteTripulante() throws Exception {
+-        int selectedItem = listaTripulantes.getSelectionModel().getSelectedIndex();
+-        if (selectedItem != -1) {
+-            Tripulante tripulante = listaTripulantes.getItems().get(selectedItem);
+-            controller.eliminarTripulante(tripulante);
+-            loadTripulantes();
+-        }
++    private void mostrarMensaje(String titulo, String mensaje, Alert.AlertType tipo) {
++        Alert alert = new Alert(tipo);
++        alert.setTitle(titulo);
++        alert.setHeaderText(null);
++        alert.setContentText(mensaje);
++        alert.showAndWait();
+     }
+ 
+-    public void cambiarPanel (AnchorPane panel){
++    public void cambiarPanel(AnchorPane panel) {
+         this.panelTripulacion = panel;
+     }
+ 
+     public void nextPanel(ActionEvent actionEvent) {
+-
+         try {
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml"));
+             panelTripulacion.getChildren().setAll((Node) loader.load());
+ 
+             PanelTripulacionController1 controller1 = loader.getController();
+             controller1.cambiarPanel(panelTripulacion);
+-
+-        }catch (IOException e) {
+-            e.printStackTrace();
++        } catch (IOException e) {
++            mostrarMensaje("Error", "Error al cambiar de panel: " + e.getMessage(), Alert.AlertType.ERROR);
+         }
+     }
+-}
++}
+\ No newline at end of file
+Index: src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uniquindio.caribe_airlines.viewController;\r\n\r\nimport co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.control.*;\r\nimport javafx.scene.control.cell.PropertyValueFactory;\r\nimport javafx.scene.layout.AnchorPane;\r\n\r\nimport java.io.IOException;\r\nimport java.util.List;\r\nimport java.util.stream.Collectors;\r\n\r\nimport co.edu.uniquindio.caribe_airlines.Model.Avion;\r\nimport co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;\r\nimport co.edu.uniquindio.caribe_airlines.Model.Tripulante;\r\n\r\npublic class PanelTripulacionController1 {\r\n    public Button btnVolver;\r\n    public AnchorPane panelTripulacion1;\r\n\r\n    @FXML\r\n    private TableView<TripulacionDisplay> tablaTripulacion;\r\n    @FXML\r\n    private TableColumn<TripulacionDisplay, String> colAvion, colTripulante, colRango;\r\n    @FXML\r\n    private ListView<Tripulante> listaTripulantesDisponibles;\r\n    @FXML\r\n    private ComboBox<Avion> comboAviones;\r\n    @FXML\r\n    private Button btnAsignar, btnEliminar;\r\n\r\n    private ModelFactoryController controller;\r\n    private List<Avion> avionesList;\r\n    private List<Tripulante> tripulantesDisponiblesList;\r\n\r\n//----------------------------------------------------------------------------------------------------//\r\n\r\n    @FXML\r\n    public void initialize() {\r\n        controller = ModelFactoryController.getInstance();\r\n        avionesList = controller.getAeronaves();\r\n        tripulantesDisponiblesList = controller.obtenerTripulantesDisponibles();\r\n\r\n        tablaTripulacion.getItems().clear();\r\n        colAvion.setCellValueFactory(new PropertyValueFactory<>(\"avion\"));\r\n        colTripulante.setCellValueFactory(new PropertyValueFactory<>(\"tripulante\"));\r\n        colRango.setCellValueFactory(new PropertyValueFactory<>(\"rango\"));\r\n\r\n        cargarTripulacion();\r\n        cargarTripulantesDisponibles();\r\n        cargarAviones();\r\n    }\r\n\r\n    private void cargarTripulacion() {\r\n        List<TripulacionDisplay> tripulacionList = avionesList.stream()\r\n                .flatMap(avion -> avion.getTripulacion().stream()\r\n                        .map(tripulante -> new TripulacionDisplay(avion.getModelo(),\r\n                                tripulante.getNombre(), tripulante.getRango())))\r\n                .collect(Collectors.toList());\r\n\r\n        ObservableList<TripulacionDisplay> data = FXCollections.observableArrayList(tripulacionList);\r\n        tablaTripulacion.setItems(data);\r\n    }\r\n\r\n    private void cargarTripulantesDisponibles() {\r\n        listaTripulantesDisponibles.getItems().clear();\r\n        ObservableList<Tripulante> tripulantes = FXCollections.observableArrayList(tripulantesDisponiblesList);\r\n        listaTripulantesDisponibles.setItems(tripulantes);\r\n        listaTripulantesDisponibles.setCellFactory(param -> new ListCell<>(){\r\n            @Override\r\n            protected void updateItem(Tripulante item, boolean empty){\r\n                super.updateItem(item, empty);\r\n                if (empty || item == null){\r\n                    setText(null);\r\n                }\r\n                else{\r\n                    setText(\"Nombre:   \"+item.getNombre()+\"   ID: \"+item.getId()+\"   Rango: \"+item.getRango() );\r\n                }\r\n            }\r\n        });\r\n        listaTripulantesDisponibles.refresh();\r\n    }\r\n\r\n    private void cargarAviones() {\r\n        ObservableList<Avion> aviones = FXCollections.observableArrayList(avionesList);\r\n        comboAviones.setItems(aviones);\r\n        comboAviones.setCellFactory(param -> new ListCell<>(){\r\n            @Override\r\n            protected void updateItem (Avion item, boolean empty){\r\n                super.updateItem(item, empty);\r\n                if (empty || item == null){\r\n                    setText(null);\r\n                }\r\n                else {\r\n                    setText(item.getModelo());\r\n                }\r\n            }\r\n        });\r\n    }\r\n\r\n    public void asignarTripulante(ActionEvent actionEvent) {\r\n        Tripulante selectedTripulante = listaTripulantesDisponibles.getSelectionModel().getSelectedItem();\r\n        Avion selectedAvion = comboAviones.getSelectionModel().getSelectedItem();\r\n        if (selectedTripulante != null && selectedAvion != null) {\r\n            selectedAvion.getTripulacion().add(selectedTripulante);\r\n            tripulantesDisponiblesList.remove(selectedTripulante);\r\n            controller.asignarTripulacionAAvion(selectedAvion, selectedAvion.getTripulacion());\r\n            cargarTripulacion();\r\n            cargarTripulantesDisponibles();\r\n        }\r\n    }\r\n\r\n    public void eliminarTripulante(ActionEvent actionEvent) {\r\n        TripulacionDisplay selectedTripulacion = tablaTripulacion.getSelectionModel().getSelectedItem();\r\n        if (selectedTripulacion != null) {\r\n            Avion avion = avionesList.stream()\r\n                    .filter(a -> a.getModelo().equals(selectedTripulacion.getAvion()))\r\n                    .findFirst().orElse(null);\r\n            Tripulante tripulante = controller.getTripulantes().stream()\r\n                    .filter(t -> t.getNombre().equals(selectedTripulacion.getTripulante()))\r\n                    .findFirst().orElse(null);\r\n            if (avion != null && tripulante != null) {\r\n                controller.removerTripulacionDeAvion(avion, tripulante);\r\n                tripulantesDisponiblesList.add(tripulante);\r\n                cargarTripulacion();\r\n                cargarTripulantesDisponibles();\r\n            }\r\n        }\r\n    }\r\n\r\n    public void cambiarPanel(AnchorPane panel) {\r\n        this.panelTripulacion1 = panel;\r\n    }\r\n\r\n    public void previousPanel(ActionEvent actionEvent) {\r\n        try {\r\n            FXMLLoader loader = new FXMLLoader(getClass().getResource(\"/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml\"));\r\n            panelTripulacion1.getChildren().setAll((Node) loader.load());\r\n\r\n            PanelTripulacionController controller = loader.getController();\r\n            controller.cambiarPanel(panelTripulacion1);\r\n\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n    private static class TripulacionDisplay {\r\n        private final String avion;\r\n        private final String tripulante;\r\n        private final String rango;\r\n\r\n        public TripulacionDisplay(String avion, String tripulante, String rango) {\r\n            this.avion = avion;\r\n            this.tripulante = tripulante;\r\n            this.rango = rango;\r\n        }\r\n\r\n        public String getAvion() {\r\n            return avion;\r\n        }\r\n\r\n        public String getTripulante() {\r\n            return tripulante;\r\n        }\r\n\r\n        public String getRango() {\r\n            return rango;\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java b/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java
+--- a/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java	
++++ b/src/main/java/co/edu/uniquindio/caribe_airlines/viewController/PanelTripulacionController1.java	
+@@ -1,6 +1,5 @@
+ package co.edu.uniquindio.caribe_airlines.viewController;
+ 
+-import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
+ import javafx.collections.FXCollections;
+ import javafx.collections.ObservableList;
+ import javafx.event.ActionEvent;
+@@ -11,126 +10,217 @@
+ import javafx.scene.control.cell.PropertyValueFactory;
+ import javafx.scene.layout.AnchorPane;
+ 
++import co.edu.uniquindio.caribe_airlines.Model.*;
++import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
++
+ import java.io.IOException;
+-import java.util.List;
+-import java.util.stream.Collectors;
+-
+-import co.edu.uniquindio.caribe_airlines.Model.Avion;
+-import co.edu.uniquindio.caribe_airlines.Model.CaribeAirlines;
+-import co.edu.uniquindio.caribe_airlines.Model.Tripulante;
+ 
+ public class PanelTripulacionController1 {
+-    public Button btnVolver;
+-    public AnchorPane panelTripulacion1;
+-
+-    @FXML
+-    private TableView<TripulacionDisplay> tablaTripulacion;
+-    @FXML
+-    private TableColumn<TripulacionDisplay, String> colAvion, colTripulante, colRango;
+-    @FXML
+-    private ListView<Tripulante> listaTripulantesDisponibles;
+-    @FXML
+-    private ComboBox<Avion> comboAviones;
+-    @FXML
+-    private Button btnAsignar, btnEliminar;
++    @FXML public Button btnVolver;
++    @FXML public AnchorPane panelTripulacion1;
++    @FXML private TableView<TripulacionDisplay> tablaTripulacion;
++    @FXML private TableColumn<TripulacionDisplay, String> colAvion;
++    @FXML private TableColumn<TripulacionDisplay, String> colTripulante;
++    @FXML private TableColumn<TripulacionDisplay, String> colRango;
++    @FXML private ListView<Tripulante> listaTripulantesDisponibles;
++    @FXML private ComboBox<Avion> comboAviones;
++    @FXML private Button btnAsignar;
++    @FXML private Button btnEliminar;
++    @FXML private Button btnVerTripulacion;
+ 
+-    private ModelFactoryController controller;
+-    private List<Avion> avionesList;
+-    private List<Tripulante> tripulantesDisponiblesList;
+-
+-//----------------------------------------------------------------------------------------------------//
++    private ModelFactoryController modelFactoryController;
++    private ObservableList<Tripulante> tripulantesDisponibles;
++    private ObservableList<Avion> aviones;
++    private ObservableList<TripulacionDisplay> tripulacionDisplayList;
+ 
+     @FXML
+     public void initialize() {
+-        controller = ModelFactoryController.getInstance();
+-        avionesList = controller.getAeronaves();
+-        tripulantesDisponiblesList = controller.obtenerTripulantesDisponibles();
++        modelFactoryController = ModelFactoryController.getInstance();
++        tripulacionDisplayList = FXCollections.observableArrayList();
++
++        configurarColumnas();
++        configurarListaTripulantes();
++        configurarComboAviones();
+ 
+-        tablaTripulacion.getItems().clear();
++        actualizarDatos();
++    }
++
++    private void configurarColumnas() {
+         colAvion.setCellValueFactory(new PropertyValueFactory<>("avion"));
+         colTripulante.setCellValueFactory(new PropertyValueFactory<>("tripulante"));
+         colRango.setCellValueFactory(new PropertyValueFactory<>("rango"));
+-
+-        cargarTripulacion();
+-        cargarTripulantesDisponibles();
+-        cargarAviones();
+-    }
+-
+-    private void cargarTripulacion() {
+-        List<TripulacionDisplay> tripulacionList = avionesList.stream()
+-                .flatMap(avion -> avion.getTripulacion().stream()
+-                        .map(tripulante -> new TripulacionDisplay(avion.getModelo(),
+-                                tripulante.getNombre(), tripulante.getRango())))
+-                .collect(Collectors.toList());
+-
+-        ObservableList<TripulacionDisplay> data = FXCollections.observableArrayList(tripulacionList);
+-        tablaTripulacion.setItems(data);
++        tablaTripulacion.setItems(tripulacionDisplayList);
+     }
+ 
+-    private void cargarTripulantesDisponibles() {
+-        listaTripulantesDisponibles.getItems().clear();
+-        ObservableList<Tripulante> tripulantes = FXCollections.observableArrayList(tripulantesDisponiblesList);
+-        listaTripulantesDisponibles.setItems(tripulantes);
+-        listaTripulantesDisponibles.setCellFactory(param -> new ListCell<>(){
++    private void configurarListaTripulantes() {
++        listaTripulantesDisponibles.setCellFactory(lv -> new ListCell<Tripulante>() {
+             @Override
+-            protected void updateItem(Tripulante item, boolean empty){
+-                super.updateItem(item, empty);
+-                if (empty || item == null){
++            protected void updateItem(Tripulante tripulante, boolean empty) {
++                super.updateItem(tripulante, empty);
++                if (empty || tripulante == null) {
+                     setText(null);
++                } else {
++                    setText(String.format("%s - %s (%s)",
++                            tripulante.getNombre(),
++                            tripulante.getRango(),
++                            tripulante.getId()));
+                 }
+-                else{
+-                    setText("Nombre:   "+item.getNombre()+"   ID: "+item.getId()+"   Rango: "+item.getRango() );
+-                }
+-            }
+-        });
+-        listaTripulantesDisponibles.refresh();
+-    }
++            }
++        });
++    }
++
++    private void configurarComboAviones() {
++        comboAviones.setCellFactory(lv -> new ListCell<Avion>() {
++            @Override
++            protected void updateItem(Avion avion, boolean empty) {
++                super.updateItem(avion, empty);
++                if (empty || avion == null) {
++                    setText(null);
++                } else {
++                    setText(avion.getModelo());
++                }
++            }
++        });
+ 
+-    private void cargarAviones() {
+-        ObservableList<Avion> aviones = FXCollections.observableArrayList(avionesList);
+-        comboAviones.setItems(aviones);
+-        comboAviones.setCellFactory(param -> new ListCell<>(){
++        comboAviones.setButtonCell(new ListCell<Avion>() {
+             @Override
+-            protected void updateItem (Avion item, boolean empty){
+-                super.updateItem(item, empty);
+-                if (empty || item == null){
++            protected void updateItem(Avion avion, boolean empty) {
++                super.updateItem(avion, empty);
++                if (empty || avion == null) {
+                     setText(null);
++                } else {
++                    setText(avion.getModelo());
+                 }
+-                else {
+-                    setText(item.getModelo());
+-                }
++            }
++        });
++
++        comboAviones.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
++            if (newVal != null) {
++                actualizarTablaTripulacion();
++                actualizarEstadoBotones();
+             }
+         });
+     }
+ 
+-    public void asignarTripulante(ActionEvent actionEvent) {
+-        Tripulante selectedTripulante = listaTripulantesDisponibles.getSelectionModel().getSelectedItem();
+-        Avion selectedAvion = comboAviones.getSelectionModel().getSelectedItem();
+-        if (selectedTripulante != null && selectedAvion != null) {
+-            selectedAvion.getTripulacion().add(selectedTripulante);
+-            tripulantesDisponiblesList.remove(selectedTripulante);
+-            controller.asignarTripulacionAAvion(selectedAvion, selectedAvion.getTripulacion());
+-            cargarTripulacion();
+-            cargarTripulantesDisponibles();
++    private int getTripulacionRequerida(Avion avion) {
++        switch (avion.getModelo()) {
++            case "Airbus A320":
++                return 5; // 1 comandante + 1 copiloto + 3 auxiliares
++            case "Airbus A330":
++            case "Boeing 787":
++                return 9; // 1 comandante + 1 copiloto + 7 auxiliares
++            default:
++                return 0;
+         }
+     }
++
++    private void actualizarEstadoBotones() {
++        Avion avionSeleccionado = comboAviones.getSelectionModel().getSelectedItem();
++        btnAsignar.setDisable(avionSeleccionado == null ||
++                !modelFactoryController.necesitaMasTripulacion(avionSeleccionado));
++    }
++
++    private void actualizarTablaTripulacion() {
++        tripulacionDisplayList.clear();
++        Avion avionSeleccionado = comboAviones.getSelectionModel().getSelectedItem();
++
++        if (avionSeleccionado != null) {
++            for (Tripulante tripulante : avionSeleccionado.getTripulacion()) {
++                tripulacionDisplayList.add(new TripulacionDisplay(
++                        avionSeleccionado.getModelo(),
++                        tripulante.getNombre(),
++                        tripulante.getRango()
++                ));
++            }
++
++            // Mostrar información de la tripulación actual
++            String infoTripulacion = String.format("Tripulación actual: %d/%d",
++                    avionSeleccionado.getTripulacion().size(),
++                    getTripulacionRequerida(avionSeleccionado));
++            System.out.println(infoTripulacion); // Para debugging
++        }
++    }
++
++    private void actualizarDatos() {
++        tripulantesDisponibles = FXCollections.observableArrayList(
++                modelFactoryController.obtenerTripulantesDisponibles());
++        listaTripulantesDisponibles.setItems(tripulantesDisponibles);
++
++        aviones = FXCollections.observableArrayList(
++                modelFactoryController.getAeronaves());
++        comboAviones.setItems(aviones);
++
++        if (!aviones.isEmpty()) {
++            comboAviones.getSelectionModel().selectFirst();
++            actualizarTablaTripulacion();
++            actualizarEstadoBotones();
++        }
++    }
++
++    @FXML
++    public void handleAsignarTripulante() {
++        Tripulante tripulanteSeleccionado = listaTripulantesDisponibles.getSelectionModel().getSelectedItem();
++        Avion avionSeleccionado = comboAviones.getSelectionModel().getSelectedItem();
++
++        if (tripulanteSeleccionado == null || avionSeleccionado == null) {
++            mostrarAlerta("Por favor, seleccione un tripulante y un avión.");
++            return;
++        }
++
++        try {
++            if (modelFactoryController.necesitaTripulante(avionSeleccionado, tripulanteSeleccionado.getRango())) {
++                modelFactoryController.asignarTripulacionAAvion(avionSeleccionado, tripulanteSeleccionado));
++                actualizarDatos();
++                actualizarTablaTripulacion();
++                mostrarInformacion("Tripulante asignado exitosamente.");
++            } else {
++                mostrarAlerta("No se puede asignar más tripulantes de este rango al avión seleccionado.");
++            }
++        } catch (Exception e) {
++            mostrarError("Error al asignar tripulante: " + e.getMessage());
++        }
++    }
++
++    @FXML
++    public void handleEliminarTripulante() {
++        TripulacionDisplay tripulacionSeleccionada = tablaTripulacion.getSelectionModel().getSelectedItem();
++        if (tripulacionSeleccionada == null) {
++            mostrarAlerta("Por favor, seleccione un tripulante para eliminar.");
++            return;
++        }
++
++        Avion avionSeleccionado = comboAviones.getSelectionModel().getSelectedItem();
++        Tripulante tripulanteAEliminar = avionSeleccionado.getTripulacion().stream()
++                .filter(t -> t.getNombre().equals(tripulacionSeleccionada.getTripulante()))
++                .findFirst()
++                .orElse(null);
++
++        if (tripulanteAEliminar != null) {
++            modelFactoryController.removerTripulacionDeAvion(avionSeleccionado, tripulanteAEliminar);
++            actualizarDatos();
++            actualizarTablaTripulacion();
++            mostrarInformacion("Tripulante removido exitosamente.");
++        }
++    }
++
++    private void mostrarAlerta(String mensaje) {
++        mostrarDialogo(Alert.AlertType.WARNING, "Advertencia", mensaje);
++    }
+ 
+-    public void eliminarTripulante(ActionEvent actionEvent) {
+-        TripulacionDisplay selectedTripulacion = tablaTripulacion.getSelectionModel().getSelectedItem();
+-        if (selectedTripulacion != null) {
+-            Avion avion = avionesList.stream()
+-                    .filter(a -> a.getModelo().equals(selectedTripulacion.getAvion()))
+-                    .findFirst().orElse(null);
+-            Tripulante tripulante = controller.getTripulantes().stream()
+-                    .filter(t -> t.getNombre().equals(selectedTripulacion.getTripulante()))
+-                    .findFirst().orElse(null);
+-            if (avion != null && tripulante != null) {
+-                controller.removerTripulacionDeAvion(avion, tripulante);
+-                tripulantesDisponiblesList.add(tripulante);
+-                cargarTripulacion();
+-                cargarTripulantesDisponibles();
+-            }
+-        }
++    private void mostrarError(String mensaje) {
++        mostrarDialogo(Alert.AlertType.ERROR, "Error", mensaje);
++    }
++
++    private void mostrarInformacion(String mensaje) {
++        mostrarDialogo(Alert.AlertType.INFORMATION, "Información", mensaje);
++    }
++
++    private void mostrarDialogo(Alert.AlertType tipo, String titulo, String mensaje) {
++        Alert alert = new Alert(tipo);
++        alert.setTitle(titulo);
++        alert.setHeaderText(null);
++        alert.setContentText(mensaje);
++        alert.showAndWait();
+     }
+ 
+     public void cambiarPanel(AnchorPane panel) {
+@@ -147,30 +237,9 @@
+ 
+         } catch (IOException e) {
+             e.printStackTrace();
++            mostrarError("Error al cambiar de panel: " + e.getMessage());
+         }
+     }
+ 
+-    private static class TripulacionDisplay {
+-        private final String avion;
+-        private final String tripulante;
+-        private final String rango;
+-
+-        public TripulacionDisplay(String avion, String tripulante, String rango) {
+-            this.avion = avion;
+-            this.tripulante = tripulante;
+-            this.rango = rango;
+-        }
+ 
+-        public String getAvion() {
+-            return avion;
+-        }
+-
+-        public String getTripulante() {
+-            return tripulante;
+-        }
+-
+-        public String getRango() {
+-            return rango;
+-        }
+-    }
+-}
++}
+\ No newline at end of file
+Index: src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.DatePicker?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane fx:id=\"panelTripulacion\" prefHeight=\"680.0\" prefWidth=\"900.0\" xmlns=\"http://javafx.com/javafx/8.0.171\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController\">\r\n   <children>\r\n      <Label alignment=\"CENTER\" contentDisplay=\"TOP\" prefHeight=\"35.0\" prefWidth=\"900.0\" style=\"-fx-background-color: Black;\" text=\"Gestion de Tripulantes\" textFill=\"WHITE\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"24.0\" />\r\n         </font>\r\n      </Label>\r\n      <Label layoutX=\"47.0\" layoutY=\"74.0\" text=\"Nombre:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField fx:id=\"txtNom\" layoutX=\"47.0\" layoutY=\"94.0\" prefHeight=\"25.0\" prefWidth=\"257.0\" />\r\n      <Label layoutX=\"47.0\" layoutY=\"138.0\" text=\"Identificacion:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField fx:id=\"txtID\" layoutX=\"47.0\" layoutY=\"158.0\" prefHeight=\"25.0\" prefWidth=\"257.0\" />\r\n      <Label layoutX=\"47.0\" layoutY=\"203.0\" text=\"Direccion:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField fx:id=\"txtDirec\" layoutX=\"47.0\" layoutY=\"223.0\" prefHeight=\"25.0\" prefWidth=\"257.0\" />\r\n      <Label layoutX=\"47.0\" layoutY=\"265.0\" text=\"Correo:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField fx:id=\"txtCorreo\" layoutX=\"47.0\" layoutY=\"285.0\" prefHeight=\"25.0\" prefWidth=\"257.0\" />\r\n      <Label layoutX=\"47.0\" layoutY=\"330.0\" text=\"Fecha de Nacimiento:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <DatePicker fx:id=\"fNacimiento\" layoutX=\"47.0\" layoutY=\"358.0\" prefHeight=\"25.0\" prefWidth=\"257.0\" />\r\n      <Label layoutX=\"47.0\" layoutY=\"403.0\" text=\"Estudios:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <TextField fx:id=\"txtEstud\" layoutX=\"47.0\" layoutY=\"423.0\" prefHeight=\"25.0\" prefWidth=\"257.0\" />\r\n      <Button fx:id=\"btnAgregar\" layoutX=\"47.0\" layoutY=\"527.0\" mnemonicParsing=\"false\" onAction=\"#handleAddTripulante\" prefHeight=\"35.0\" prefWidth=\"103.0\" text=\"Agregar\" />\r\n      <Button fx:id=\"btnEliminar\" layoutX=\"201.0\" layoutY=\"585.0\" mnemonicParsing=\"false\" onAction=\"#handleDeleteTripulante\" prefHeight=\"35.0\" prefWidth=\"103.0\" text=\"Eliminar\" />\r\n      <Button fx:id=\"btnActualizar\" layoutX=\"47.0\" layoutY=\"585.0\" mnemonicParsing=\"false\" onAction=\"#handleUpdateTripulante\" prefHeight=\"35.0\" prefWidth=\"103.0\" text=\"Actualizar\" />\r\n      <TextField fx:id=\"txtRango\" layoutX=\"47.0\" layoutY=\"477.0\" prefHeight=\"25.0\" prefWidth=\"257.0\" />\r\n      <Label layoutX=\"46.0\" layoutY=\"457.0\" text=\"Rango:\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n      <Button fx:id=\"sgtPagina\" layoutX=\"705.0\" layoutY=\"590.0\" mnemonicParsing=\"false\" onAction=\"#nextPanel\" prefHeight=\"35.0\" prefWidth=\"160.0\" text=\"Asignar Tripulantes --&gt;\" />\r\n      <TableView fx:id=\"listaTripulantes\" layoutX=\"375.0\" layoutY=\"74.0\" prefHeight=\"486.0\" prefWidth=\"490.0\">\r\n        <columns>\r\n          <TableColumn fx:id=\"Nombres\" prefWidth=\"168.0\" text=\"Nombre\" />\r\n          <TableColumn fx:id=\"IDs\" prefWidth=\"119.0\" text=\"ID\" />\r\n            <TableColumn fx:id=\"Correos\" prefWidth=\"201.0\" text=\"Correo\" />\r\n        </columns>\r\n      </TableView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml b/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml
+--- a/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml	
++++ b/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion.fxml	
+@@ -1,73 +1,67 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.DatePicker?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.TableColumn?>
+-<?import javafx.scene.control.TableView?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.layout.*?>
+ <?import javafx.scene.text.Font?>
++<?import javafx.geometry.Insets?>
+ 
+ <AnchorPane fx:id="panelTripulacion" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController">
+    <children>
+-      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Gestion de Tripulantes" textFill="WHITE">
+-         <font>
+-            <Font name="System Bold" size="24.0" />
+-         </font>
+-      </Label>
+-      <Label layoutX="47.0" layoutY="74.0" text="Nombre:">
+-         <font>
+-            <Font name="System Bold" size="14.0" />
+-         </font>
+-      </Label>
+-      <TextField fx:id="txtNom" layoutX="47.0" layoutY="94.0" prefHeight="25.0" prefWidth="257.0" />
+-      <Label layoutX="47.0" layoutY="138.0" text="Identificacion:">
+-         <font>
+-            <Font name="System Bold" size="14.0" />
+-         </font>
+-      </Label>
+-      <TextField fx:id="txtID" layoutX="47.0" layoutY="158.0" prefHeight="25.0" prefWidth="257.0" />
+-      <Label layoutX="47.0" layoutY="203.0" text="Direccion:">
+-         <font>
+-            <Font name="System Bold" size="14.0" />
+-         </font>
+-      </Label>
+-      <TextField fx:id="txtDirec" layoutX="47.0" layoutY="223.0" prefHeight="25.0" prefWidth="257.0" />
+-      <Label layoutX="47.0" layoutY="265.0" text="Correo:">
+-         <font>
+-            <Font name="System Bold" size="14.0" />
+-         </font>
+-      </Label>
+-      <TextField fx:id="txtCorreo" layoutX="47.0" layoutY="285.0" prefHeight="25.0" prefWidth="257.0" />
+-      <Label layoutX="47.0" layoutY="330.0" text="Fecha de Nacimiento:">
+-         <font>
+-            <Font name="System Bold" size="14.0" />
+-         </font>
+-      </Label>
+-      <DatePicker fx:id="fNacimiento" layoutX="47.0" layoutY="358.0" prefHeight="25.0" prefWidth="257.0" />
+-      <Label layoutX="47.0" layoutY="403.0" text="Estudios:">
+-         <font>
+-            <Font name="System Bold" size="14.0" />
+-         </font>
+-      </Label>
+-      <TextField fx:id="txtEstud" layoutX="47.0" layoutY="423.0" prefHeight="25.0" prefWidth="257.0" />
+-      <Button fx:id="btnAgregar" layoutX="47.0" layoutY="527.0" mnemonicParsing="false" onAction="#handleAddTripulante" prefHeight="35.0" prefWidth="103.0" text="Agregar" />
+-      <Button fx:id="btnEliminar" layoutX="201.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleDeleteTripulante" prefHeight="35.0" prefWidth="103.0" text="Eliminar" />
+-      <Button fx:id="btnActualizar" layoutX="47.0" layoutY="585.0" mnemonicParsing="false" onAction="#handleUpdateTripulante" prefHeight="35.0" prefWidth="103.0" text="Actualizar" />
+-      <TextField fx:id="txtRango" layoutX="47.0" layoutY="477.0" prefHeight="25.0" prefWidth="257.0" />
+-      <Label layoutX="46.0" layoutY="457.0" text="Rango:">
+-         <font>
+-            <Font name="System Bold" size="14.0" />
+-         </font>
+-      </Label>
+-      <Button fx:id="sgtPagina" layoutX="705.0" layoutY="590.0" mnemonicParsing="false" onAction="#nextPanel" prefHeight="35.0" prefWidth="160.0" text="Asignar Tripulantes --&gt;" />
+-      <TableView fx:id="listaTripulantes" layoutX="375.0" layoutY="74.0" prefHeight="486.0" prefWidth="490.0">
+-        <columns>
+-          <TableColumn fx:id="Nombres" prefWidth="168.0" text="Nombre" />
+-          <TableColumn fx:id="IDs" prefWidth="119.0" text="ID" />
+-            <TableColumn fx:id="Correos" prefWidth="201.0" text="Correo" />
+-        </columns>
+-      </TableView>
++      <VBox spacing="10" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
++         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Gestión de Tripulantes" textFill="WHITE">
++            <font>
++               <Font name="System Bold" size="24.0" />
++            </font>
++         </Label>
++
++         <HBox spacing="20">
++            <padding>
++               <Insets top="10" right="10" bottom="10" left="10"/>
++            </padding>
++
++            <VBox spacing="10" prefWidth="300">
++               <Label text="Información del Tripulante" style="-fx-font-weight: bold; -fx-font-size: 14;"/>
++
++               <Label text="Nombre:" style="-fx-font-weight: bold"/>
++               <TextField fx:id="txtNom"/>
++
++               <Label text="Identificación:" style="-fx-font-weight: bold"/>
++               <TextField fx:id="txtID"/>
++
++               <Label text="Dirección:" style="-fx-font-weight: bold"/>
++               <TextField fx:id="txtDirec"/>
++
++               <Label text="Correo:" style="-fx-font-weight: bold"/>
++               <TextField fx:id="txtCorreo"/>
++
++               <Label text="Fecha de Nacimiento:" style="-fx-font-weight: bold"/>
++               <DatePicker fx:id="fNacimiento" prefWidth="300"/>
++
++               <Label text="Estudios:" style="-fx-font-weight: bold"/>
++               <TextField fx:id="txtEstud"/>
++
++               <Label text="Rango:" style="-fx-font-weight: bold"/>
++               <ComboBox fx:id="comboRango" prefWidth="300"/>
++
++               <HBox spacing="10" alignment="CENTER_LEFT">
++                  <Button fx:id="btnAgregar" onAction="#handleAddTripulante" text="Agregar" prefWidth="120"/>
++                  <Button fx:id="btnEliminar" onAction="#handleDeleteTripulante" text="Eliminar" prefWidth="120"/>
++               </HBox>
++            </VBox>
++
++            <VBox spacing="10" HBox.hgrow="ALWAYS">
++               <TableView fx:id="listaTripulantes" VBox.vgrow="ALWAYS">
++                  <columns>
++                     <TableColumn fx:id="Nombres" text="Nombre" prefWidth="200"/>
++                     <TableColumn fx:id="IDs" text="ID" prefWidth="120"/>
++                     <TableColumn fx:id="Correos" text="Correo" prefWidth="200"/>
++                  </columns>
++               </TableView>
++
++               <Button fx:id="sgtPagina" onAction="#nextPanel" text="Asignar Tripulantes →"
++                       alignment="CENTER_RIGHT" prefWidth="200"/>
++            </VBox>
++         </HBox>
++      </VBox>
+    </children>
+-</AnchorPane>
++</AnchorPane>
+\ No newline at end of file
+Index: src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uniquindio.caribe_airlines.Controller;\r\n\r\nimport co.edu.uniquindio.caribe_airlines.Model.*;\r\nimport co.edu.uniquindio.caribe_airlines.Utils.Persistencia;\r\n\r\nimport java.io.FileNotFoundException;\r\nimport java.util.List;\r\n\r\n\r\npublic class ModelFactoryController {\r\n\r\n    private CaribeAirlines caribeAirlines;\r\n\r\n    private static class SingletonHolder {\r\n        private final static ModelFactoryController eINSTANCE = new ModelFactoryController();\r\n    }\r\n\r\n    public static ModelFactoryController getInstance() {\r\n        return SingletonHolder.eINSTANCE;\r\n    }\r\n\r\n    public ModelFactoryController (){\r\n        cargarArchivo();\r\n        if (caribeAirlines == null){\r\n            caribeAirlines = new CaribeAirlines();\r\n        }\r\n    }\r\n\r\n//----------------------------------------Gestion Clientes-----------------------------------------//\r\n\r\n    public Cliente estaRegistrado(String id){\r\n        return caribeAirlines.clienteRegistrado(id);\r\n    }\r\n\r\n    public boolean verificarContrasena (Cliente c, String con){\r\n        return caribeAirlines.verificarContrasena(c,con);\r\n    }\r\n\r\n    public void registrarCliente(Cliente cliente){\r\n        caribeAirlines.registrarCliente(cliente);\r\n    }\r\n\r\n\r\n//------------------------------------------Manejo Vuelos------------------------------------------//\r\n\r\n    public List<Vuelo> obtenerVuelos(Ticket t){\r\n        return caribeAirlines.obtenerVuelos(t);\r\n    }\r\n\r\n    public List<Ruta> getRutas(){\r\n        return caribeAirlines.getRutas().toArrayList();\r\n    }\r\n\r\n    public List<Avion> getAeronaves(){\r\n        return caribeAirlines.getAeronaves().toArrayList();\r\n    }\r\n\r\n//---------------------------------------Gestion Tripulacion---------------------------------------//\r\n\r\n    public void registrarTripulante(Tripulante tripulante) throws Exception {\r\n        caribeAirlines.registrarTripulante(tripulante);\r\n        guardarArchivo();\r\n    }\r\n\r\n    public void eliminarTripulante(Tripulante tripulante) throws Exception {\r\n        caribeAirlines.eliminarTripulante(tripulante);\r\n        guardarArchivo();\r\n    }\r\n\r\n    public void actualizarTripulante(Tripulante tripulanteActualizado) throws Exception {\r\n        caribeAirlines.actualizarTripulante(tripulanteActualizado);\r\n        guardarArchivo();\r\n    }\r\n\r\n    public List<Tripulante> obtenerTripulantesDisponibles(){\r\n        return caribeAirlines.obtenerTripulantesDisponibles();\r\n    }\r\n\r\n    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion){\r\n        caribeAirlines.asignarTripulacionAAvion(avion, tripulacion);\r\n\r\n    }\r\n\r\n    public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante){\r\n        caribeAirlines.removerTripulacionDeAvion(avion, tripulante);\r\n\r\n    }\r\n\r\n    public List<Tripulante> getTripulantes(){\r\n        return caribeAirlines.getTripulantes().toArrayList();\r\n    }\r\n\r\n//----------------------------------CARGADO Y GUARDADO DE ARCHIVOS---------------------------------//\r\n\r\n    private void guardarArchivo(){\r\n        Persistencia.guardarArchivoJSON(caribeAirlines);\r\n        Persistencia.guardarArchivoRESPALDO_JSON(caribeAirlines);\r\n    }\r\n\r\n    private void cargarArchivo(){\r\n        CaribeAirlines objeto = Persistencia.cargarArchivo();\r\n        if (objeto != null){\r\n            this.caribeAirlines = objeto;\r\n        }\r\n        else{\r\n            this.caribeAirlines = Persistencia.cargarRespaldo();\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java b/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java
+--- a/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java	
++++ b/src/main/java/co/edu/uniquindio/caribe_airlines/Controller/ModelFactoryController.java	
+@@ -1,109 +1,86 @@
+ package co.edu.uniquindio.caribe_airlines.Controller;
+ 
+ import co.edu.uniquindio.caribe_airlines.Model.*;
+-import co.edu.uniquindio.caribe_airlines.Utils.Persistencia;
+ 
+-import java.io.FileNotFoundException;
+ import java.util.List;
+ 
+-
+ public class ModelFactoryController {
+ 
+     private CaribeAirlines caribeAirlines;
+ 
+     private static class SingletonHolder {
+-        private final static ModelFactoryController eINSTANCE = new ModelFactoryController();
++        private final static ModelFactoryController INSTANCE = new ModelFactoryController();
+     }
+ 
+     public static ModelFactoryController getInstance() {
+-        return SingletonHolder.eINSTANCE;
++        return SingletonHolder.INSTANCE;
+     }
+ 
+-    public ModelFactoryController (){
+-        cargarArchivo();
+-        if (caribeAirlines == null){
+-            caribeAirlines = new CaribeAirlines();
+-        }
++    public ModelFactoryController() {
++        caribeAirlines = new CaribeAirlines();
+     }
+ 
+-//----------------------------------------Gestion Clientes-----------------------------------------//
++    //----------------------------------------Gestión de Clientes-----------------------------------------//
+ 
+-    public Cliente estaRegistrado(String id){
++    public Cliente estaRegistrado(String id) {
+         return caribeAirlines.clienteRegistrado(id);
+     }
+ 
+-    public boolean verificarContrasena (Cliente c, String con){
+-        return caribeAirlines.verificarContrasena(c,con);
++    public boolean verificarContrasena(Cliente c, String con) {
++        return caribeAirlines.verificarContrasena(c, con);
+     }
+ 
+-    public void registrarCliente(Cliente cliente){
++    public void registrarCliente(Cliente cliente) {
+         caribeAirlines.registrarCliente(cliente);
+     }
+ 
+-
+-//------------------------------------------Manejo Vuelos------------------------------------------//
++    //------------------------------------------Manejo de Vuelos------------------------------------------//
+ 
+-    public List<Vuelo> obtenerVuelos(Ticket t){
++    public List<Vuelo> obtenerVuelos(Ticket t) {
+         return caribeAirlines.obtenerVuelos(t);
+     }
+ 
+-    public List<Ruta> getRutas(){
++    public List<Ruta> getRutas() {
+         return caribeAirlines.getRutas().toArrayList();
+     }
+ 
+-    public List<Avion> getAeronaves(){
++    public List<Avion> getAeronaves() {
+         return caribeAirlines.getAeronaves().toArrayList();
+     }
+ 
+-//---------------------------------------Gestion Tripulacion---------------------------------------//
++    //---------------------------------------Gestión de Tripulación---------------------------------------//
+ 
+     public void registrarTripulante(Tripulante tripulante) throws Exception {
+         caribeAirlines.registrarTripulante(tripulante);
+-        guardarArchivo();
+-    }
+-
+-    public void eliminarTripulante(Tripulante tripulante) throws Exception {
+-        caribeAirlines.eliminarTripulante(tripulante);
+-        guardarArchivo();
+     }
+ 
+-    public void actualizarTripulante(Tripulante tripulanteActualizado) throws Exception {
+-        caribeAirlines.actualizarTripulante(tripulanteActualizado);
+-        guardarArchivo();
++    public void eliminarTripulante(Tripulante tripulante) {
++        caribeAirlines.eliminarTripulante(tripulante.getId());
+     }
+ 
+-    public List<Tripulante> obtenerTripulantesDisponibles(){
++    public List<Tripulante> obtenerTripulantesDisponibles() {
+         return caribeAirlines.obtenerTripulantesDisponibles();
+     }
+ 
+-    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion){
+-        caribeAirlines.asignarTripulacionAAvion(avion, tripulacion);
+-
++    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion) {
++        for (Tripulante t : tripulacion) {
++            caribeAirlines.asignarTripulacionAAvion(avion, t);
++        }
+     }
+ 
+-    public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante){
++    public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante) {
+         caribeAirlines.removerTripulacionDeAvion(avion, tripulante);
+-
+     }
+ 
+-    public List<Tripulante> getTripulantes(){
++    public List<Tripulante> getTripulantes() {
+         return caribeAirlines.getTripulantes().toArrayList();
+     }
+ 
+-//----------------------------------CARGADO Y GUARDADO DE ARCHIVOS---------------------------------//
+-
+-    private void guardarArchivo(){
+-        Persistencia.guardarArchivoJSON(caribeAirlines);
+-        Persistencia.guardarArchivoRESPALDO_JSON(caribeAirlines);
++    public boolean validarTripulacionCompleta(Avion avion) {
++        return caribeAirlines.validarTripulacionCompleta(avion);
+     }
+ 
+-    private void cargarArchivo(){
+-        CaribeAirlines objeto = Persistencia.cargarArchivo();
+-        if (objeto != null){
+-            this.caribeAirlines = objeto;
+-        }
+-        else{
+-            this.caribeAirlines = Persistencia.cargarRespaldo();
+-        }
++    public boolean necesitaMasTripulacion(Avion avion) {
++        return caribeAirlines.necesitaMasTripulacion(avion);
+     }
+-}
++}
+\ No newline at end of file

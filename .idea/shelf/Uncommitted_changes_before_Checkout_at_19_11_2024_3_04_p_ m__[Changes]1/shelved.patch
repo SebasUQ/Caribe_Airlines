@@ -1,0 +1,397 @@
+Index: src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.ComboBox?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.ListView?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane fx:id=\"panelTripulacion1\" prefHeight=\"680.0\" prefWidth=\"900.0\" xmlns=\"http://javafx.com/javafx/8.0.171\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController1\">\r\n   <children>\r\n      <Label alignment=\"CENTER\" contentDisplay=\"TOP\" prefHeight=\"35.0\" prefWidth=\"900.0\" style=\"-fx-background-color: Black;\" text=\"Asignacion de Tripulacion\" textFill=\"WHITE\">\r\n         <font>\r\n            <Font name=\"System Bold\" size=\"24.0\" />\r\n         </font>\r\n      </Label>\r\n      <TableView fx:id=\"tablaTripulacion\" layoutX=\"41.0\" layoutY=\"50.0\" prefHeight=\"467.0\" prefWidth=\"800.0\">\r\n         <columns>\r\n            <TableColumn fx:id=\"colAvion\" prefWidth=\"258.0\" text=\"Avion\" />\r\n            <TableColumn fx:id=\"colTripulante\" prefWidth=\"284.0\" text=\"Tripulante\" />\r\n            <TableColumn fx:id=\"colRango\" prefWidth=\"257.0\" text=\"Rango\" />\r\n         </columns>\r\n      </TableView>\r\n      <ListView fx:id=\"listaTripulantesDisponibles\" layoutX=\"182.0\" layoutY=\"547.0\" prefHeight=\"100.0\" prefWidth=\"423.0\" />\r\n      <ComboBox fx:id=\"comboAviones\" layoutX=\"616.0\" layoutY=\"546.0\" prefWidth=\"150.0\" />\r\n      <Button fx:id=\"btnAsignar\" layoutX=\"774.0\" layoutY=\"545.0\" mnemonicParsing=\"false\" onAction=\"#asignarTripulante\" prefHeight=\"35.0\" prefWidth=\"67.0\" text=\"Asignar\" />\r\n      <Button fx:id=\"btnEliminar\" layoutX=\"774.0\" layoutY=\"612.0\" mnemonicParsing=\"false\" onAction=\"#eliminarTripulante\" prefHeight=\"35.0\" prefWidth=\"67.0\" text=\"Eliminar\" />\r\n      <Button fx:id=\"btnVolver\" layoutX=\"41.0\" layoutY=\"597.0\" mnemonicParsing=\"false\" onAction=\"#previousPanel\" prefHeight=\"46.0\" prefWidth=\"113.0\" text=\"Volver\" />\r\n      <Label layoutX=\"317.0\" layoutY=\"526.0\" text=\"Tripulantes sin Asignar\">\r\n         <font>\r\n            <Font name=\"System Bold Italic\" size=\"14.0\" />\r\n         </font>\r\n      </Label>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml b/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml
+--- a/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml	
++++ b/src/main/resources/co/edu/uniquindio/caribe_airlines/View/panelTripulacion1.fxml	
+@@ -1,37 +1,48 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.ComboBox?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.ListView?>
+-<?import javafx.scene.control.TableColumn?>
+-<?import javafx.scene.control.TableView?>
+-<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.layout.*?>
+ <?import javafx.scene.text.Font?>
++<?import javafx.geometry.Insets?>
+ 
+-<AnchorPane fx:id="panelTripulacion1" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController1">
++<AnchorPane fx:id="panelTripulacion1" prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelTripulacionController1">
+    <children>
+-      <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Asignacion de Tripulacion" textFill="WHITE">
+-         <font>
+-            <Font name="System Bold" size="24.0" />
+-         </font>
+-      </Label>
+-      <TableView fx:id="tablaTripulacion" layoutX="41.0" layoutY="50.0" prefHeight="467.0" prefWidth="800.0">
+-         <columns>
+-            <TableColumn fx:id="colAvion" prefWidth="258.0" text="Avion" />
+-            <TableColumn fx:id="colTripulante" prefWidth="284.0" text="Tripulante" />
+-            <TableColumn fx:id="colRango" prefWidth="257.0" text="Rango" />
+-         </columns>
+-      </TableView>
+-      <ListView fx:id="listaTripulantesDisponibles" layoutX="182.0" layoutY="547.0" prefHeight="100.0" prefWidth="423.0" />
+-      <ComboBox fx:id="comboAviones" layoutX="616.0" layoutY="546.0" prefWidth="150.0" />
+-      <Button fx:id="btnAsignar" layoutX="774.0" layoutY="545.0" mnemonicParsing="false" onAction="#asignarTripulante" prefHeight="35.0" prefWidth="67.0" text="Asignar" />
+-      <Button fx:id="btnEliminar" layoutX="774.0" layoutY="612.0" mnemonicParsing="false" onAction="#eliminarTripulante" prefHeight="35.0" prefWidth="67.0" text="Eliminar" />
+-      <Button fx:id="btnVolver" layoutX="41.0" layoutY="597.0" mnemonicParsing="false" onAction="#previousPanel" prefHeight="46.0" prefWidth="113.0" text="Volver" />
+-      <Label layoutX="317.0" layoutY="526.0" text="Tripulantes sin Asignar">
+-         <font>
+-            <Font name="System Bold Italic" size="14.0" />
+-         </font>
+-      </Label>
++      <VBox spacing="10" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0">
++         <Label alignment="CENTER" contentDisplay="TOP" prefHeight="35.0" prefWidth="900.0" style="-fx-background-color: Black;" text="Asignación de Tripulación" textFill="WHITE">
++            <font>
++               <Font name="System Bold" size="24.0" />
++            </font>
++         </Label>
++
++         <TableView fx:id="tablaTripulacion" VBox.vgrow="ALWAYS" prefHeight="400.0">
++            <columns>
++               <TableColumn fx:id="colAvion" text="Avión" prefWidth="250"/>
++               <TableColumn fx:id="colTripulante" text="Tripulante" prefWidth="250"/>
++               <TableColumn fx:id="colRango" text="Rango" prefWidth="250"/>
++            </columns>
++         </TableView>
++
++         <HBox spacing="20" alignment="CENTER_LEFT">
++            <padding>
++               <Insets top="10.0" right="10.0" bottom="10.0" left="10.0" />
++            </padding>
++            <VBox spacing="5" prefWidth="300.0">
++               <Label text="Tripulantes Disponibles:"/>
++               <ListView fx:id="listaTripulantesDisponibles" prefHeight="100.0"/>
++            </VBox>
++
++            <VBox spacing="5" alignment="CENTER" prefWidth="200.0">
++               <Label text="Seleccionar Avión:"/>
++               <ComboBox fx:id="comboAviones" prefWidth="150.0"/>
++               <Button fx:id="btnAsignar" onAction="#handleAsignarTripulante" text="Asignar" prefWidth="100.0"/>
++               <Button fx:id="btnEliminar" onAction="#handleEliminarTripulante" text="Eliminar" prefWidth="100.0"/>
++            </VBox>
++
++            <VBox spacing="5" alignment="CENTER">
++               <Button fx:id="btnVerTripulacion" text="Ver Tripulación" prefWidth="120.0"/>
++               <Button fx:id="btnVolver" onAction="#previousPanel" text="Volver" prefWidth="120.0"/>
++            </VBox>
++         </HBox>
++      </VBox>
+    </children>
+-</AnchorPane>
++</AnchorPane>
+\ No newline at end of file
+Index: src/main/java/co/edu/uniquindio/caribe_airlines/Model/TripulacionDisplay.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uniquindio/caribe_airlines/Model/TripulacionDisplay.java b/src/main/java/co/edu/uniquindio/caribe_airlines/Model/TripulacionDisplay.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/co/edu/uniquindio/caribe_airlines/Model/TripulacionDisplay.java	
+@@ -0,0 +1,15 @@
++package co.edu.uniquindio.caribe_airlines.Model;
++
++import lombok.AllArgsConstructor;
++import lombok.Getter;
++import lombok.Setter;
++
++@Getter
++@Setter
++@AllArgsConstructor
++public class TripulacionDisplay {
++    private String avion;
++    private String tripulante;
++    private String rango;
++}
++
+Index: src/main/java/co/edu/uniquindio/caribe_airlines/Model/Tripulante.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uniquindio.caribe_airlines.Model;\r\n\r\nimport java.io.Serializable;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Getter;\r\nimport lombok.Setter;\r\nimport lombok.ToString;\r\n\r\n@ToString\r\n@Getter\r\n@Setter\r\n@AllArgsConstructor\r\npublic class Tripulante implements Serializable {\r\n\r\n    private String id;\r\n    private String nombre;\r\n    private String direccion;\r\n    private String email;\r\n    private String fechaNacimiento;\r\n    private String estudios;\r\n    private String rango;\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Tripulante.java b/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Tripulante.java
+--- a/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Tripulante.java	
++++ b/src/main/java/co/edu/uniquindio/caribe_airlines/Model/Tripulante.java	
+@@ -1,17 +1,15 @@
+ package co.edu.uniquindio.caribe_airlines.Model;
+ 
+-import java.io.Serializable;
+-import lombok.AllArgsConstructor;
+ import lombok.Getter;
+ import lombok.Setter;
+-import lombok.ToString;
+ 
+-@ToString
++import java.io.Serializable;
++
+ @Getter
+ @Setter
+-@AllArgsConstructor
+ public class Tripulante implements Serializable {
+ 
++    // Getters and setters
+     private String id;
+     private String nombre;
+     private String direccion;
+@@ -19,5 +17,16 @@
+     private String fechaNacimiento;
+     private String estudios;
+     private String rango;
++
++    public Tripulante(String id, String nombre, String direccion, String email, String fechaNacimiento, String estudios, String rango) {
++        this.id = id;
++        this.nombre = nombre;
++        this.direccion = direccion;
++        this.email = email;
++        this.fechaNacimiento = fechaNacimiento;
++        this.estudios = estudios;
++        this.rango = rango;
++    }
++
+ }
+ 
+Index: src/main/resources/aeronaves.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/aeronaves.txt b/src/main/resources/aeronaves.txt
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/aeronaves.txt	
+@@ -0,0 +1,6 @@
++Airbus A320,150,19000,12,138
++Airbus A320,150,19000,12,138
++Airbus A330,252,52000,30,222
++Airbus A330,252,52000,30,222
++Boeing 787,250,50000,28,222
++Boeing 787,250,50000,28,222
+\ No newline at end of file
+Index: src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package co.edu.uniquindio.caribe_airlines.Model;\r\n\r\nimport co.edu.uniquindio.caribe_airlines.dataStructures.MiListaEnlazada;\r\nimport co.edu.uniquindio.caribe_airlines.dataStructures.Nodo;\r\nimport lombok.AllArgsConstructor;\r\nimport lombok.Getter;\r\nimport lombok.Setter;\r\nimport lombok.ToString;\r\n\r\nimport javax.swing.*;\r\nimport java.io.*;\r\nimport java.util.ArrayList;\r\nimport java.util.HashMap;\r\nimport java.util.List;\r\nimport java.util.logging.FileHandler;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\nimport java.util.logging.SimpleFormatter;\r\n\r\n@ToString\r\n@Getter\r\n@Setter\r\n@AllArgsConstructor\r\npublic class CaribeAirlines implements Serializable {\r\n\r\n    // Estructuras de datos personalizadas para tripulantes y aeronaves\r\n    private MiListaEnlazada<Tripulante> tripulantes;\r\n    private MiListaEnlazada<Avion> aeronaves;\r\n    private MiListaEnlazada<Vuelo> vuelosProgramados;\r\n    private MiListaEnlazada<Cliente> clientes;\r\n    private MiListaEnlazada<Ruta> rutas;\r\n\r\n    private static final Logger LOGGER = Logger.getLogger(CaribeAirlines.class.getName());\r\n\r\n    public CaribeAirlines() {\r\n        try {\r\n            FileHandler fh = new FileHandler(\"logs.log\", true);\r\n            fh.setFormatter(new SimpleFormatter());\r\n            LOGGER.addHandler(fh);\r\n        } catch (IOException e) {\r\n            LOGGER.log(Level.WARNING, \"No se pudo crear el archivo de logs\", e);\r\n        }\r\n\r\n        // Inicializar las listas personalizadas\r\n        this.tripulantes = new MiListaEnlazada<>();\r\n        this.aeronaves = new MiListaEnlazada<>();\r\n        this.vuelosProgramados = new MiListaEnlazada<>();\r\n        this.clientes = new MiListaEnlazada<>();\r\n        this.rutas = new MiListaEnlazada<>();\r\n\r\n        // Cargar datos desde archivos si es necesario\r\n        initializeRutas();\r\n        //leerTripulantes();\r\n        initializeAeronaves();\r\n    }\r\n\r\n    private void initializeAeronaves() {\r\n\r\n        aeronaves.add(new Avion(\"Airbus A320\", 150, 19000, new HashMap<>(), new ArrayList<>()));\r\n        aeronaves.add(new Avion(\"Airbus A320\", 150, 19000, new HashMap<>(), new ArrayList<>()));\r\n        aeronaves.add(new Avion(\"Airbus A330\", 252, 52000, new HashMap<>(), new ArrayList<>()));\r\n        aeronaves.add(new Avion(\"Airbus A330\", 252, 52000, new HashMap<>(), new ArrayList<>()));\r\n        aeronaves.add(new Avion(\"Boeing 787\", 250, 50000, new HashMap<>(), new ArrayList<>()));\r\n        aeronaves.add(new Avion(\"Boeing 787\", 250, 50000, new HashMap<>(), new ArrayList<>()));\r\n        // Add more predefined aircraft as needed\r\n    }\r\n\r\n    private void initializeRutas(){\r\n        rutas.add(new Ruta(\"CDMX\",\"Monterrey\", \"2(h):45(m)\",\"6:00 am\",\"Nacional\"));\r\n        rutas.add(new Ruta(\"CDMX\",\"Cancun\", \"3(h):12(m)\",\"8:00 am\",\"Nacional\"));\r\n        rutas.add(new Ruta(\"CDMX\",\"Buenos Aires\", \"9(h):05(m)\",\"11:20 pm\",\"Internacional\"));\r\n        rutas.add(new Ruta(\"CDMX\",\"Los Angeles\", \"3(h):25(m)\",\"9:45 am\",\"Internacional\"));\r\n        rutas.add(new Ruta(\"CDMX\",\"Bogota\", \"3(h):45(m)\",\"1:30 pm\",\"Internacional\"));\r\n        rutas.add(new Ruta(\"CDMX\",\"Panama\", \"2(h):55(m)\",\"2:45 pm\",\"Internacional\"));\r\n    }\r\n\r\n//----------------------------------------Gestion Clientes-----------------------------------------//\r\n\r\n    public Cliente clienteRegistrado(String id){\r\n        Cliente cliente = null;\r\n        for (Cliente c : clientes){\r\n            if(c.getIdentificacion().equals(id)){\r\n                cliente = c;\r\n                break;\r\n            }\r\n        }\r\n        return cliente;\r\n    }\r\n\r\n    public boolean verificarContrasena(Cliente c, String con){\r\n        boolean cent = false;\r\n        if (c.getContrasena().equals(con)){\r\n            cent = true;\r\n        }\r\n        return cent;\r\n    }\r\n\r\n    public void registrarCliente (Cliente cliente){\r\n        clientes.add(cliente);\r\n    }\r\n\r\n\r\n//------------------------------------------Manejo Vuelos------------------------------------------//\r\n\r\n    public List<Vuelo> obtenerVuelos(Ticket t){\r\n        List<Vuelo> vuelosDisponibles = new ArrayList<>();\r\n        if (vuelosProgramados.isEmpty()){\r\n            initializeVuelos(t);\r\n            vuelosDisponibles = obtenerVuelos(t);\r\n        }\r\n        else{\r\n            for(Vuelo v: vuelosProgramados){\r\n                if (v.getFechaVuelo().equals(t.getFechaInicio()) && v.getRuta().getDestino().equals(t.getDestino())){\r\n                    vuelosDisponibles.add(v);\r\n                }\r\n            }\r\n            if (vuelosDisponibles.isEmpty()){\r\n                initializeVuelos(t);\r\n                vuelosDisponibles = obtenerVuelos(t);\r\n            }\r\n        }\r\n        return vuelosDisponibles;\r\n    }\r\n\r\n   private void initializeVuelos(Ticket t){\r\n        if (t.getTipoVuelo().equals(\"Nacional\")){\r\n            vuelosProgramados.add(new Vuelo(\"Nacional\",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(0), new MiListaEnlazada<>()));\r\n            vuelosProgramados.add(new Vuelo(\"Nacional\",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(1), new MiListaEnlazada<>()));\r\n        }\r\n        else{\r\n            vuelosProgramados.add(new Vuelo(\"Internacional\",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(2), new MiListaEnlazada<>()));\r\n            vuelosProgramados.add(new Vuelo(\"Internacional\",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(3), new MiListaEnlazada<>()));\r\n            vuelosProgramados.add(new Vuelo(\"Internacional\",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(4), new MiListaEnlazada<>()));\r\n            vuelosProgramados.add(new Vuelo(\"Internacional\",t.getFechaInicio(),obtenerRuta(t),aeronaves.get(5), new MiListaEnlazada<>()));\r\n        }\r\n   }\r\n\r\n   private Ruta obtenerRuta(Ticket t){\r\n        Ruta r = null;\r\n        if (t.getDestino().equals(\"Monterrey\")){\r\n            r = rutas.get(0);\r\n        }\r\n        if (t.getDestino().equals(\"Cancun\")){\r\n            r = rutas.get(1);\r\n        }\r\n        if (t.getDestino().equals(\"Buenos Aires\")){\r\n            r = rutas.get(2);\r\n        }\r\n        if (t.getDestino().equals(\"Los Angeles\")){\r\n            r = rutas.get(3);\r\n        }\r\n       if (t.getDestino().equals(\"Bogota\")){\r\n           r = rutas.get(4);\r\n       }\r\n       if (t.getDestino().equals(\"Panama\")){\r\n           r = rutas.get(5);\r\n       }\r\n        return r;\r\n   }\r\n\r\n\r\n//------------------------------------------Manejo Tripulación------------------------------------------//\r\n    public void registrarTripulante(Tripulante tripulante) throws Exception {\r\n        if (tripulantes.find(tripulante) != null) {\r\n            throw new Exception(\"El tripulante ya está registrado\");\r\n        }\r\n        tripulantes.add(tripulante);\r\n        guardarTripulantes();\r\n    }\r\n\r\n    public void eliminarTripulante(Tripulante tripulante) throws Exception {\r\n        if (tripulante != null) {\r\n            tripulantes.remove(tripulante);\r\n            guardarTripulantes();\r\n        }\r\n        else{\r\n            throw new Exception(\"No se a seleccionado ningun tripulante\");\r\n        }\r\n    }\r\n\r\n    public void actualizarTripulante(Tripulante tripulanteActualizado) throws Exception {\r\n        eliminarTripulante(tripulanteActualizado);\r\n        tripulantes.add(tripulanteActualizado);\r\n        guardarTripulantes();\r\n    }\r\n\r\n    public List<Tripulante> obtenerTripulantesDisponibles() {\r\n        List<Tripulante> disponibles = new ArrayList<>();\r\n        Nodo<Tripulante> current = tripulantes.getHead();\r\n        while (current != null) {\r\n            boolean asignado = false;\r\n            Nodo<Avion> currentAvion = aeronaves.getHead();\r\n            while (currentAvion != null) {\r\n                if (currentAvion.data.getTripulacion().contains(current.data)) {\r\n                    asignado = true;\r\n                    break;\r\n                }\r\n                currentAvion = currentAvion.next;\r\n            }\r\n            if (!asignado) {\r\n                disponibles.add(current.data);\r\n            }\r\n            current = current.next;\r\n        }\r\n        return disponibles;\r\n    }\r\n\r\n    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion) {\r\n        avion.setTripulacion(tripulacion);\r\n        guardarAeronaves();\r\n    }\r\n\r\n    public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante) {\r\n        avion.getTripulacion().remove(tripulante);\r\n        guardarAeronaves();\r\n    }\r\n\r\n//------------------------------------CARGADO Y GUARDADO DE ARCHIVOS------------------------------------//\r\n\r\n    // Método para leer tripulantes de archivo\r\n    private void leerTripulantes() {\r\n        try (BufferedReader br = new BufferedReader(new FileReader(\"src/main/resources/tripulantes.txt\"))) {\r\n            String line;\r\n            while ((line = br.readLine()) != null) {\r\n                String[] data = line.split(\",\");\r\n                if (data.length >= 7) { // Ensure there are enough elements\r\n                    Tripulante tripulante = new Tripulante(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);\r\n                    tripulantes.add(tripulante);\r\n                } else {\r\n                    // Handle the case where data is incomplete\r\n                    System.err.println(\"Incomplete data: \" + line);\r\n                }\r\n            }\r\n        } catch (IOException e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n\r\n\r\n    // Métodos para guardar la información en archivos\r\n    private void guardarTripulantes() {\r\n        try (FileWriter fw = new FileWriter(new File(\"src/main/resources/tripulantes.txt\"), false)) {\r\n            Nodo<Tripulante> current = tripulantes.getHead();\r\n            String contenido = \"\";\r\n            while (current != null) {\r\n                contenido += current.data.getId()+\",\"+current.data.getNombre()+\",\"+current.data.getDireccion()+\r\n                \",\"+current.data.getEmail()+\",\"+current.data.getFechaNacimiento()+\",\"+current.data.getEstudios()+\r\n                \",\"+current.data.getRango()+\"\\n\";\r\n                current = current.next;\r\n            }\r\n            BufferedWriter bfw = new BufferedWriter(fw);\r\n            bfw.write(contenido);\r\n            bfw.close();\r\n\r\n        } catch (IOException e) {\r\n            LOGGER.log(Level.WARNING, \"Error al guardar los tripulantes\", e);\r\n        }\r\n    }\r\n\r\n    private void guardarAeronaves() {\r\n        try (FileWriter fw = new FileWriter(new File(\"src/main/resources/aeronaves.txt\"))) {\r\n            Nodo<Avion> current = aeronaves.getHead();\r\n            while (current != null) {\r\n                fw.write(current.data.toString() + \"\\n\");\r\n                current = current.next;\r\n            }\r\n        } catch (IOException e) {\r\n            LOGGER.log(Level.WARNING, \"Error al guardar las aeronaves\", e);\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java b/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java
+--- a/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java	
++++ b/src/main/java/co/edu/uniquindio/caribe_airlines/Model/CaribeAirlines.java	
+@@ -161,59 +161,107 @@
+ 
+ //------------------------------------------Manejo Tripulación------------------------------------------//
+     public void registrarTripulante(Tripulante tripulante) throws Exception {
+-        if (tripulantes.find(tripulante) != null) {
++        if (buscarTripulante(tripulante.getId()) != null) {
+             throw new Exception("El tripulante ya está registrado");
+         }
+         tripulantes.add(tripulante);
+         guardarTripulantes();
+     }
+ 
+-    public void eliminarTripulante(Tripulante tripulante) throws Exception {
++    public void eliminarTripulante(String id) {
++        Tripulante tripulante = buscarTripulante(id);
+         if (tripulante != null) {
+             tripulantes.remove(tripulante);
+             guardarTripulantes();
+         }
+-        else{
+-            throw new Exception("No se a seleccionado ningun tripulante");
+-        }
+-    }
+-
+-    public void actualizarTripulante(Tripulante tripulanteActualizado) throws Exception {
+-        eliminarTripulante(tripulanteActualizado);
+-        tripulantes.add(tripulanteActualizado);
+-        guardarTripulantes();
+-    }
++    }
++
++    public Tripulante buscarTripulante(String id) {
++        return tripulantes.find(new Tripulante(id, null, null, null, null, null, null));
++    }
++
+ 
+     public List<Tripulante> obtenerTripulantesDisponibles() {
+         List<Tripulante> disponibles = new ArrayList<>();
+-        Nodo<Tripulante> current = tripulantes.getHead();
+-        while (current != null) {
++        for (Tripulante tripulante : tripulantes.toArrayList()) {
+             boolean asignado = false;
+-            Nodo<Avion> currentAvion = aeronaves.getHead();
+-            while (currentAvion != null) {
+-                if (currentAvion.data.getTripulacion().contains(current.data)) {
++            for (Avion avion : aeronaves.toArrayList()) {
++                if (avion.getTripulacion().contains(tripulante)) {
+                     asignado = true;
+                     break;
+                 }
+-                currentAvion = currentAvion.next;
+             }
+             if (!asignado) {
+-                disponibles.add(current.data);
++                disponibles.add(tripulante);
+             }
+-            current = current.next;
+         }
+         return disponibles;
+     }
+ 
+-    public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion) {
+-        avion.setTripulacion(tripulacion);
+-        guardarAeronaves();
++    public void asignarTripulacionAAvion(Avion avion, Tripulante tripulante) {
++        if (avion != null && tripulante != null && necesitaTripulante(avion, tripulante.getRango())) {
++            avion.getTripulacion().add(tripulante);
++            guardarAeronaves();
++        }
+     }
+ 
+     public void removerTripulacionDeAvion(Avion avion, Tripulante tripulante) {
+-        avion.getTripulacion().remove(tripulante);
+-        guardarAeronaves();
++        if (avion != null && tripulante != null) {
++            avion.getTripulacion().remove(tripulante);
++            guardarAeronaves();
++        }
+     }
++
++    public boolean validarTripulacionCompleta(Avion avion) {
++        long comandantes = avion.getTripulacion().stream()
++                .filter(t -> t.getRango().equals("Comandante")).count();
++        long copilotos = avion.getTripulacion().stream()
++                .filter(t -> t.getRango().equals("Copiloto")).count();
++        long auxiliares = avion.getTripulacion().stream()
++                .filter(t -> t.getRango().equals("Auxiliar de vuelo")).count();
++
++        if (avion.getModelo().equals("Airbus A320")) {
++            return comandantes == 1 && copilotos == 1 && auxiliares == 3;
++        } else if (avion.getModelo().equals("Airbus A330") || avion.getModelo().equals("Boeing 787")) {
++            return comandantes == 1 && copilotos == 1 && auxiliares == 7;
++        }
++        return false;
++    }
++
++    public boolean necesitaTripulante(Avion avion, String rango) {
++        if (avion == null || rango == null) {
++            return false;
++        }
++
++        long count = avion.getTripulacion().stream()
++                .filter(t -> t.getRango().equals(rango))
++                .count();
++
++        switch (avion.getModelo()) {
++            case "Airbus A320":
++                switch (rango) {
++                    case "Comandante": return count < 1;
++                    case "Copiloto": return count < 1;
++                    case "Auxiliar de vuelo": return count < 3;
++                }
++                break;
++            case "Airbus A330":
++            case "Boeing 787":
++                switch (rango) {
++                    case "Comandante": return count < 1;
++                    case "Copiloto": return count < 1;
++                    case "Auxiliar de vuelo": return count < 7;
++                }
++                break;
++        }
++        return false;
++    }
++
++    public boolean necesitaMasTripulacion(Avion avion) {
++        return necesitaTripulante(avion, "Comandante") ||
++                necesitaTripulante(avion, "Copiloto") ||
++                necesitaTripulante(avion, "Auxiliar de vuelo");
++    }
+ 
+ //------------------------------------CARGADO Y GUARDADO DE ARCHIVOS------------------------------------//
+ 
+@@ -223,49 +271,47 @@
+             String line;
+             while ((line = br.readLine()) != null) {
+                 String[] data = line.split(",");
+-                if (data.length >= 7) { // Ensure there are enough elements
++                if (data.length >= 7) {
+                     Tripulante tripulante = new Tripulante(data[0], data[1], data[2], data[3], data[4], data[5], data[6]);
+                     tripulantes.add(tripulante);
+-                } else {
+-                    // Handle the case where data is incomplete
+-                    System.err.println("Incomplete data: " + line);
+                 }
+             }
+         } catch (IOException e) {
+-            e.printStackTrace();
++            LOGGER.log(Level.WARNING, "Error al leer tripulantes", e);
+         }
+     }
+ 
+ 
+     // Métodos para guardar la información en archivos
+     private void guardarTripulantes() {
+-        try (FileWriter fw = new FileWriter(new File("src/main/resources/tripulantes.txt"), false)) {
+-            Nodo<Tripulante> current = tripulantes.getHead();
+-            String contenido = "";
+-            while (current != null) {
+-                contenido += current.data.getId()+","+current.data.getNombre()+","+current.data.getDireccion()+
+-                ","+current.data.getEmail()+","+current.data.getFechaNacimiento()+","+current.data.getEstudios()+
+-                ","+current.data.getRango()+"\n";
+-                current = current.next;
++        try (PrintWriter writer = new PrintWriter(new FileWriter("src/main/resources/tripulantes.txt"))) {
++            for (Tripulante tripulante : tripulantes.toArrayList()) {
++                writer.printf("%s,%s,%s,%s,%s,%s,%s\n",
++                        tripulante.getId(),
++                        tripulante.getNombre(),
++                        tripulante.getDireccion(),
++                        tripulante.getEmail(),
++                        tripulante.getFechaNacimiento(),
++                        tripulante.getEstudios(),
++                        tripulante.getRango());
+             }
+-            BufferedWriter bfw = new BufferedWriter(fw);
+-            bfw.write(contenido);
+-            bfw.close();
+-
+         } catch (IOException e) {
+-            LOGGER.log(Level.WARNING, "Error al guardar los tripulantes", e);
++            LOGGER.log(Level.WARNING, "Error al guardar tripulantes", e);
+         }
+     }
+ 
+     private void guardarAeronaves() {
+-        try (FileWriter fw = new FileWriter(new File("src/main/resources/aeronaves.txt"))) {
+-            Nodo<Avion> current = aeronaves.getHead();
+-            while (current != null) {
+-                fw.write(current.data.toString() + "\n");
+-                current = current.next;
++        try (PrintWriter writer = new PrintWriter(new FileWriter("src/main/resources/aeronaves.txt"))) {
++            for (Avion avion : aeronaves.toArrayList()) {
++                writer.printf("%s,%d,%d,%d,%d\n",
++                        avion.getModelo(),
++                        avion.getCapacidadPasajeros(),
++                        avion.getCapacidadCarga(),
++                        avion.getAsientosDisponibles().get("Ejecutiva"),
++                        avion.getAsientosDisponibles().get("Economica"));
+             }
+         } catch (IOException e) {
+-            LOGGER.log(Level.WARNING, "Error al guardar las aeronaves", e);
++            LOGGER.log(Level.WARNING, "Error al guardar aeronaves", e);
+         }
+     }
+ }
+\ No newline at end of file
