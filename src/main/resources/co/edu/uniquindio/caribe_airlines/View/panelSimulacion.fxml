@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
+<AnchorPane prefHeight="680.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelSimulacionController">
 
-<AnchorPane prefHeight="680.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.caribe_airlines.viewController.PanelSimulacionController">
+    <VBox spacing="10"
+          alignment="CENTER"
+          AnchorPane.topAnchor="0.0"
+          AnchorPane.rightAnchor="0.0"
+          AnchorPane.bottomAnchor="0.0"
+          AnchorPane.leftAnchor="0.0">
+
+        <padding>
+            <Insets top="10.0" right="10.0" bottom="10.0" left="10.0"/>
+        </padding>
+
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Añadir Carro" onAction="#añadirCarro"/>
+            <Button text="Salida de Carro" onAction="#salidaCarro"/>
+            <Button text="Retirar Carro" onAction="#retirarCarro"/>
+        </HBox>
+
+        <VBox spacing="5" VBox.vgrow="ALWAYS">
+            <Label text="Carros en Bicola" style="-fx-font-weight: bold"/>
+            <TableView fx:id="tablaBicola" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colIdBicola" text="ID" prefWidth="100"/>
+                    <TableColumn fx:id="colDestinoBicola" text="Destino" prefWidth="200"/>
+                    <TableColumn fx:id="colCargaBicola" text="Carga" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox spacing="5" VBox.vgrow="ALWAYS">
+            <Label text="Carros en Espera" style="-fx-font-weight: bold"/>
+            <TableView fx:id="tablaEspera" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colIdEspera" text="ID" prefWidth="100"/>
+                    <TableColumn fx:id="colDestinoEspera" text="Destino" prefWidth="200"/>
+                    <TableColumn fx:id="colCargaEspera" text="Carga" prefWidth="100"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </VBox>
 
 </AnchorPane>

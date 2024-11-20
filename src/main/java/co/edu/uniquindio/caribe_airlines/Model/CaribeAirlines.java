@@ -30,6 +30,8 @@ public class CaribeAirlines implements Serializable {
     private MiListaEnlazada<Vuelo> vuelosProgramados;
     private MiListaEnlazada<Cliente> clientes;
     private MiListaEnlazada<Ruta> rutas;
+    private final Estacionamiento estacionamiento;
+
 
     private static final Logger LOGGER = Logger.getLogger(CaribeAirlines.class.getName());
 
@@ -49,6 +51,8 @@ public class CaribeAirlines implements Serializable {
         this.vuelosProgramados = new MiListaEnlazada<>();
         this.clientes = new MiListaEnlazada<>();
         this.rutas = new MiListaEnlazada<>();
+        this.estacionamiento = new Estacionamiento();
+
 
         // Cargar datos desde archivos si es necesario
         //initializeRutas();
@@ -315,5 +319,16 @@ public class CaribeAirlines implements Serializable {
         } catch (IOException e) {
             LOGGER.log(Level.WARNING, "Error al guardar aeronaves", e);
         }
+    }
+
+
+    //----------------- Simulación -----------------//
+
+    public void procesarEmbarque(CarroEmbarque carro) {
+        estacionamiento.llegada(carro);
+    }
+
+    public Estacionamiento getEstacionamiento() {
+        return estacionamiento;
     }
 }

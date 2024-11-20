@@ -14,6 +14,9 @@ public class ModelFactoryController {
     private static class SingletonHolder {
         private final static ModelFactoryController INSTANCE = new ModelFactoryController();
     }
+    public CaribeAirlines getCaribeAirlines() {
+        return caribeAirlines;
+    }
 
     public static ModelFactoryController getInstance() {
         return SingletonHolder.INSTANCE;
@@ -116,6 +119,14 @@ public class ModelFactoryController {
         if (caribeAirlines == null){
             this.caribeAirlines = Persistencia.cargarRespaldo();
         }
+    }
+
+
+    //------------- Simulación --------------//
+
+    public void procesarEmbarque(CarroEmbarque carro) {
+        caribeAirlines.procesarEmbarque(carro);
+        guardarArchivo();
     }
 
 }
