@@ -9,6 +9,8 @@ public class ModelFactoryController {
 
     private CaribeAirlines caribeAirlines;
 
+
+
     private static class SingletonHolder {
         private final static ModelFactoryController INSTANCE = new ModelFactoryController();
     }
@@ -58,6 +60,10 @@ public class ModelFactoryController {
     public void registrarTripulante(Tripulante tripulante) throws Exception {
         caribeAirlines.registrarTripulante(tripulante);
     }
+    public boolean necesitaTripulante(Avion avionSeleccionado, String rango) {
+        return caribeAirlines.necesitaTripulante(avionSeleccionado, rango);
+    }
+
 
     public void eliminarTripulante(Tripulante tripulante) {
         caribeAirlines.eliminarTripulante(tripulante.getId());
@@ -67,9 +73,18 @@ public class ModelFactoryController {
         return caribeAirlines.obtenerTripulantesDisponibles();
     }
 
+    public void asignarTripulacionAAvion(Avion avion, Tripulante tripulante) {
+        if (caribeAirlines.necesitaTripulante(avion, tripulante.getRango())) {
+            caribeAirlines.asignarTripulacionAAvion(avion, tripulante);
+            guardarArchivo();
+        }
+    }
+
     public void asignarTripulacionAAvion(Avion avion, List<Tripulante> tripulacion) {
-        for (Tripulante t : tripulacion) {
-            caribeAirlines.asignarTripulacionAAvion(avion, t);
+        if (tripulacion != null && !tripulacion.isEmpty()) {
+            for (Tripulante t : tripulacion) {
+                asignarTripulacionAAvion(avion, t);
+            }
         }
     }
 

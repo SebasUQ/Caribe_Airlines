@@ -14,6 +14,8 @@ import co.edu.uniquindio.caribe_airlines.Model.*;
 import co.edu.uniquindio.caribe_airlines.Controller.ModelFactoryController;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PanelTripulacionController1 {
     @FXML public Button btnVolver;
@@ -168,14 +170,22 @@ public class PanelTripulacionController1 {
         }
 
         try {
-            /*if (modelFactoryController.necesitaTripulante(avionSeleccionado, tripulanteSeleccionado.getRango())) {
-                modelFactoryController.asignarTripulacionAAvion(avionSeleccionado, tripulanteSeleccionado));
-                actualizarDatos();
-                actualizarTablaTripulacion();
-                mostrarInformacion("Tripulante asignado exitosamente.");
+            if (modelFactoryController.necesitaMasTripulacion(avionSeleccionado)) {
+                if (modelFactoryController.necesitaTripulante(avionSeleccionado, tripulanteSeleccionado.getRango())) {
+                    // Crear una lista con un solo tripulante
+                    List<Tripulante> tripulantes = new ArrayList<>();
+                    tripulantes.add(tripulanteSeleccionado);
+
+                    modelFactoryController.asignarTripulacionAAvion(avionSeleccionado, tripulantes);
+                    actualizarDatos();
+                    actualizarTablaTripulacion();
+                    mostrarInformacion("Tripulante asignado exitosamente.");
+                } else {
+                    mostrarAlerta("No se necesitan más tripulantes de este rango en el avión seleccionado.");
+                }
             } else {
-                mostrarAlerta("No se puede asignar más tripulantes de este rango al avión seleccionado.");
-            }*/
+                mostrarAlerta("El avión ya tiene la tripulación completa.");
+            }
         } catch (Exception e) {
             mostrarError("Error al asignar tripulante: " + e.getMessage());
         }

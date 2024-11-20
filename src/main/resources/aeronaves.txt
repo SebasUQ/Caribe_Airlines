@@ -1,6 +1,6 @@
-Airbus A320,150,19000,12,138
-Airbus A320,150,19000,12,138
-Airbus A330,252,52000,30,222
-Airbus A330,252,52000,30,222
-Boeing 787,250,50000,28,222
-Boeing 787,250,50000,28,222
+Airbus A320,150,19000,null,null
+Airbus A320,150,19000,null,null
+Airbus A330,252,52000,null,null
+Airbus A330,252,52000,null,null
+Boeing 787,250,50000,null,null
+Boeing 787,250,50000,null,null
