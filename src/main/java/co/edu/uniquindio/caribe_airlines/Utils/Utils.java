@@ -11,6 +11,37 @@ public class Utils {
     private static final int LONGITUD_CODIGO = 10;
     private static final SecureRandom random = new SecureRandom();
 
+    public static boolean esNumeroValido(String numeroTarjeta) {
+        // Eliminar espacios o guiones en caso de que el número esté formateado
+        numeroTarjeta = numeroTarjeta.replaceAll("\\s|-", "");
+
+        // Verificar que solo contenga dígitos
+        if (!numeroTarjeta.matches("\\d+")) {
+            return false;
+        }
+
+        int suma = 0;
+        boolean alternar = false;
+
+        // Iterar desde el último dígito hacia el primero
+        for (int i = numeroTarjeta.length() - 1; i >= 0; i--) {
+            int digito = Character.getNumericValue(numeroTarjeta.charAt(i));
+
+            if (alternar) {
+                digito *= 2;
+                if (digito > 9) {
+                    digito -= 9;
+                }
+            }
+
+            suma += digito;
+            alternar = !alternar; // Alternar entre true y false
+        }
+
+        // La suma debe ser múltiplo de 10
+        return suma % 10 == 0;
+    }
+
     public static String generarID(){
         StringBuilder codigo = new StringBuilder(LONGITUD_CODIGO);
 

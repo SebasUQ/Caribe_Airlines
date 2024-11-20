@@ -55,7 +55,9 @@ public class PanelTicketsViewController3 {
 
     public void nextPanel(ActionEvent actionEvent) {
         if (!txtNumTarjeta.getText().isEmpty()){
+            if (Utils.esNumeroValido(txtNumTarjeta.getText())){
 
+            }
         }else{
             JOptionPane.showMessageDialog(null, "Por favor ingrese un numero de tarjeta");
         }
